@@ -53,15 +53,15 @@
 汎用性の高いペット記録アプリだと不要な機能も多く、使いたいものがありませんでした。
 ならば自分で爬虫類飼育に特化したUI/UXのシンプルなアプリを作ってしまおう！と思いました。
 
-### スケジュール
+## スケジュール
 企画〜技術調査：12/15〆切
 README〜ER図作成：12/31 〆切
 メイン機能実装：1/1 - 1/31
 β版をRUNTEQ内リリース（MVP）：2/15〆切
 本番リリース：2月末
 
-### 画面遷移図
+## 画面遷移図
 https://www.figma.com/file/JjM0EoDorxomyWRDX7hhkJ/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0%3A1
 
 ## ER図
-https://i.gyazo.com/653ec746419349cd5a155e2dfef1f18c.png
+https://i.gyazo.com/e04832e893a97aa355de6b9115f3a16f.png
