@@ -36,6 +36,7 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -58,3 +59,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
+# Authentication
+gem 'sorcery'
