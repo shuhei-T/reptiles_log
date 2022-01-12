@@ -1,0 +1,80 @@
+ja:
+  defaults: #すべてのコントローラーで使える
+    login: 'ログイン'
+    register: '登録'
+    logout: 'ログアウト'
+    post: '投稿'
+    search_word: '検索ワード'
+    show: '詳細'
+    edit: '編集'
+    delete: '削除'
+    password_reset: 'パスワードリセット'
+    unspecified: '指定なし'
+    message:
+      require_login: 'ログインしてください'
+      created: '%{item}を作成しました'
+      not_created: '%{item}を作成できませんでした'
+      updated: '%{item}を更新しました'
+      not_updated: '%{item}を更新できませんでした'
+      deleted: '%{item}を削除しました'
+      delete_confirm: '削除しますか?'
+      not_authorized: '権限がありません'
+  users:
+    new:
+      title: 'ユーザー登録'
+      to_login_page: 'ログインページへ'
+    create:  
+      success: 'ユーザー登録が完了しました'
+      fail: 'ユーザー登録に失敗しました'
+  user_sessions:
+    new:
+      title: 'ログイン'
+      to_register_page: '登録ページへ'
+      password_forget: 'パスワードをお忘れの方はこちら'
+    create:
+      success: 'ログインしました'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
+  profiles:
+    show:
+      title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'
+  password_resets:
+    new:
+      title: 'パスワードリセット申請'
+      submit: '送信'
+    edit:
+      title: 'パスワードリセット'
+    create:
+      success: 'パスワードリセット手順を送信しました'
+    update:
+      success: 'パスワードが変更されました'
+      fail: 'パスワードの変更に失敗しました'
+  admin:
+    user_sessions:
+      new:
+        title: 'ログイン'
+      create:
+        success: 'ログインしました'
+        fall: 'ログインに失敗しました'
+      destroy:
+        success: 'ログアウトしました'
+    dashboards:
+      index:
+        title: 'ダッシュボード'
+    users:
+      index:
+        title: 'ユーザー一覧'
+      show:
+        title: 'ユーザー詳細'
+      edit:
+        title: 'ユーザー編集'
+    boards:
+      index:
+        title: '掲示板一覧'
+      show:
+        title: '掲示板詳細'
+      edit:
+        title: '掲示板編集'

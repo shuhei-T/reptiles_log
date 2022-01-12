@@ -1,0 +1,19 @@
+# モデルは全て activerecord 以下に記述する。
+# これにより、User.model_name.human / User.human_attribute_name({attr_name})で使用可能。
+
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+    attributes:
+      user:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        name: '名前'
+        avatar: 'アバター'
+        created_at: '作成日時'
+  attributes:
+    id: 'ID'
+    created_at: '作成日時'
+    updated_at: '更新日時'
