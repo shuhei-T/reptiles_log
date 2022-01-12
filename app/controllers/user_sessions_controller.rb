@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_back_or_to root_path
     else
-      render: new
+      render :new
     end
   end
 
