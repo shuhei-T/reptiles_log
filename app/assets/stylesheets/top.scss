@@ -2,9 +2,9 @@ body {
   background-color: #f2f2f2;
 
   .top-wrapper {
-    height: calc(100vh - 134px);
-    // position: relative;
-    // background-position: center;
+    height: calc(100vh - 120px);
+    position: relative;
+    background-position: center;
   
     .top-inner-text {
       position: absolute;
@@ -16,8 +16,13 @@ body {
       font-size: 3rem;
       color: #0EB784;
   
-      @media screen and (max-width: 767px) {
-        font-size: 2.0rem;
+      @media screen and (min-width: 767px) {
+        font-size: 5rem;
+      }
+
+      h1 {
+        margin-top: 4rem;
+        
       }
     }
   }
