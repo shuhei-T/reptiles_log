@@ -1,4 +1,4 @@
-a:
+ja:
   defaults: #すべてのコントローラーで使える
     login: 'ログイン'
     register: '登録'
