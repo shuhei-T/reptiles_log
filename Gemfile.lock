@@ -257,9 +257,9 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
-    sorcery (0.14.0)
+    sorcery (0.16.2)
       bcrypt (~> 3.1)
-      oauth (~> 0.4, >= 0.4.4)
+      oauth (~> 0.5, >= 0.5.5)
       oauth2 (~> 1.0, >= 0.8.0)
     spring (4.0.0)
     sprockets (4.0.2)
