@@ -2,3 +2,14 @@
 @import 'top';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+// フッター固定用
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}

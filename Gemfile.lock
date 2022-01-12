@@ -316,7 +316,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   sass-rails (>= 6)
-  sorcery
+  sorcery (~> 0.14.0)
   spring
   turbolinks (~> 5)
   tzinfo-data

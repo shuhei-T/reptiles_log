@@ -60,4 +60,4 @@ gem 'bootstrap'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 # Authentication
-gem 'sorcery'
+gem 'sorcery', '~> 0.14.0'
