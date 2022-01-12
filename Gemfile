@@ -61,3 +61,5 @@ gem 'font-awesome-sass'
 gem 'jquery-rails'
 # Authentication
 gem 'sorcery'
+# UI/UX
+gem 'rails-i18n'
