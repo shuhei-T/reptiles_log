@@ -119,6 +119,7 @@ GEM
       sassc (>= 1.11)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    hirb (0.7.3)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.5)
@@ -306,6 +307,7 @@ DEPENDENCIES
   byebug
   factory_bot_rails
   font-awesome-sass
+  hirb
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.3)
