@@ -5,14 +5,26 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      reptile: '爬虫類'
     attributes:
       user:
+        name: 'ユーザー名'
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
-        name: '名前'
         avatar: 'アバター'
+        comment: 'コメント'
         created_at: '作成日時'
+        updated_at: '更新日時'
+      reptile:
+        name: '爬虫類の名前'
+        morph: 'モルフ'
+        sex: '性別'
+        birthday: '誕生日'
+        adoptaversary: 'お迎え日'
+        image: 'ペットの写真'
+        comeent: 'コメント'
+        age: '年齢'
   attributes:
     id: 'ID'
     created_at: '作成日時'

@@ -41,6 +41,15 @@ ja:
       title: 'プロフィール'
     edit:
       title: 'プロフィール編集'
+  reptiles:
+    index:
+      title: '爬虫類リスト'
+      no_result: '爬虫類が居ません'
+    new:
+    create:
+    edit:
+    update:
+    destroy:
   password_resets:
     new:
       title: 'パスワードリセット申請'
