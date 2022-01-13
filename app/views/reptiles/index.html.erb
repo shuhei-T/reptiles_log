@@ -1,0 +1,12 @@
+<div class="container pt-3">
+  <div class="col-12">
+    <h1><%= t('.title') %></h1>
+      <div class="row">
+        <% if @reptiles.present? %>
+          <%= render @reptiles %>
+        <% else %>
+          <p><%= t('.no_result') %></p>
+        <% end %> 
+      </div>
+  </div>
+</div>
