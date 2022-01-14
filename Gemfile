@@ -38,6 +38,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'hirb'
+  gem 'rails-erd'
 end
 
 group :development do
