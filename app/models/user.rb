@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true
   validates :name, presence: true, length: { maximum: 30 }
+
+  has_many :reptiles
 end

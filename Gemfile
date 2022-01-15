@@ -65,3 +65,5 @@ gem 'jquery-rails'
 gem 'sorcery'
 # UI/UX
 gem 'rails-i18n'
+# Model
+gem 'enum_help'

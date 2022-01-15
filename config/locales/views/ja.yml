@@ -46,6 +46,7 @@ ja:
       title: '爬虫類リスト'
       no_result: '爬虫類が居ません'
     new:
+      title: '爬虫類登録'
     create:
     edit:
     update:

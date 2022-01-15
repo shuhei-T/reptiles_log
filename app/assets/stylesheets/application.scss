@@ -3,6 +3,10 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+
+$vivid-color: #FF436B;
+
+
 // フッター固定用
 body {
   display: flex;
@@ -12,4 +16,19 @@ body {
 
 .container {
   flex: 1;
+}
+
+
+// reptile _form
+.attention {
+  color:$vivid-color;
+}
+
+.hidden {
+  display: none;
+}
+
+.disable input,.disable select{
+  pointer-events : none;
+  background: #cccccc;
 }

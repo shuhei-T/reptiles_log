@@ -1,0 +1,45 @@
+<%= form_with model: reptile, local: true do |f| %>
+  <div class="mb-3">
+    <%= f.label :name, class: 'form-label' %>
+    <%= f.text_field :name, class: 'form-control', placeholder: '※必須' %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :morph, class: 'form-label' %>
+    <%= f.text_field :morph, class: 'form-control', placeholder: '例)ノーマル' %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :sex, class: 'form-label' %><br>
+    <%= f.collection_radio_buttons :sex, Reptile.sexes_i18n, :first, :last do |b| %>
+    <%= b.label(class: 'btn btn-secondary') { b.radio_button(class: 'btn btn-secondary') + b.text } %>
+    <% end %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :birthday, class: 'form-label' %><br>
+    <div class="select_raw">
+      <%= raw sprintf(f.date_select(:birthday, {prefix:'birthday', prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1920, date_separator:'%s'} ,{class: 'form-select', style: 'display: inline-block;width: auto;'}),'年','月')+'日' %>
+    </div>
+  </div>
+  <div class="mb-3">
+    <%= check_box_tag :check_birthday, class: 'form-check-input', id:'check_birthday' %>
+    <%= label_tag :check_birthday, "わからない", class: 'fomr-check-label' %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :adoptaversary, class: 'form-label' %><br>
+    <div class="select_raw">
+      <%= raw sprintf(f.date_select(:adoptaversary, {prefix:'adoptaversary', prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1920, date_separator:'%s'}, {class: 'form-select', style: 'display: inline-block;width: auto;'}),'年','月')+'日' %>
+    </div>
+  </div>
+  <div class="mb-3">
+    <%= f.label :age, class: 'form-label', id: 'label-age' %><br>
+    <span class="age_comment attention hidden"> 生年月日が分かっている場合、入力は不要です。</span><br>
+    <div class="select_raw", id="raw_age">
+      <%= raw sprintf(f.select :age, options_for_select((0..99).to_a), {prompt:"--"}, {class: 'form-select', style: 'display: inline-block;width: auto;'}) +' 歳' %>
+    </div>
+  </div>
+  <div class="mb-3">
+    <%= f.label :comment, class: 'form-label' %>
+    <%= f.text_area :comment, class: 'form-control', placeholder:"コメント" %>
+  </div>
+
+  <%= f.submit class: 'btn btn-primary mb-2' %>
+<% end %>
