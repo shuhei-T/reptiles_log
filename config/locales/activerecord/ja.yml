@@ -23,9 +23,15 @@ ja:
         birthday: '誕生日'
         adoptaversary: 'お迎え日'
         image: 'ペットの写真'
-        comeent: 'コメント'
+        comment: 'コメント'
         age: '年齢'
   attributes:
     id: 'ID'
     created_at: '作成日時'
     updated_at: '更新日時'
+  enums:
+    reptile:
+      sex:
+        unknown: '不明'
+        male: 'オス'
+        female: 'メス'

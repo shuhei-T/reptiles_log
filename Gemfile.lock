@@ -85,6 +85,8 @@ GEM
     crass (1.0.6)
     debug_inspector (1.1.0)
     diff-lcs (1.5.0)
+    enum_help (0.0.18)
+      activesupport (>= 3.0.0)
     erubi (1.10.0)
     execjs (2.8.1)
     factory_bot (6.2.0)
@@ -316,6 +318,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   bootstrap
   byebug
+  enum_help
   factory_bot_rails
   font-awesome-sass
   hirb

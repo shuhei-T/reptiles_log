@@ -12,5 +12,9 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+//= require jquery
+//= require rails-ujs
+//= require jquery_ujs
 //= require popper
 //= require bootstrap-sprockets
+import "./reptile.js"
