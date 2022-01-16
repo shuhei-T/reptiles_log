@@ -3,9 +3,8 @@ if defined? Rails::Console
 # Hirb.enableの有効性
   if defined? Hirb
     # hirbをオン
-    Hirb.enable
+    # Hirb.enable
     # hirbをオフ
-    # Hirb.disable
+    Hirb.disable
   end
-
 end
