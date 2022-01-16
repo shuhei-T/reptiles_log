@@ -1,10 +1,28 @@
-@import 'bootstrap';
 @import 'top';
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
+@import 'reptile';
+
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
 
 
+$base-color: #F2F5F6;
+$middium-color: #8D99AF;
+$thema-color: #DE3A5D;
 $vivid-color: #FF436B;
+$vivid-hover: #ff7a97;
+$dark-color: #B82C5C;
+$font-color: #412B2D;
+$font-color-light: #8D99AF;
+$font-placeholder: #cccccc;
+$icon-color: #ff938b;
+$border-color: #DAD8D4;
+$focus-color: #33C3F0;
+$focus-hover: #74ddfc;
+$hover_box: #F2F5F6;
 
 
 // フッター固定用
@@ -19,16 +37,3 @@ body {
 }
 
 
-// reptile _form
-.attention {
-  color:$vivid-color;
-}
-
-.hidden {
-  display: none;
-}
-
-.disable input,.disable select{
-  pointer-events : none;
-  background: #cccccc;
-}

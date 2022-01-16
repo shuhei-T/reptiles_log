@@ -1,0 +1,79 @@
+$base-color: #F2F5F6;
+$middium-color: #8D99AF;
+$thema-color: #DE3A5D;
+$vivid-color: #FF436B;
+$vivid-hover: #ff7a97;
+$dark-color: #B82C5C;
+$font-color: #412B2D;
+$font-color-light: #8D99AF;
+$font-placeholder: #cccccc;
+$icon-color: #ff938b;
+$border-color: #DAD8D4;
+$focus-color: #33C3F0;
+$focus-hover: #74ddfc;
+$hover_box: #F2F5F6;
+
+// reptile _form
+.attention {
+  color:$vivid-color;
+}
+
+.hidden {
+  display: none;
+}
+
+.disable input,.disable select{
+  pointer-events : none;
+  background: #cccccc;
+}
+
+// reptile#_reptile
+.reptiles_list {
+  
+  .content {
+    background: #fff;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    border: solid 1px #DAD8D4;
+    overflow: hidden;
+  }
+
+  .left_column{
+    width: 104px;
+    padding-right:3rem;
+
+    img, div{
+      display: block;
+      height: 104px;
+      width: 104px;
+      border-radius: 50%;
+      background: $border-color;
+    }
+  }
+
+  .right_column{
+    display: block;
+    height: auto;
+    width:100%;
+    margin-left: 2rem;
+
+    .reptile_comment{
+      padding: 0.2rem 0 0.8rem;
+    }
+
+    span{
+      display: block;
+    }
+  }
+
+  .reptile_name{
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .reptile_morph{
+    font-size: 1.4rem;
+    color: $font-color-light;
+  }
+}

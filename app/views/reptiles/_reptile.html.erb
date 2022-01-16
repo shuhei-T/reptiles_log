@@ -1,13 +1,17 @@
-<div class="col-sm-12 col-lg-4 mb-3">
-  <div>
-    <div class="card">
-      <%= image_tag 'default_reptile.png', class: 'card-img-top', size: '300x200' %>
-      <div class="card-body">
-        <h4 class="card-title">
-          <%= reptile.name %>
-        </h4>
-        <p class="card-text"><%= reptile.comment %></p>
-      </div>
+<article class="reptiles_list">
+  <div class="content row">
+    <div class="left_column col-2">
+      <%= image_tag reptile.image.url, class: 'rounded-circle card-img-top', size: '20x20' %>
     </div>
+    <div class="right_column col">
+      <h3 class="reptile_name"><%= reptile.name %></h3>
+      <span class="reptile_morph"><%= reptile.morph %></span>
+      <span class="reptile_comment">
+        <% if reptile.comment.present? %>
+          <i class="fas fa-comment"></i>
+          <%= truncate(reptile.comment, :length => 120) %>
+        <% end %>
+      </span>
   </div>
 </div>
+
