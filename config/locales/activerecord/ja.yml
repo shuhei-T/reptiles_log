@@ -22,7 +22,7 @@ ja:
         sex: '性別'
         birthday: '誕生日'
         adoptaversary: 'お迎え日'
-        image: 'ペットの写真'
+        image: '爬虫類の写真'
         comment: 'コメント'
         age: '年齢'
   attributes:

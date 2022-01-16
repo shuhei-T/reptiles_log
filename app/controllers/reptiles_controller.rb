@@ -34,7 +34,7 @@ class ReptilesController < ApplicationController
 
 
   def reptile_params
-    params.require(:reptile).permit(:name, :morph, :sex, :birthday, :adoptaversary, :comment, :image, :age)
+    params.require(:reptile).permit(:name, :morph, :sex, :birthday, :adoptaversary, :comment, :image, :image_cache, :age)
   end
 
   def params_modifi
