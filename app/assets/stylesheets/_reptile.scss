@@ -1,17 +1,4 @@
-$base-color: #F2F5F6;
-$middium-color: #8D99AF;
-$thema-color: #DE3A5D;
-$vivid-color: #FF436B;
-$vivid-hover: #ff7a97;
-$dark-color: #B82C5C;
-$font-color: #412B2D;
-$font-color-light: #8D99AF;
-$font-placeholder: #cccccc;
-$icon-color: #ff938b;
-$border-color: #DAD8D4;
-$focus-color: #33C3F0;
-$focus-hover: #74ddfc;
-$hover_box: #F2F5F6;
+@import 'variables';
 
 // reptile _form
 .attention {
@@ -27,7 +14,18 @@ $hover_box: #F2F5F6;
   background: #cccccc;
 }
 
-// reptile#_reptile
+#image_btn{
+  display: block;
+  max-width:10rem;
+  padding: 0.3rem;
+  margin: 1rem auto;
+  background: #fff;
+}
+.image_form{
+  display: none;
+}
+
+// reptiles/_reptile
 .reptiles_list {
   
   .content {
@@ -75,5 +73,42 @@ $hover_box: #F2F5F6;
   .reptile_morph{
     font-size: 1.4rem;
     color: $font-color-light;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      color: $font-color;
+    }
+  }
+
+  a .reptile_name:hover{
+    color: $vivid-hover;
+  }
+}
+
+// reptiles/show
+.reptile_profile {
+  overflow: hidden;
+  padding: 3rem 0;
+  
+
+  .image {
+    height: 192px;
+    width: 192px;
+    margin: auto;
+    background: $border-color;
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+  }
+
+  .name {
+    font-size: 2rem;
+    font-weight: bold;
+    display: table-cell;
+    padding-right: 4rem;
+    line-height: 2.2;
   }
 }

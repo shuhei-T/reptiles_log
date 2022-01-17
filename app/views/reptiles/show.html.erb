@@ -1,0 +1,52 @@
+<% content_for(:title, @reptile.name) %>
+<div class="container pt-5 reptile_profile d-flex">
+  <div class="row mb-3 justify-content-center">
+    <h1><%= t('.title') %></h1>
+    <div class="col-sm">
+      <div class="image">
+        <% if @reptile.image && @reptile.image.url %>
+          <%= image_tag @reptile.image.url %>
+        <% else %>
+          <%= image_tag 'default_reptile.png' %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="raw">
+        <div class="name">
+          <%= @reptile.name %>
+          <%= render 'crud_menus', reptile: @reptile if current_user.own?(@reptile) %>
+        </div>
+      </div>
+      <div class="morph">
+        <%= @reptile.morph %>
+      </div>
+      <ul class="details">
+        <% if @reptile.sex.present? %>
+          <li class="sex">性別: <%= @reptile.sex_i18n %></li>
+        <% end %>
+        <% if @reptile.decorate.full_age.present? %>
+          <li class="age">年齢: <%= @reptile.decorate.full_age %></li>
+        <% end %>
+
+        <% if @reptile.birthday.present? %>
+          <li class="birthday">誕生日: <%= @reptile.birthday&.strftime("%Y年%-m月%-d日") %></li>
+        <% end %>
+        <% if @reptile.adoptaversary.present? %>
+          <li class="adoptaversary">お迎え日: <%= @reptile.adoptaversary&.strftime("%Y年%-m月%-d日") %></li>
+        <% end %>
+      </ul>
+      <ul class="count">
+      </ul>
+      <div class="owner">
+      </div>
+    </div>
+    <div class="row">
+
+        <div class="comment">
+          <%= @reptile.comment %>
+        </div>
+
+    </div>
+  </div>
+</div>

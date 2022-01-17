@@ -9,4 +9,8 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 30 }
 
   has_many :reptiles
+
+  def own?(object)
+    id == object.user_id
+  end
 end

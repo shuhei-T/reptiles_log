@@ -1,9 +1,9 @@
 <%= form_with model: reptile, local: true do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
 <div class="container">
-  <div class="row", id="edit_profile">
+  <div class="row reptile_profile", id="edit_profile">
     <div class="col-sm-4">
-      <div class="avatar">
+      <div class="image">
         <div id="image_field">
           <% if reptile.image && reptile.image.url %>
             <%= image_tag reptile.image.url, size: '200x200', class: 'd-block mx-auto' %>
@@ -12,8 +12,8 @@
           <% end %>
         </div>
       </div>
-      <%= f.label :image, class: 'form-label d-block mx-5' do %>
-        <span class="btn btn-outline-secondary d-block mx-sm-5", id="image_btn">プロフィール画像</span>
+      <%= f.label :image, class: 'form-label d-block' do %>
+        <span class="btn btn-outline-secondary d-block", id="image_btn">プロフィール画像</span>
         <%= f.file_field :image, placeholder: 'プロフィール画像', class: "image_form hidden", id: "reptile_image", accept: 'image/*' %>
       <% end %>
       <%= f.hidden_field :image_cache %>
@@ -31,7 +31,7 @@
       <div class="mb-3">
         <%= f.label :sex, class: 'form-label' %><br>
         <%= f.collection_radio_buttons :sex, Reptile.sexes_i18n, :first, :last do |b| %>
-        <%= b.label(class: 'btn btn-secondary') { b.radio_button(class: 'btn btn-secondary') + b.text } %>
+        <%= b.label(class: 'btn btn-outline-secondary') { b.radio_button(class: 'btn btn-secondary') + b.text } %>
         <% end %>
       </div>
       <div class="mb-3">
@@ -54,7 +54,7 @@
         <%= f.label :age, class: 'form-label', id: 'label-age' %><br>
         <span class="age_comment attention hidden"> 生年月日が分かっている場合、入力は不要です。</span><br>
         <div class="select_raw", id="raw_age">
-          <%= raw sprintf(f.select :age, options_for_select((0..99).to_a), {prompt:"--"}, {class: 'form-select', style: 'display: inline-block;width: auto;'}) +' 歳' %>
+          <%= raw sprintf(f.select :age, options_for_select((0..99).to_a), {prompt:"--", include_blank: true}, {class: 'form-select', style: 'display: inline-block;width: auto;'}) +' 歳' %>
         </div>
       </div>
       <div class="mb-3">
