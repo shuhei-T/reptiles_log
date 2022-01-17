@@ -15,7 +15,7 @@ class ReptilesController < ApplicationController
     if @reptile.save
       redirect_to reptiles_path, success: t('defaults.message.created', item: Reptile.model_name.human)
     else
-      flash.now['danger'] = t('defaults.message.not_created', item: Reptile.model_name.human)
+      flash.now[:danger] = t('defaults.message.not_created', item: Reptile.model_name.human)
       render :new
     end
   end
@@ -25,9 +25,23 @@ class ReptilesController < ApplicationController
   end
 
   def edit
+    @reptile = current_user.reptiles.find(params[:id])
   end
 
   def update
+    @reptile = current_user.reptiles.find(params[:id])
+    if @reptile.update(reptile_params)
+      redirect_to @reptile, success: t('defaults.message.updated', item: Reptile.model_name.human)
+    else
+      flash.now[:danger] = t('defaults.message.not_updated', item: Reptile.model_name.human)
+      render :edit
+    end
+  end
+
+  def destroy
+    @reptile = current_user.reptiles.find(params[:id])
+    @reptile.destroy!
+    redirect_to reptiles_path, success: t('defaults.message.deleted', item: Reptile.model_name.human)
   end
 
   private

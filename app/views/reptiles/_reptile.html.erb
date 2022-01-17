@@ -1,5 +1,6 @@
 <article class="reptiles_list">
   <div class="content row">
+  <%= link_to reptile_path(reptile), id: "reptile_#{reptile.id}" do %>
     <div class="left_column col-2">
       <%= image_tag reptile.image.url, class: 'rounded-circle card-img-top', size: '20x20' %>
     </div>
@@ -12,6 +13,7 @@
           <%= truncate(reptile.comment, :length => 120) %>
         <% end %>
       </span>
+  <% end %>
   </div>
 </div>
 
