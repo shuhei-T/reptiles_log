@@ -38,13 +38,13 @@ ja:
       success: 'ログアウトしました'
   profiles:
     show:
-      title: 'プロフィール'
+      title: 'ユーザープロフィール'
     edit:
-      title: 'プロフィール編集'
+      title: 'ユーザープロフィール編集'
   reptiles:
     index:
       title: '爬虫類リスト'
-      no_result: '爬虫類が居ません'
+      no_result: '爬虫類が登録されていません'
     new:
       title: '爬虫類登録'
     show:

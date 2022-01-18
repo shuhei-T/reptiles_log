@@ -1,28 +1,32 @@
+// 爬虫類に関するスタイル
+
 @import 'variables';
 
 // reptile _form
-.attention {
-  color:$vivid-color;
-}
-
-.hidden {
-  display: none;
-}
-
-.disable input,.disable select{
-  pointer-events : none;
-  background: #cccccc;
-}
-
-#image_btn{
-  display: block;
-  max-width:10rem;
-  padding: 0.3rem;
-  margin: 1rem auto;
-  background: #fff;
-}
-.image_form{
-  display: none;
+.reptile_profile {
+  .attention {
+    color:$vivid-color;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .disable input,.disable select{
+    pointer-events : none;
+    background: #cccccc;
+  }
+  
+  #image_btn{
+    display: block;
+    max-width:10rem;
+    padding: 0.3rem;
+    margin: 1rem auto;
+    background: #fff;
+  }
+  .image_form{
+    display: none;
+  }
 }
 
 // reptiles/_reptile
