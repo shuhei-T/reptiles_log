@@ -15,8 +15,8 @@
       <%= f.label :image, class: 'form-label d-block' do %>
         <span class="btn btn-outline-secondary d-block", id="image_btn">プロフィール画像</span>
         <%= f.file_field :image, placeholder: 'プロフィール画像', class: "image_form hidden", id: "reptile_image", accept: 'image/*' %>
-      <% end %>
       <%= f.hidden_field :image_cache %>
+      <% end %>
     </div>
 
     <div class="col-sm-8">

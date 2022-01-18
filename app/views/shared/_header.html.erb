@@ -16,10 +16,10 @@
           <%= link_to t('reptiles.new.title'), new_reptile_path, class: "nav-link #{ active_if('new') }" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">プロフィール</a>
+          <%= link_to t('profiles.show.title'), profile_path, class: "nav-link #{ active_if('show') }" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'ログアウト', logout_path, class: 'nav-link', method: :delete %>
+          <%= link_to t('defaults.logout'), logout_path, class: 'nav-link', method: :delete %>
         </li>
       </ul>
     </div>

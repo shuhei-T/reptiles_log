@@ -1,0 +1,45 @@
+// ユーザープロフィールに関するスタイル
+
+@import 'variables';
+
+.user_profile {
+  padding: 1rem 1rem 2rem;
+  overflow: hidden;
+
+  .avatar {
+    margin-bottom: 2rem;
+    height: 152px;
+    width: 152px;
+    margin: auto;
+    background: $border-color;
+    border-radius: 50%;
+  }
+
+  .name {
+    font-size: 2.2rem;
+    display: table-cell;
+    padding-right: 4rem;
+    // line-height: 2.2;
+  }
+
+  #image_btn{
+    display: block;
+    max-width:10rem;
+    padding: 0.3rem;
+    margin: 1rem auto;
+    background: #fff;
+  }
+
+  .image_form{
+    display: none;
+  }
+
+  .count {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+}
