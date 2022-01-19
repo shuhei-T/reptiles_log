@@ -17,3 +17,4 @@ ActiveStorage.start()
 
 
 import "./reptile.js"
+import "./common.js"
