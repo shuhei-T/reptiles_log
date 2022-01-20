@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_13_043910) do
+ActiveRecord::Schema.define(version: 2022_01_20_020729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "daily_records", force: :cascade do |t|
+    t.date "take_care_time", null: false
+    t.bigint "reptile_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reptile_id"], name: "index_daily_records_on_reptile_id"
+    t.index ["take_care_time"], name: "index_daily_records_on_take_care_time"
+  end
 
   create_table "reptiles", force: :cascade do |t|
     t.string "name", null: false
@@ -42,5 +51,6 @@ ActiveRecord::Schema.define(version: 2022_01_13_043910) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "daily_records", "reptiles"
   add_foreign_key "reptiles", "users"
 end
