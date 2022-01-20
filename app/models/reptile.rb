@@ -1,5 +1,6 @@
 class Reptile < ApplicationRecord
   belongs_to :user
+  has_many :daily_records, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 20 }
 
