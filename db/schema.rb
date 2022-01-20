@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_031336) do
+ActiveRecord::Schema.define(version: 2022_01_20_061844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,14 @@ ActiveRecord::Schema.define(version: 2022_01_20_031336) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "log_feeds", force: :cascade do |t|
+    t.integer "count"
+    t.bigint "feed_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["feed_id"], name: "index_log_feeds_on_feed_id"
   end
 
   create_table "reptiles", force: :cascade do |t|
@@ -58,5 +66,6 @@ ActiveRecord::Schema.define(version: 2022_01_20_031336) do
   end
 
   add_foreign_key "daily_records", "reptiles"
+  add_foreign_key "log_feeds", "feeds"
   add_foreign_key "reptiles", "users"
 end
