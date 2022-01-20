@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_061844) do
+ActiveRecord::Schema.define(version: 2022_01_20_075253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,30 @@ ActiveRecord::Schema.define(version: 2022_01_20_061844) do
     t.bigint "feed_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "log_id", null: false
     t.index ["feed_id"], name: "index_log_feeds_on_feed_id"
+    t.index ["log_id"], name: "index_log_feeds_on_log_id"
+  end
+
+  create_table "logs", force: :cascade do |t|
+    t.text "remark"
+    t.integer "condition"
+    t.integer "shit"
+    t.boolean "bath", default: false, null: false
+    t.boolean "handling", default: false, null: false
+    t.boolean "creaning", default: false, null: false
+    t.integer "sheding"
+    t.float "weight"
+    t.float "length"
+    t.string "image"
+    t.float "temperature"
+    t.float "humidity"
+    t.bigint "user_id", null: false
+    t.bigint "daily_record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["daily_record_id"], name: "index_logs_on_daily_record_id"
+    t.index ["user_id"], name: "index_logs_on_user_id"
   end
 
   create_table "reptiles", force: :cascade do |t|
@@ -67,5 +90,8 @@ ActiveRecord::Schema.define(version: 2022_01_20_061844) do
 
   add_foreign_key "daily_records", "reptiles"
   add_foreign_key "log_feeds", "feeds"
+  add_foreign_key "log_feeds", "logs"
+  add_foreign_key "logs", "daily_records"
+  add_foreign_key "logs", "users"
   add_foreign_key "reptiles", "users"
 end
