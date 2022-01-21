@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_075253) do
+ActiveRecord::Schema.define(version: 2022_01_21_024545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "daily_records", force: :cascade do |t|
-    t.date "take_care_time", null: false
-    t.bigint "reptile_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["reptile_id"], name: "index_daily_records_on_reptile_id"
-    t.index ["take_care_time"], name: "index_daily_records_on_take_care_time"
-  end
 
   create_table "feeds", force: :cascade do |t|
     t.string "name", null: false
@@ -54,10 +45,8 @@ ActiveRecord::Schema.define(version: 2022_01_20_075253) do
     t.float "temperature"
     t.float "humidity"
     t.bigint "user_id", null: false
-    t.bigint "daily_record_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["daily_record_id"], name: "index_logs_on_daily_record_id"
     t.index ["user_id"], name: "index_logs_on_user_id"
   end
 
@@ -88,10 +77,8 @@ ActiveRecord::Schema.define(version: 2022_01_20_075253) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "daily_records", "reptiles"
   add_foreign_key "log_feeds", "feeds"
   add_foreign_key "log_feeds", "logs"
-  add_foreign_key "logs", "daily_records"
   add_foreign_key "logs", "users"
   add_foreign_key "reptiles", "users"
 end
