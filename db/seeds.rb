@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+if Feed.count == 0
+  Feed.create! [
+    { name: 'フタホシコオロギ'},
+    { name: 'ヨーロッパイエコオロギ'},
+    { name: 'デュビア'},
+    { name: 'レッドローチ'},
+    { name: 'ワーム'},
+    { name: 'ピンクマウス'},
+    { name: 'ファジーマウス'},
+    { name: 'ホッパーマウス'},
+    { name: 'アダルトマウス'},
+    { name: 'リタイアマウス'},
+    { name: 'ピンクラット'},
+    { name: 'ファジーラット'},
+    { name: 'ホッパーラット'},
+    { name: 'アダルトラット'},
+    { name: 'リタイアラット'},
+    { name: '人工飼料'},
+    { name: '野菜'},
+    { name: 'フルーツ'},
+    { name: 'ヒヨコ'},
+  ]
+end
