@@ -1,10 +1,10 @@
 <% if@reptile.user == current_user %>
 <div class="edit">
-  <%= link_to edit_reptile_path(@reptile), class: 'btn btn-outline-secondary' do %>
+  <%= link_to edit_reptile_path(@reptile), class: 'btn btn-outline-warning' do %>
     <i class="fas fa-edit"></i>
     <span>編集</span>
   <% end %>
-  <%= link_to reptile_path(@reptile), method: :delete, class: 'btn btn-outline-secondary', data: { confirm: t('defaults.message.delete_confirm') } do %>
+  <%= link_to reptile_path(@reptile), method: :delete, class: 'btn btn-outline-danger', data: { confirm: t('defaults.message.delete_confirm') } do %>
     <i class="fas fa-trash"></i>
     <span>削除</span>
   <% end %>

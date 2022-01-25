@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 30 }
 
   has_many :reptiles
-
+  has_many :logs
   mount_uploader :avatar, AvatarUploader
 
   def own?(object)

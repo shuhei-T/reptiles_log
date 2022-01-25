@@ -53,6 +53,11 @@ ja:
     edit:
     update:
     destroy:
+  logs:
+    index:
+      title: '記録一覧'
+    new:
+      title: '記録画面'
   password_resets:
     new:
       title: 'パスワードリセット申請'

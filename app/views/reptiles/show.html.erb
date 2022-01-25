@@ -2,7 +2,7 @@
 <div class="container pt-5 reptile_profile d-flex">
   <div class="row mb-3 justify-content-center">
     <h1><%= t('.title') %></h1>
-    <div class="col-sm">
+    <div class="col-sm-4">
       <div class="image">
         <% if @reptile.image && @reptile.image.url %>
           <%= image_tag @reptile.image.url %>
@@ -11,7 +11,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-sm">
+    <div class="col-sm-8">
       <div class="raw">
         <div class="name">
           <%= @reptile.name %>
@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="morph">
-        <%= @reptile.morph %>
+        <p>モルフ: <%= @reptile.morph %></p>
       </div>
       <ul class="details">
         <% if @reptile.sex.present? %>
@@ -36,17 +36,14 @@
           <li class="adoptaversary">お迎え日: <%= @reptile.adoptaversary&.strftime("%Y年%-m月%-d日") %></li>
         <% end %>
       </ul>
+      <ul class="comment">
+        <li class="comment">コメント: <%= @reptile.comment %></li>
+      </ul>
       <ul class="count">
       </ul>
       <div class="owner">
       </div>
-    </div>
-    <div class="row">
-
-        <div class="comment">
-          <%= @reptile.comment %>
-        </div>
-
+      <%= render 'log_menus', reptile: @reptile if current_user.own?(@reptile) %>
     </div>
   </div>
 </div>

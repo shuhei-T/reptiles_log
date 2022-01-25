@@ -1,0 +1,201 @@
+// 記録画面に関するスタイル
+@import 'variables';
+
+.log_new {
+  overflow: hidden;
+  padding: 3rem 0;
+  
+
+  .image {
+    height: 192px;
+    width: 192px;
+    margin: auto;
+    background: $border-color;
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+  }
+
+  .name {
+    font-size: 2rem;
+    font-weight: bold;
+    display: table-cell;
+    padding-right: 4rem;
+    line-height: 2.2;
+  }
+}
+
+//  log_index   記録一覧
+.log_index {
+  // Timeline holder
+  ul.timeline {
+    list-style-type: none;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  // Timeline vertical line
+  ul.timeline::before {
+    content: ' ';
+    background: #fff;
+    display: inline-block;
+    position: absolute;
+    left: 16px;
+    width: 4px;
+    height: 100%;
+    z-index: 400;
+    border-radius: 0.5rem;
+  }
+
+  li.timeline-item {
+    margin: 20px 0;
+  }
+
+  // Timeline item arrow
+  .timeline-arrow {
+    border-top: 0.5rem solid transparent;
+    border-right: 0.5rem solid #fff;
+    border-bottom: 0.5rem solid transparent;
+    display: block;
+    position: absolute;
+    left: 2rem;
+  }
+  // timeline item circle marker
+  li.timeline-item::before {
+    content: ' ';
+    background: #ddd;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    left: 11px;
+    width: 14px;
+    height: 14px;
+    z-index: 400;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  
+  .content{
+    border-top: solid 1px #eeeeee;
+    padding: 0.7rem 0.7rem;
+    
+    .text-gray {
+      color: #999;
+    }
+
+    .smile {
+      margin-top: 0.5rem;
+      svg {
+        color: rgb(199, 10, 10);
+        font-size: 25px;
+      }
+    }
+
+    .meh {
+      margin-top: 0.5rem;
+      svg {
+        color: rgb(230, 187, 0);
+        font-size: 25px;
+      }
+    }
+
+    .tired {
+      margin-top: 0.5rem;
+      svg {
+        color:rgb(1, 47, 248);
+        font-size: 25px;
+      }
+    }
+
+    .feed {
+      .cricket, .cockroach {
+        margin-top: 0.5rem;
+        filter: invert(40%) sepia(36%) saturate(599%) hue-rotate(345deg) brightness(97%) contrast(93%);
+      }
+
+      .mouse, .rat {
+        margin-top: 0.5rem;
+        filter: invert(52%) sepia(2%) saturate(2516%) hue-rotate(227deg) brightness(99%) contrast(95%);
+      }
+
+      .worm {
+        margin-top: 0.5rem;
+        filter: invert(47%) sepia(75%) saturate(414%) hue-rotate(359deg) brightness(91%) contrast(86%);
+      }
+
+      .vegetable {
+        margin-top: 0.5rem;
+        filter: invert(60%) sepia(55%) saturate(1726%) hue-rotate(92deg) brightness(103%) contrast(106%);
+      }
+
+      .apple {
+        margin-top: 0.5rem;
+        filter: invert(8%) sepia(72%) saturate(7420%) hue-rotate(347deg) brightness(99%) contrast(122%);
+      }
+
+      .chick {
+        margin-top: 0.5rem;
+        filter: invert(98%) sepia(60%) saturate(5160%) hue-rotate(324deg) brightness(89%) contrast(107%);
+      }
+    }
+
+    .shit {
+      .good {
+        margin-top: 0.5rem;
+        svg {
+          color: rgb(184, 124, 13);
+          font-size: 25px;
+        }
+      }
+
+      .bad {
+        margin-top: 0.5rem;
+        svg {
+          color: rgb(108, 131, 8);
+          font-size: 25px;
+        }
+      }
+    }
+
+    .crean {
+      margin-top: 0.5rem;
+      svg {
+        color: rgb(1, 47, 248);
+        font-size: 25px;
+      }
+    }
+
+    .hand {
+      margin-bottom: 0.5rem;
+      svg {
+        color: rgb(250, 220, 121);
+        font-size: 25px;
+      }
+    }
+
+    .bath {
+      margin-top: 0.5rem;
+      filter: invert(19%) sepia(45%) saturate(4035%) hue-rotate(338deg) brightness(80%) contrast(125%);
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .weight, .length, .temperature, .humidity {
+      margin: 0.1rem 0;
+    }
+
+  }
+
+
+
+  
+}
+
+body {
+  background: #e8cbc0;
+  background: -webkit-linear-gradient(to right, #E8CBC0, #636FA4);
+  background: linear-gradient(to right, #ffe285, #58967e);
+  min-height: 100vh;
+}
