@@ -1,7 +1,7 @@
-<div class="container log_new">
+<div class="container log-edit">
   <div class="row">
     <h1><%= t('.title') %></h1>
-    <div class="col-sm-4">
+        <div class="col-sm-4">
       <div class="image">
         <% if @reptile.image && @reptile.image.url %>
           <%= image_tag @reptile.image.url %>
@@ -89,12 +89,18 @@
             <% end %>
           </div>
           <div class="image_field">
+            <% if @log.images %>
+              <% @log.images.each_with_index do |image, index| %>
+                <%= image_tag image.to_s %>
+              <% end %>
+            <% end %>
             <img id='preview_0'>
             <img id='preview_1'>
             <img id='preview_2'>
             <img id='preview_3'>
             <img id='preview_4'>
           </div>
+
 
           <%= f.submit class: 'btn btn-primary my-2 mx-auto d-block' %>
         <% end %>

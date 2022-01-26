@@ -38,6 +38,7 @@ ja:
         length: '体長(cm)'
         temperature: '温度(℃)'
         humidity: '湿度(%)'
+        images: '画像'
       log_feed:
         name: '給餌'
         count: '給餌の個数'

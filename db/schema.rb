@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_23_083353) do
+ActiveRecord::Schema.define(version: 2022_01_25_031446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,13 +41,13 @@ ActiveRecord::Schema.define(version: 2022_01_23_083353) do
     t.integer "sheding"
     t.float "weight"
     t.float "length"
-    t.string "image"
     t.float "temperature"
     t.float "humidity"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "reptile_id", null: false
+    t.json "images"
     t.index ["reptile_id"], name: "index_logs_on_reptile_id"
     t.index ["user_id"], name: "index_logs_on_user_id"
   end

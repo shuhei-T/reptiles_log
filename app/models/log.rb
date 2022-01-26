@@ -9,6 +9,7 @@ class Log < ApplicationRecord
   validates :handling, inclusion: [true, false]
   validates :creaning, inclusion: [true, false]
 
+  mount_uploaders :images, ImagesUploader
 
   enum condition: { smile: 0, meh: 1, tired: 2 }
   enum shit: { good: 0, bad: 1 }

@@ -55,9 +55,11 @@ ja:
     destroy:
   logs:
     index:
-      title: '記録一覧'
+      title: '飼育記録一覧'
     new:
-      title: '記録画面'
+      title: '飼育記録'
+    edit:
+      title: '飼育記録編集'
   password_resets:
     new:
       title: 'パスワードリセット申請'

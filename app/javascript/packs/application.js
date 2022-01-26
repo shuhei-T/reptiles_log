@@ -13,6 +13,7 @@ import "jquery";
 import "../src/reptile.js"
 import "../src/previews.js"
 import "../src/preview.js"
+import "../src/logs_modal.js"
 
 Rails.start()
 Turbolinks.start()
