@@ -31,7 +31,6 @@ $(document).on('turbolinks:load', function() {
 
     function disable_JoinAge() {
       $('#raw_age,#label_age').addClass('disable');
-      // $('#pet_join_age').val("");
       $('.age_comment').removeClass('hidden');
     }
     function enable_JoinAge() {

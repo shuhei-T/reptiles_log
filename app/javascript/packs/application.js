@@ -10,7 +10,9 @@ import "bootstrap";
 import '@fortawesome/fontawesome-free/js/all';
 import "../stylesheets/application.scss";
 import "jquery";
-import "./reptile.js"
+import "../src/reptile.js"
+import "../src/previews.js"
+import "../src/preview.js"
 
 Rails.start()
 Turbolinks.start()
