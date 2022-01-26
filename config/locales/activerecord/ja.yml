@@ -6,6 +6,7 @@ ja:
     models:
       user: 'ユーザー'
       reptile: '爬虫類'
+      log: '生体記録'
     attributes:
       user:
         name: 'ユーザー名'
@@ -17,14 +18,30 @@ ja:
         created_at: '作成日時'
         updated_at: '更新日時'
       reptile:
-        name: '爬虫類の名前'
+        name: '生体の名前'
         morph: 'モルフ'
         sex: '性別'
         birthday: '誕生日'
         adoptaversary: 'お迎え日'
-        image: '爬虫類の写真'
+        image: '生体の写真'
         comment: 'コメント'
         age: '年齢'
+      log:
+        remark: 'メモ'
+        condition: '状態'
+        shit: '糞'
+        bath: '温浴'
+        handling: 'ハンドリング'
+        creaning: '掃除'
+        sheding: '脱皮'
+        weight: '体重(g)'
+        length: '体長(cm)'
+        temperature: '温度(℃)'
+        humidity: '湿度(%)'
+        images: '画像'
+      log_feed:
+        name: '給餌'
+        count: '給餌の個数'
   attributes:
     id: 'ID'
     created_at: '作成日時'
@@ -35,3 +52,14 @@ ja:
         unknown: '不明'
         male: 'オス'
         female: 'メス'
+    log:
+      condition:
+        smile: '笑顔'
+        meh: '普通'
+        tired: '疲れてる'
+      shit:
+        good: '良い'
+        bad: '悪い'
+      sheding:
+        shed: '脱皮'
+        white: '白濁'

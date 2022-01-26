@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_21_044557) do
+ActiveRecord::Schema.define(version: 2022_01_25_031446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 2022_01_21_044557) do
 
   create_table "log_feeds", force: :cascade do |t|
     t.integer "count"
-    t.bigint "feed_id", null: false
+    t.bigint "feed_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "log_id", null: false
+    t.bigint "log_id"
     t.index ["feed_id"], name: "index_log_feeds_on_feed_id"
     t.index ["log_id"], name: "index_log_feeds_on_log_id"
   end
@@ -41,12 +41,14 @@ ActiveRecord::Schema.define(version: 2022_01_21_044557) do
     t.integer "sheding"
     t.float "weight"
     t.float "length"
-    t.string "image"
     t.float "temperature"
     t.float "humidity"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "reptile_id", null: false
+    t.json "images"
+    t.index ["reptile_id"], name: "index_logs_on_reptile_id"
     t.index ["user_id"], name: "index_logs_on_user_id"
   end
 
@@ -79,6 +81,7 @@ ActiveRecord::Schema.define(version: 2022_01_21_044557) do
 
   add_foreign_key "log_feeds", "feeds"
   add_foreign_key "log_feeds", "logs"
+  add_foreign_key "logs", "reptiles"
   add_foreign_key "logs", "users"
   add_foreign_key "reptiles", "users"
 end

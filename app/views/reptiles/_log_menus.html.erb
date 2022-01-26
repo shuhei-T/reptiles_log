@@ -1,0 +1,12 @@
+<% if@reptile.user == current_user %>
+<div class="log mt-3">
+  <%= link_to new_reptile_log_path(@reptile), class: 'btn btn-outline-primary' do %>
+    <i class="fas fa-plus-circle"></i>
+    <span>記録</span>
+  <% end %>
+  <%= link_to reptile_logs_path(@reptile), class: 'btn btn-outline-success' do %>
+    <i class="fas fa-list"></i>
+    <span>記録一覧</span>
+  <% end %>
+</div>
+<% end %>

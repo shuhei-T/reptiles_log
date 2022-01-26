@@ -14,7 +14,7 @@
       </div>
       <%= f.label :image, class: 'form-label d-block' do %>
         <span class="btn btn-outline-secondary d-block", id="image_btn">プロフィール画像</span>
-        <%= f.file_field :image, placeholder: 'プロフィール画像', class: "image_form hidden", id: "reptile_image", accept: 'image/*', onchange: 'previewImage(preview)' %>
+        <%= f.file_field :image, placeholder: 'プロフィール画像', class: "image_form hidden", accept: 'image/*' %>
       <%= f.hidden_field :image_cache %>
       <% end %>
     </div>
@@ -67,20 +67,3 @@
 
   <%= f.submit class: 'btn btn-primary mt-2 mb-2 mx-auto d-block' %>
 <% end %>
-
-<script>
-  function previewImage() {
-    const target = this.event.target;
-    const file = target.files[0];
-    const reader = new FileReader();
-    reader.onloadend = function () {
-      const preview = document.querySelector("#preview")
-      if(preview) {
-        preview.src = reader.result;
-      }
-    }
-    if (file) {
-      reader.readAsDataURL(file);
-    }
-  }
-</script>

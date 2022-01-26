@@ -1,4 +1,6 @@
 class Reptile < ApplicationRecord
+  has_many :logs, dependent: :destroy
+  
   belongs_to :user
 
   validates :name, presence: true, length: { maximum: 20 }

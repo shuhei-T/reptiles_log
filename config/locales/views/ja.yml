@@ -53,6 +53,13 @@ ja:
     edit:
     update:
     destroy:
+  logs:
+    index:
+      title: '飼育記録一覧'
+    new:
+      title: '飼育記録'
+    edit:
+      title: '飼育記録編集'
   password_resets:
     new:
       title: 'パスワードリセット申請'
