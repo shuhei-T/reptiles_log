@@ -1,12 +1,16 @@
 <% if@reptile.user == current_user %>
 <div class="log mt-3">
-  <%= link_to new_reptile_log_path(@reptile), class: 'btn btn-outline-primary' do %>
-    <i class="fas fa-plus-circle"></i>
-    <span>記録</span>
+  <%= link_to new_reptile_log_path(@reptile), class: 'btn btn-primary' do %>
+    <i class="fas fa-plus"></i>
+    <span>記録する</span>
   <% end %>
-  <%= link_to reptile_logs_path(@reptile), class: 'btn btn-outline-success' do %>
-    <i class="fas fa-list"></i>
-    <span>記録一覧</span>
+  <%= link_to reptile_logs_path(@reptile), class: 'btn btn-success' do %>
+    <i class="fas fa-stream"></i>
+    <span>タイムライン</span>
+  <% end %>
+  <%= link_to reptile_events_path(@reptile), class: 'btn btn-info' do %>
+    <i class="fas fa-calendar"></i>
+    <span>カレンダー</span>
   <% end %>
 </div>
 <% end %>

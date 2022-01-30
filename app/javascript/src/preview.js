@@ -1,5 +1,5 @@
 
-$(document).on('turbolinks:load', function() {
+$(document).on('DOMContentLoaded', function() {
   $('#reptile_image').on('change', function (e) {
     var reader = new FileReader();
     reader.onload = function (e) {

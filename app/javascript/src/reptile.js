@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).on('DOMContentLoaded', function() {
   let dataController = $('body').attr('data-controller');
   let dataAction = $('body').attr('data-action');
 

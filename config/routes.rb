@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resource :profile, only: %i[show edit update]
   resources :reptiles do
     resources :logs
+    resources :events, only: %i[index new create show destroy]
   end
 end

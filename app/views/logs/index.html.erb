@@ -3,13 +3,17 @@
     <h1><%= t('.title') %></h1>
   </div>
   <div class="row title">
-    <div class="col">
-      <h5><%= link_to "#{@reptile.name}", reptile_path(@reptile) , class: 'name'%>
+    <div class="col right-column">
+      <span class="name-link">
+        <%= image_tag @reptile.image.url, class: 'rounded-circle card-img-top', size: '20x20A' %>
+        <%= link_to reptile_path(@reptile) do %>
+          <span class="reptile_name"><%= @reptile.name %></span>
+        <% end %>
+      </span>
       <%= link_to new_reptile_log_path(@reptile), class: 'btn btn-success' do %>
-      <i class="fas fa-plus-circle"></i>
-      <span>記録</span>
+        <i class="fas fa-plus-circle"></i>
+        <span>記録</span>
       <% end %>
-      </h5>
     </div>
   </div>
 <%# ===============タイムライン================================================================= %>

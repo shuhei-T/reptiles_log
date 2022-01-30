@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).on('DOMContentLoaded', function() {
   // コース画像モーダル表示イベント
   $(".course-item img").click(function () {
     // まず、クリックした画像の HTML(<img>タグ全体)を#frayDisplay内にコピー

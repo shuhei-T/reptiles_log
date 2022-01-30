@@ -1,0 +1,36 @@
+<%= javascript_pack_tag 'calendar/event', 'data-turbolinks-track': 'reload' %>
+<div class="container calendar-index">
+  <div class="row">
+    <h1><%= t('.title') %></h1>
+    <div class="left_column">
+      <%= image_tag @reptile.image.url, class: 'rounded-circle card-img-top', size: '20x20' %>
+      <%= link_to reptile_path(@reptile) do %>
+        <span class="reptile_name"><%= @reptile.name %></span>
+      <% end %>
+    </div>
+  </div>
+<div id="calendar"></div>
+</div>
+
+
+
+<%# モーダル用 %>
+<div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  
+</div>
+
+
+
+
+<div class="modal" id="responce-modal" tabindex="0" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="responce-modal-body">
+      </div>
+    </div>
+  </div>
+</div>

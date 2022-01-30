@@ -43,23 +43,26 @@ ja:
       title: 'ユーザープロフィール編集'
   reptiles:
     index:
-      title: '爬虫類リスト'
+      title: '生体リスト'
       no_result: '爬虫類が登録されていません'
     new:
-      title: '爬虫類登録'
+      title: '生体登録'
     show:
-      title: '爬虫類プロフィール'
+      title: '生体プロフィール'
     create:
     edit:
     update:
     destroy:
   logs:
     index:
-      title: '飼育記録一覧'
+      title: '飼育記録タイムライン'
     new:
       title: '飼育記録'
     edit:
       title: '飼育記録編集'
+  events:
+    index:
+      title: '飼育カレンダー'
   password_resets:
     new:
       title: 'パスワードリセット申請'

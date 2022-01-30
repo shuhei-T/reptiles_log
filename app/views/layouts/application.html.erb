@@ -11,7 +11,7 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
   </head>
-  <body class="<%= controller.controller_name %>" data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>"> 
+  <body class="<%= controller.controller_name %>" data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>" data-tabolinks="false">
     <% if logged_in? %>
       <%= render 'shared/header' %>
     <% else %>
