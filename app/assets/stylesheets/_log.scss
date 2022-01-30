@@ -50,10 +50,43 @@
 
 //  log_index   記録一覧
 .log_index {
-  .name {
-    text-decoration: none;
-    color: $font-color;
+  .right-column {
+    img{
+      height: 104px;
+      width: 104px;
+      border-radius: 50%;
+      background: $border-color;
+      margin-bottom: 2rem;
+    }
+    .name {
+      text-decoration: none;
+      color: $font-color;
+    }
+
+
+    .name-link {
+    
+      .reptile_name {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+  
+      a {
+        text-decoration: none;
+        color: inherit;
+    
+        &:hover {
+          color: $font-color;
+        }
+    
+        .reptile_name:hover{
+          color: $vivid-hover;
+        }
+      }
+    }
   }
+
+
   // Timeline holder
   ul.timeline {
     list-style-type: none;

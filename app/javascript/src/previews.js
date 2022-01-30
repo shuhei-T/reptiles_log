@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).on('DOMContentLoaded', function() {
   $('#log_images').on('change', function (e) {
     if(e.target.files.length > 5){
       alert('一度に投稿できるのは5枚までです');

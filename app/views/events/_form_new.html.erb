@@ -1,0 +1,146 @@
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">飼育記録</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body event-log-form">
+
+          <div class="form">
+        <%= form_with model: [@reptile, @event], url: reptile_events_path do |f| %>
+          <h3 class="date"><%= l Date.current, format: :long %></h3>
+          <div class="mb-3">
+            <%= f.label :remark, class: 'form-label' %>
+            <%= f.text_area :remark, class: 'form-control', placeholder:"メモを書いてください" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :condition, class: 'form-label' %><br>
+            <%= f.collection_radio_buttons :condition, Log.conditions_i18n, :first, :last do |b| %>
+            <%= b.label(class: 'btn btn-outline-secondary') { b.radio_button(class: 'btn btn-secondary') + b.text } %>
+            <% end %>
+          </div>
+          <div class="mb-3">
+            <%= f.fields_for :log_feeds do |log_feeds_f| %>
+              <div class="mb-3">
+                <%= log_feeds_f.label :name, class: 'form-label' %>
+                <%= log_feeds_f.collection_select(:feed_id, @feeds, :id, :name, {prompt: "--"}, {class: 'form-select', style: 'display: inline-block;width: auto;'}) %>
+              </div>
+              <div class="mb-3">
+                <%= log_feeds_f.label :count, class: 'form-label'%>
+                <%= log_feeds_f.number_field :count, class: 'form-control', style: 'display: inline-block;width: auto;' %>
+              </div>
+            <% end %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :shit, class: 'form-label' %>
+            <%= f.collection_radio_buttons :shit, Log.shits_i18n, :first, :last do |b| %>
+            <%= b.label(class: 'btn btn-outline-secondary') { b.radio_button(class: 'btn btn-secondary') + b.text } %>
+            <% end %>
+          </div>
+          <div class="mb-3">
+          <%= f.check_box :creaning, class: 'form-check-input', id:'check_birthday' %>
+          <%= f.label :creaning,  class: 'fomr-check-label' %>
+          </div>
+          <div class="mb-3">
+          <%= f.check_box :handling, class: 'form-check-input', id:'check_birthday' %>
+          <%= f.label :handling, class: 'fomr-check-label' %>
+          </div>
+          <div class="mb-3">
+          <%= f.label :sheding, class: 'form-label' %>
+            <%= f.collection_radio_buttons :sheding, Log.shedings_i18n, :first, :last do |b| %>
+            <%= b.label(class: 'btn btn-outline-secondary') { b.radio_button(class: 'btn btn-secondary') + b.text } %>
+            <% end %>
+          </div>
+          <div class="mb-3">
+          <%= f.check_box :bath, class: 'form-check-input' %>
+          <%= f.label :bath, class: 'fomr-check-label' %>
+          </div>
+          <div class="mb-3 w-25">
+            <%= f.label :weight,  class: 'form-label' %>
+            <%= f.number_field :weight, class: 'form-control', step: '0.1', placeholder:"100" %>
+          </div>
+          <div class="mb-3 w-25">
+          <%= f.label :length, class: 'form-label' %>
+          <%= f.number_field :length, class: 'form-control', step: '0.1', placeholder:"100" %>
+          </div>
+          <div class="mb-3 w-25">
+          <%= f.label :temperature, class: 'form-label' %>
+          <%= f.number_field :temperature, class: 'form-control', step: '0.1', placeholder:"27" %>
+          </div>
+          <div class="mb-3 w-25">
+          <%= f.label :humidity, class: 'form-label' %>
+          <%= f.number_field :humidity, class: 'form-control', step: '0.1', placeholder:"60" %>
+          </div>
+          <div class="mb-3 w-25">
+            <%= f.label :images, class: 'form-label d-block' do %>
+              <span class="btn btn-outline-secondary", id="images_btn">画像登録</span>
+              <%= f.file_field :images, class: "images_form hidden", accept: 'image/*', multiple: true %>
+              <%= f.hidden_field :images_cache %>
+            <% end %>
+          </div>
+          <div class="image_field">
+            <img id='preview_0'>
+            <img id='preview_1'>
+            <img id='preview_2'>
+            <img id='preview_3'>
+            <img id='preview_4'>
+          </div>
+
+          <%= f.submit class: 'btn btn-primary my-2 mx-auto d-block' %>
+        <% end %>
+      </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+<script>
+  $('#log_images').on('change', function (e) {
+    if(e.target.files.length > 5){
+      alert('一度に投稿できるのは5枚までです');
+      // 5枚以上の画像を選択していた場合、選択したファイルをリセット
+      $('#log_images').val = '';
+
+      // 以前の画像が残っていた場合は、まだ画像選択できていると勘違いを誘発するため初期化
+      for(let i = 0; i < 5; i++) {
+        $(`#preview_${i}`).attr('src', '');
+      }
+
+    } else {
+      let reader = new Array(5);
+
+      // 画像選択を2回した時、1回目より数が少なかったりすると画面上に残るので初期化
+      for(let i = 0; i < 5; i++) {
+        $(`#preview_${i}`).attr('src', '');
+      }
+
+      for(let i = 0; i < e.target.files.length; i++) {
+        reader[i] = new FileReader();
+        reader[i].onload = finisher(i,e);
+        reader[i].readAsDataURL(e.target.files[i]);
+        
+        //onloadは別関数で準備しないとfor文内では使用できないので、関数を準備。
+        function finisher(i, e) {
+          return function (e) {
+            $(`#preview_${i}`).attr('src', e.target.result);
+            $(`#preview_${i}`).addClass('preview_size');
+          }
+        } 
+      }
+    }
+  });
+</script>

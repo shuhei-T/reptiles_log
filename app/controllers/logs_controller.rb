@@ -3,7 +3,7 @@ class LogsController < ApplicationController
 
   def index
     @reptile = current_user.reptiles.find(params[:reptile_id])
-    logs = Log.includes(:reptile).includes(:user).includes(:log_feeds).all.order(created_at: :desc)
+    logs = @reptile.logs.includes(:reptile).includes(:user).includes(:log_feeds).all.order(created_at: :desc)
     @logs_by_date = logs.group_by{|log|log.updated_at.to_date}
   end
 
@@ -23,7 +23,8 @@ class LogsController < ApplicationController
   end
 
   def show
-    
+    @reptile = current_user.reptiles.find(params[:reptile_id])
+    @log = @reptile.logs.find(params[:id])
   end
 
   def edit
