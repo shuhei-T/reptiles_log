@@ -1,0 +1,33 @@
+// グラフに関するスタイル
+@import 'variables';
+
+.chart-index {
+  .left_column{
+    img, div{
+      height: 104px;
+      width: 104px;
+      border-radius: 50%;
+      background: $border-color;
+      margin-bottom: 2rem;
+    }
+
+    .reptile_name {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+  
+      &:hover {
+        color: $font-color;
+      }
+  
+      .reptile_name:hover{
+        color: $vivid-hover;
+      }
+    }
+  }
+}
+

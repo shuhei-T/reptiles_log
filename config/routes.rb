@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   resources :reptiles do
     resources :logs
     resources :events, only: %i[index new create show destroy]
+    resources :charts, only: %i[index]
   end
 end
