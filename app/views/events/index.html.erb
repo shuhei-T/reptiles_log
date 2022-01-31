@@ -1,3 +1,4 @@
+<% content_for(:title, @reptile.name + "|" + t('.title')) %>
 <%= javascript_pack_tag 'calendar/event', 'data-turbolinks-track': 'reload' %>
 <div class="container calendar-index">
   <div class="row">

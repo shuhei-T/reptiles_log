@@ -1,0 +1,63 @@
+<% content_for(:title, @reptile.name + "|" + t('.title')) %>
+<div class="container chart-index">
+  <div class="row">
+    <h1><%= t('.title') %></h1>
+    <div class="left_column">
+      <%= image_tag @reptile.image.url, class: 'rounded-circle card-img-top', size: '20x20' %>
+      <%= link_to reptile_path(@reptile) do %>
+        <span class="reptile_name"><%= @reptile.name %></span>
+      <% end %>
+    </div>
+<div class="chart-container" style="position: relative; height:50vh; width:100vw;">
+  <canvas id="myChart"></canvas>
+</div>
+  </div>
+</div>
+
+
+<script>
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: <%= @chartlabels %>,
+        datasets: [{
+            label: '体重(g)',
+            data: <%= @weightdata %>,
+            backgroundColor: 'rgba(58, 50, 168, 0.2)',
+            borderColor: 'rgba(58, 50, 168, 1.0)',
+            borderWidth: 2,
+        },{
+            label: '体長(cm)',
+            data: <%= @lengthdata %>,
+            backgroundColor: 'rgba(255, 80, 120, 0.2)',
+            borderColor: 'rgba(255, 80, 120, 1.0)',
+            borderWidth: 2,
+            type: 'line',
+        },{
+            label: '温度(℃)',
+            data: <%= @temperature_data %>,
+            backgroundColor: 'rgba(252, 94, 3, 0.2)',
+            borderColor: 'rgba(252, 94, 3, 1.0)',
+            borderWidth: 2,
+            type: 'bar',
+        },{
+            label: '湿度(%)',
+            data: <%= @humidity_data %>,
+            backgroundColor: 'rgba(3, 248, 252, 0.2)',
+            borderColor: 'rgba(3, 248, 252, 1.0)',
+            borderWidth: 2,
+            type: 'bar',
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        maintainAspectRatio: false
+    }
+});
+</script>
+

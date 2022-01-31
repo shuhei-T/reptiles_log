@@ -63,6 +63,9 @@ ja:
   events:
     index:
       title: '飼育カレンダー'
+  charts:
+    index:
+      title: '飼育グラフ'
   password_resets:
     new:
       title: 'パスワードリセット申請'

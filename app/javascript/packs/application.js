@@ -14,6 +14,8 @@ import "../src/reptile.js"
 import "../src/previews.js"
 import "../src/preview.js"
 import "../src/logs_modal.js"
+import Chart from "chart.js/auto";
+global.Chart = Chart;
 
 Rails.start()
 // Turbolinks.start()

@@ -8,9 +8,13 @@
     <i class="fas fa-stream"></i>
     <span>タイムライン</span>
   <% end %>
-  <%= link_to reptile_events_path(@reptile), class: 'btn btn-info' do %>
+  <%= link_to reptile_events_path(@reptile), class: 'btn btn-success' do %>
     <i class="fas fa-calendar"></i>
     <span>カレンダー</span>
+  <% end %>
+  <%= link_to reptile_charts_path(@reptile), class: 'btn btn-success' do %>
+    <i class="fas fa-chart-line"></i>
+    <span>グラフ</span>
   <% end %>
 </div>
 <% end %>
