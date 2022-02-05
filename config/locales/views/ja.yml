@@ -20,6 +20,10 @@ ja:
       delete_confirm: '削除しますか?'
       not_authorized: '権限がありません'
   users:
+    index:
+      title: 'ユーザーリスト'
+    show:
+      title: 'ユーザープロフィール'
     new:
       title: 'ユーザー登録'
       to_login_page: 'ログインページへ'
@@ -38,9 +42,9 @@ ja:
       success: 'ログアウトしました'
   profiles:
     show:
-      title: 'ユーザープロフィール'
+      title: 'マイプロフィール'
     edit:
-      title: 'ユーザープロフィール編集'
+      title: 'マイプロフィール編集'
   reptiles:
     index:
       title: '生体リスト'

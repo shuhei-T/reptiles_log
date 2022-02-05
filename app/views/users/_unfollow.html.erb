@@ -1,0 +1,3 @@
+<%= form_with(model: current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete }, local: false) do |f| %>
+  <% f.submit "フォロー中", class: "btn btn-light" %>
+<% end %>

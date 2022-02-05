@@ -12,4 +12,5 @@ module ApplicationHelper
   def active_if(path)
     path == action_name ? 'active' : ''
   end
+
 end

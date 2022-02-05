@@ -1,0 +1,23 @@
+<% user ||= current_user %>
+<dl class="follow_status">
+  <dd class="me-2">
+    <span class="count me-1">
+      <%= link_to following_profile_path, class: 'btn_link_following' do %>
+        <strong id="following">
+          <%= user.following.count %>
+        </strong>
+      <% end %>
+        フォロー
+    </span>
+  </dd>
+  <dd>
+    <span class="count">
+    <%= link_to followers_profile_path, class: 'btn_link_follower' do %>
+      <strong id="followers">
+        <%= user.followers.count %>
+      </strong>
+    <% end %>
+      フォロワー
+    </span>
+  </dd>
+</dl>
