@@ -1,0 +1,27 @@
+<article>
+  <div class="user_info_wrap">
+    <div class="user_info">
+      <%= link_to image_tag user.avatar.url, size: '50x50' %>
+      <p class="user_name mb-0">
+        <%= link_to user.name, user_path(user) %>
+      </p>
+    </div>
+    <% unless current_user?(user) %>
+      <div id="follow_form-<%= user.id%>">
+        <% if current_user.following?(user) %>
+          <%= form_with(model: current_user.active_relationships.find_by(followed_id: user.id), html: { method: :delete }, local: false) do |f| %>
+            <% f.submit "フォロー中", class: "btn btn-light" %>
+          <% end %>
+        <% else %>
+          <%= form_with(model: current_user.active_relationships.build, local: false) do |f| %>
+            <div><%= hidden_field_tag :followed_id, user.id %></div>
+            <%= f.submit "フォロー", class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="user_prof">
+    <div class="user_text"><%= user.comment %></div>
+  </div>
+</article>

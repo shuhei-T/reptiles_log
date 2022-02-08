@@ -39,6 +39,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'hirb'
   gem 'rails-erd'
+  gem 'faker'
 end
 
 group :development do

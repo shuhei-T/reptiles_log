@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: %i[edit update]
+  before_action :set_user, only: %i[edit update following followers]
 
   def show;end
 
@@ -12,6 +12,20 @@ class ProfilesController < ApplicationController
       flash.now[:danger] = t('defaults.message.updated', item: User.model_name.human)
       render :edit
     end
+  end
+
+  def following
+    @title = "フォロー中"
+    @users = @user.following
+    @count =@users.count
+    render 'show_follow'
+  end
+  
+  def followers
+    @title = "フォロワー"
+    @users = @user.followers
+    @count =@users.count
+    render 'show_follow'
   end
 
   private

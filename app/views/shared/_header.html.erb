@@ -10,6 +10,9 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
+          <%= link_to 'ユーザーリスト', users_path, class: "nav-link #{ active_if('index') }" %>
+        </li>
+        <li class="nav-item">
           <%= link_to t('reptiles.index.title'), reptiles_path, class: "nav-link #{ active_if('index') }" %>
         </li>
         <li class="nav-item">

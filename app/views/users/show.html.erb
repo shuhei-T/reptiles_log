@@ -1,0 +1,170 @@
+<% content_for(:title, t('.title')) %>
+<div class="container user_show">
+  <h1><%= t('.title') %></h1>
+  <div class="row">
+    <div class="col-4">
+      <div class="avatar">
+        <% if @user.avatar && @user.avatar.url %>
+          <%= image_tag @user.avatar.url %>
+        <% else %>
+          <%= image_tag 'default_user.png' %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="name">
+        <%= @user.name %>
+      </div>
+      <section class="stats">
+        <%= render 'shared/stats', user: @user %>
+        <%= render 'follow_form' if logged_in? %>
+      </section>
+      <div class="comment">
+        <h6>コメント: </h6>
+        <p><%= @user.comment %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="modal-title" id="exampleModalLabel"><i class="fas fa-user-check"></i>フォロー一覧</p>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <%#---------------------- nav ------------------------%>
+      <ul class="text-center nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item w-50 bg-light" role="presentation">
+          <a
+            class="nav-link active"
+            id="home-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#home"
+            type="button"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true"
+          >
+          フォロー中
+          </a>
+        </li>
+        <li class="nav-item w-50 bg-light" role="presentation">
+          <a
+            class="nav-link"
+            id="profile-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#profile"
+            type="button"
+            role="tab"
+            aria-controls="profile"
+            aria-selected="false"
+          >
+            フォロワー
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          <div class="ml-1 mt-3 mb-2">全フォロー数:<%= @user.following.count %>人</div>
+          <div class="modal-body">
+            <% @user.following.each do |user| %>
+              <article>
+                <div class="user_info_wrap">
+                  <div class="user_info">
+                    <%= link_to image_tag user.avatar.url, size: '50x50' %>
+                    <p class="user_name mb-0">
+                      <%= link_to user.name, user_path(user) %>
+                    </p>
+                  </div>
+                  <% unless current_user?(user) %>
+                    <div id="follow_form-<%= user.id%>">
+                      <% if current_user.following?(user) %>
+                        <%= form_with(model: current_user.active_relationships.find_by(followed_id: user.id), html: { method: :delete }, local: false) do |f| %>
+                          <% f.submit "フォロー中", class: "btn btn-light" %>
+                        <% end %>
+                      <% else %>
+                        <%= form_with(model: current_user.active_relationships.build, local: false) do |f| %>
+                          <div><%= hidden_field_tag :followed_id, user.id %></div>
+                          <%= f.submit "フォロー", class: "btn btn-primary" %>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="user_prof">
+                  <div class="user_text"><%= user.comment %></div>
+                </div>
+              </article>
+            <% end %>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="profile"
+          role="tabpanel"
+          aria-labelledby="profile-tab"
+        >
+          <div class="ml-1 mt-5 mb-2">全フォロワー数: <%= @user.followers.count %>人</div>
+          <div class="modal-body">
+            <% @user.followers.each do |user| %>
+              <article>
+                <div class="user_info_wrap">
+                  <div class="user_info">
+                    <%= link_to image_tag user.avatar.url, size: '50x50' %>
+                    <p class="user_name mb-0">
+                      <%= link_to user.name, user_path(user) %>
+                    </p>
+                  </div>
+                  <% unless current_user?(user) %>
+                    <div id="follow_form-<%= user.id%>">
+                      <% if current_user.following?(user) %>
+                        <%= form_with(model: current_user.active_relationships.find_by(followed_id: user.id), html: { method: :delete }, local: false) do |f| %>
+                          <% f.submit "フォロー中", class: "btn btn-light" %>
+                        <% end %>
+                      <% else %>
+                        <%= form_with(model: current_user.active_relationships.build, local: false) do |f| %>
+                          <div><%= hidden_field_tag :followed_id, user.id %></div>
+                          <%= f.submit "フォロー", class: "btn btn-primary" %>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="user_prof">
+                  <div class="user_text"><%= user.comment %></div>
+                </div>
+              </article>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+$(function () {
+  $('.btn_link_follower').click(function () {
+    $('#home-tab').removeClass('active').attr('aria-selected', 'false');
+    $('#profile-tab').addClass('active').attr('aria-selected', 'true');
+    $('#home').removeClass('active show');
+    $('#profile').addClass('active show');
+  });
+  $('.btn_link_following').click(function () {
+    $('#profile-tab').removeClass('active').attr('aria-selected', 'false');
+    $('#home-tab').addClass('active').attr('aria-selected', 'true');
+  });
+});
+</script>
