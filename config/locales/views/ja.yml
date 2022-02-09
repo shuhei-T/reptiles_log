@@ -4,7 +4,7 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     post: '投稿'
-    search_word: '検索ワード'
+    search_word: 'ユーザー検索'
     show: '詳細'
     edit: '編集'
     delete: '削除'
