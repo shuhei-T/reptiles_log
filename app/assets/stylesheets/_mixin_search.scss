@@ -1,0 +1,11 @@
+.seach_container {
+  box-sizing: border-box;
+  .input {
+    background: #ccddf5;
+    border: none;
+    height: 35px;
+    &:focus {
+      outline: 0;
+    }
+  }
+}

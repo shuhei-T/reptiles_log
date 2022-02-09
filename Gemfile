@@ -69,3 +69,4 @@ gem 'sorcery'
 gem 'rails-i18n'
 # Model
 gem 'enum_help'
+gem 'ransack'
