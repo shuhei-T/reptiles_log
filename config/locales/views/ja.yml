@@ -30,6 +30,8 @@ ja:
     create:  
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
+    search:
+      title: 'ユーザー検索結果'
   user_sessions:
     new:
       title: 'ログイン'
@@ -55,6 +57,7 @@ ja:
       title: '生体プロフィール'
     create:
     edit:
+      title: '生体プロフィール編集'
     update:
     destroy:
   logs:

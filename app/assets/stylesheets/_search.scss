@@ -1,3 +1,4 @@
+// 検索機能に関するスタイル
 .seach_container {
   box-sizing: border-box;
   .input {
@@ -8,4 +9,8 @@
       outline: 0;
     }
   }
+}
+
+.search_wrapper {
+  margin-bottom: 1.0rem;
 }

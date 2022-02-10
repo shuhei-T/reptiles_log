@@ -2,7 +2,7 @@
 <div class="container user_profile">
   <h1><%= t('.title') %></h1>
   <div class="row">
-    <div class="col-4">
+    <div class="col-sm-4">
       <div class="avatar">
         <% if current_user.avatar && current_user.avatar.url %>
           <%= image_tag current_user.avatar.url %>
@@ -11,7 +11,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-8">
+    <div class="col-sm-8">
       <div class="row">
         <div class="name">
           <%= current_user.name %>
