@@ -11,8 +11,17 @@ body {
     flex: 1;
   }
   // フッター固定用--------------------------
+  @media screen and (max-width: 479px) {
+    .footer-bottom {
+    height: 175px;
+    }
+  }
+  // background-color: #f2f2f2;
 
-  background-color: #f2f2f2;
+  .container {
+    max-width: 960px;
+  }
+
 
   .image {
     overflow: hidden;
@@ -46,12 +55,84 @@ body {
   }
 
   h1 {
+    font-size: 32px;
     position: relative;
-    padding-bottom: 1rem;
+    padding-left: 1.2em;
+    // padding-bottom: 1rem;
     line-height: 1.4;
     letter-spacing: 0.05rem;
-    color: #0fa517a9;
+    color: $font-color;
     margin: 1.6rem 0;
+    // border-bottom: thick double #fcccd4;
+    position: relative;
+    padding: 0.3em;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 7px;
+      background: repeating-linear-gradient(-45deg, $borderline-color, $borderline-color 2px, white 2px, white 4px);
+    }
+  }
+  h1:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1em;
+    color: $icon-color;
+  }
+  h2:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1em;
+    color: $icon-color;
+  }
+  h1.user::before {
+    content: "\f2bd";
+  }
+  h1.reptile::before {
+    content: url('https://api.iconify.design/mdi/snake.svg?color=%237eb63f&width=37&height=37');
+    vertical-align: middle;
+    position: relative;
+    bottom: -0.1em;
+  }
+  h1.log::before {
+    content: "\f055";
+  }
+  h1.timeline::before {
+    content: url('https://api.iconify.design/clarity/timeline-line.svg?color=%237eb63f&width=38&height=38');
+    vertical-align: middle;
+    position: relative;
+    bottom: -0.1em;
+  }
+  h1.calendar::before {
+    content: "\f133";
+  }
+  h1.chart::before {
+    content: "\f080";
+  }
+  h1.user_new::before {
+    content: "\f0e0";
+  }
+  h1.sign-in::before {
+    content: "\f2f6";
+  }
+
+  h2.timeline::before {
+    content: url('https://api.iconify.design/clarity/timeline-line.svg?color=%237eb63f&width=38&height=38');
+    vertical-align: middle;
+    position: relative;
+    bottom: -0.1em;
+    margin-right: 0.5rem;
+  }
+  h2.calendar::before {
+    content: "\f133";
+    margin-right: 0.5rem;
+  }
+  h2.chart::before {
+    content: "\f080";
+    margin-right: 0.5rem;
   }
 
   a {
@@ -82,3 +163,6 @@ body {
   }
 }
 
+.user_pagenate {
+  padding-bottom: 30px;
+}

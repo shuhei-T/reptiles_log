@@ -1,0 +1,57 @@
+<header role="banner" class="drawer_header">
+  <button type="button" class="drawer-toggle drawer-hamburger">
+    <span class="sr-only">toggle navigation</span>
+    <span class="drawer-hamburger-icon"></span>
+  </button>
+  <nav class="drawer-nav" role="navigation">
+    <ul class="drawer-menu">
+      <li>
+        <%= link_to root_path, class: "drawer-brand" do %>
+          <%= image_tag 'replog4.png',size: '135x30' %>
+        <% end %>
+      </li>
+      <div class='dropdown-divider'></div>
+      <li>
+        <%= render 'users/search_form', q: @q, url: search_users_path %>
+      </li>
+      <li>
+        <%= link_to reptiles_path, class: "drawer-menu-item" do %>
+          <span class="iconify" data-icon="mdi:snake" data-width="25" data-height="25"></span>
+          生体リスト
+        <% end %>
+      </li>
+      <li>
+        
+      </li>
+      <li>
+        <%= link_to profile_path, class: "drawer-menu-item" do %>
+          <%= image_tag current_user.avatar_url, class: 'rounded-circle mr15', size: '30x30'%>
+          <%= current_user.name %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to logout_path, class: 'logout-btn', method: :delete do %>
+          <i class="fas fa-sign-out-alt fa-lg"></i>
+          ログアウト<i class="fas fa-angle-right fa-lg"></i>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main role="main">
+<!-- Page content -->
+</main>
+
+
+
+<!-- ドロワーメニューの利用宣言 -->
+<script>
+jQuery.noConflict(); 
+(function($) {
+  $(document).on('DOMContentLoaded', function() {
+    $(document).ready(function() {
+      $('.drawer').drawer();
+    });
+  });
+})(jQuery);
+</script>

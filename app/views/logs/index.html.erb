@@ -1,6 +1,6 @@
 <div class="container log_index">
+    <h1 class="timeline"><%= t('.title') %></h1>
   <div class="row">
-    <h1><%= t('.title') %></h1>
   </div>
   <div class="row title">
     <div class="col right-column">
@@ -10,10 +10,11 @@
           <span class="reptile_name"><%= @reptile.name %></span>
         <% end %>
       </span>
-      <%= link_to new_reptile_log_path(@reptile), class: 'btn btn-success' do %>
-        <i class="fas fa-plus-circle"></i>
-        <span>記録</span>
-      <% end %>
+      <div class="log_btn">
+        <%= link_to new_reptile_log_path(@reptile) do %>
+          <i class="fas fa-plus-circle"></i>記録
+        <% end %>
+      </div>
     </div>
   </div>
 <%# ===============タイムライン================================================================= %>

@@ -1,16 +1,16 @@
 <% content_for(:title, @reptile.name + "|" + t('.title')) %>
 <%= javascript_pack_tag 'calendar/event', 'data-turbolinks-track': 'reload' %>
-<div class="container calendar-index">
-  <div class="row">
-    <h1><%= t('.title') %></h1>
+<div class="container">
+  <h1 class="calendar"><%= t('.title') %></h1>
+  <div class="row calendar-index">
     <div class="left_column">
       <%= image_tag @reptile.image.url, class: 'rounded-circle card-img-top', size: '20x20' %>
       <%= link_to reptile_path(@reptile) do %>
         <span class="reptile_name"><%= @reptile.name %></span>
       <% end %>
     </div>
+    <div id="calendar"></div>
   </div>
-<div id="calendar"></div>
 </div>
 
 

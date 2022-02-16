@@ -1,7 +1,7 @@
 <% content_for(:title, @reptile.name) %>
-<div class="container reptile_profile d-flex">
-  <div class="row mb-3 justify-content-center">
-    <h1><%= t('.title') %></h1>
+<div class="container">
+  <h1 class="reptile"><%= t('.title') %></h1>
+  <div class="row reptile_profile">
     <div class="col-sm-4">
       <div class="image">
         <% if @reptile.image && @reptile.image.url %>
@@ -43,7 +43,6 @@
       </ul>
       <div class="owner">
       </div>
-      <%= render 'log_menus', reptile: @reptile if current_user.own?(@reptile) %>
     </div>
   </div>
 </div>

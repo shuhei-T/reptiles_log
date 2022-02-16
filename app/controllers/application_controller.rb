@@ -13,4 +13,10 @@ class ApplicationController < ActionController::Base
     @search_users = @q.result(distinct: true).order(created_at: :desc).page(params[:page])
   end
 
+  def forbid_login_user
+    if current_user
+      redirect_to reptiles_path, warning: t('defaults.message.forbid_login_user')
+    end
+  end
+
 end

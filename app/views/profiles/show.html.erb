@@ -1,7 +1,7 @@
 <% content_for(:title, t('.title')) %>
-<div class="container user_profile">
-  <h1><%= t('.title') %></h1>
-  <div class="row">
+<div class="container">
+  <h1 class="user"><%= t('.title') %></h1>
+  <div class="row user_profile">
     <div class="col-sm-4">
       <div class="avatar">
         <% if current_user.avatar && current_user.avatar.url %>
@@ -12,14 +12,13 @@
       </div>
     </div>
     <div class="col-sm-8">
-      <div class="row">
-        <div class="name">
-          <%= current_user.name %>
-            <%= link_to edit_profile_path, class: 'btn btn-outline-secondary' do %>
-              <i class="fas fa-edit"></i>
-              <span>編集</span>
-            <% end %>
-        </div>
+      <div class="name">
+        <%= current_user.name %>
+        <span class='edit_link'>
+          <%= link_to edit_profile_path do %>
+            <i class="fas fa-edit"></i>編集
+          <% end %>
+        </span>
       </div>
       <%= render 'profile_stats' %>
       <ul class="count">

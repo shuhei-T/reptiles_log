@@ -1,31 +1,301 @@
 // トップページに関するスタイル
+@import 'variables';
 
 body {
-
-  .top-wrapper {
-    height: calc(100vh - 134px);
-    position: relative;
-    background-position: center;
-  
-    .top-inner-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      text-align: center;
-      
-      @media screen and (min-width: 767px) {
-        font-size: 5rem;
-        h1 {
-          margin-top: 4rem;
-          color: #0EB784;
-          font-size: 3rem;
-          
+  main {
+    // margin-bottom: 100px;
+    // margin-top: 15px;
+    .top-wrapper {
+      // padding: 50px 0 230px 0;
+      background-image: image-url("reptile_top.jpg");
+      background-size: cover;
+      background-color:rgba(255,255,255,0.2);
+      // background-blend-mode:lighten;
+      // background-repeat: no-repeat;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      // height: calc(100vh - 100px);
+      // position: relative;
+      // background-position: center;
+      background-position: 85% 95%;
+      // &::before {
+      //   content: '';
+      //   position: absolute;
+      //   /* 輪郭がぼやけてしまうのでブラー範囲を広げる */
+      //   top: -5px;
+      //   bottom: -5px;
+      //   left: -5px;
+      //   right: -5px;
+      //   background: inherit;
+      //   filter: blur(0px);
+      // }
+      .container {
+        .top-inner-text {
+          padding-top: calc(100vh / 2 - 280px);
+          // position: absolute;
+          // top: 50%;
+          // left: 50%;
+          // transform: translate(-50%, -50%);
+          // width: 100%;
+          text-align: center;
+          text-shadow: 0 0 1px #333;
+          h1 {
+            font-size: 24px;
+            margin: 45px 0 60px 0 ;
+            opacity: 0.8;
+            color: $font-color;
+            letter-spacing: 2px;
+            font-weight: 700;
+            &::after {
+              background: none;
+            }
+          }
+          p {
+            font-size: 14px;
+            color: $font-color;
+            opacity: 0.8;
+            
+          }
+          @media screen and (min-width: 767px) {
+            // img {
+            //   width: 450px;
+            //   height: 98px;
+            // }
+            // font-size: 5rem;
+            // h1 {
+            //   margin-top: 4rem;
+            //   color: #0EB784;
+            //   font-size: 3rem;
+            // }
+          } 
+        }
+        .btn-wrapper {
+          margin-top: 230px;
+          text-align: center;
+          .btn-square-so-pop {
+            width: 100%;
+            margin-bottom: 15px;
+            // position: absolute;
+            // top: 95%;
+            // left: 30%;
+            // transform: translate(-50%, -50%);
+            @media screen and (min-width: 767px) {
+              // position: absolute;
+              // top: 80%;
+              // left: 40%;
+              // transform: translate(-50%, -50%);
+            }
+          }
+          .btn-guest-square-so-pop {
+            width: 100%;
+            // position: absolute;
+            // top: 95%;
+            // left: 70%;
+            // transform: translate(-50%, -50%);
+            @media screen and (min-width: 767px) {
+              // position: absolute;
+              // top: 80%;
+              // left: 60%;
+              // transform: translate(-50%, -50%);
+              // text-align: center;
+            }
+          }
         }
       }
-      
+    }
+    .explanation-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      margin-bottom: 75px;
+      h2 {
+        margin: 2rem 0;
+        text-align: center;
+        font-weight: 500;
+      }
+      p.red {
+        font-size: 24px;
+        color: red;
+      }
+    }
+
+    .middle-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      .middle_title {
+        text-align: center;
+        margin: 50px 0 20px;
+      }
+      .contents {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // 最後の要素以外に余白を追加
+        &:not(:last-child) {
+          margin-bottom: 50px;
+        }
+        &:nth-child(odd) {
+          flex-direction: column;
+          
+        }
+        .image_contents {
+          width: 100%;
+          height: 250px;
+          padding-bottom: 30px;
+
+
+          img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+          }
+        }
+        .text-contents {
+          width: 100%;
+          
+          h2 {
+            font-size: 24px;
+            padding: 10px 0;
+          }
+          p {
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+
+    .message-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      text-align: center;
+      .btn-wrapper {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .reve_btn {
+          margin-top: 15px;
+          width: 100%;
+        }
+        .guest_btn {
+          margin-top: 15px;
+          width: 100%;
+        }
+      }
     }
   }
 }
 
+
+h2.label {
+  position: relative;
+  background: #d0e9e3;
+  box-shadow: 0px 0px 0px 5px #d0e9e3;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+  &:after {
+    position: absolute;
+    content: '';
+    left: -7px;
+    top: -7px;
+    border-width: 0 0 15px 15px;
+    border-style: solid;
+    border-color: #fff #fff #d0e7e2;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  }
+}
+
+h2.check {
+  position: relative;/*相対位置*/
+  padding: 0.5em 0.5em 0.5em 1.5em;/*アイコン分のスペース*/
+  line-height: 1.4;/*行高*/
+  color: $font-color;/*文字色*/
+  border-top: dotted 1px gray;
+  border-bottom: dotted 1px gray;
+  background: #fffff4;
+  &:before {
+    font-family: "Font Awesome 5 Free";/*忘れずに*/
+    content: "\f058";/*アイコンのユニコード*/
+    font-weight: 900;
+    position: absolute;/*絶対位置*/
+    font-size: 1em;/*サイズ*/
+    left: 0.25em;/*アイコンの位置*/
+    top: 0.5em;/*アイコンの位置*/
+    color: $highlight-color; /*アイコン色*/
+  }
+}
+
+
+
+
+
+@media screen and (min-width: 767px) {
+/* 768px以上用（タブレット・PC用）の記述 */
+  body {
+    main {
+      .top-wrapper {
+        background-position: 50% 90%;
+        .container {
+          .top-inner-text {
+            padding-top: calc(100vh / 2 - 115px);
+            h1 {
+              font-size: 32px;
+              margin: 45px 0 20px 0 ;
+            }
+            p {
+              font-size: 16px;
+
+            }
+          }
+        }
+      }
+
+      .btn-wrapper {
+        .login_btn {
+          text-align: center;
+        }
+        .guest-login_btn {
+          text-align: center;
+        }
+      }
+
+      .explanation-wrapper {
+
+      }
+
+      .middle-wrapper {
+        .contents {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: normal;
+
+          &:nth-child(odd) {
+            flex-direction: row-reverse;
+          }
+          .image_contents {
+            width: 38%;
+            align-items: center;
+            padding-right: 10px;
+          }
+          .text-contents {
+            width: 58%;
+          }
+        }
+      }
+
+      .message-wrapper {
+        .btn-wrapper {
+          .reve_btn {
+            width: 50%;
+          }
+          .guest_btn {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}

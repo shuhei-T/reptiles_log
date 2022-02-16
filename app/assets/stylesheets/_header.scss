@@ -1,0 +1,134 @@
+@import 'variables';
+
+header.before {
+  .container-fluid {
+    max-width: 960px;
+  }
+}
+
+.replogo {
+  width: 137px;
+  height: 30px;
+} 
+
+.btn_login {
+  background-color: none;
+}
+
+.information {
+  width: 70px;
+}
+.contact {
+  width: 100px;
+}
+.contact, .information {
+  position: relative;
+  padding-top: 0.8rem;
+  margin: 0 10px 0 0;
+  a {
+    display: flex;
+    align-items: center;
+    color: white;
+    &:hover {
+      color: white;
+      background-color: rgb(163, 180, 194);
+    }
+  }
+}
+.btn_login {
+  a {
+    &:hover {
+      color: #0255bb;
+    }
+  }
+}
+.btn_signin {
+  a {
+    &:hover {
+      color: #b47e08;
+    }
+  }
+}
+
+
+.btn_login, .btn_signin {
+  position: relative;
+  margin-top: 0.5rem;
+  width: 40px;
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    &:hover {
+      // color: #b47e08;
+    }
+    .size {
+      font-size:2rem;
+      padding-left: 5px;
+      padding-top: 5px;
+    }
+    .font {
+      font-size: xx-small;
+      text-align: center;
+    }
+  }
+}
+
+
+@media screen and (min-width: 767px) {
+  /* 768px以上用（タブレット・PC用）の記述 */
+  header.before {
+    .navbar {
+      padding: 0;
+    }
+  }
+
+  .replogo {
+    width: 187px;
+    height: 40px;
+  } 
+
+  .information {
+    width: auto;
+    padding-top: 0;
+    a {
+      height: 55px;
+    }
+  }
+  
+  .contact {
+    width: auto;
+    padding-top: 0;
+    a {
+      height: 55px;
+    }
+  }
+
+  .btn_login {
+    margin: 0 0 0 0;
+    background-color: #167eff;
+    width: 60px;
+    text-align: right;
+    a {
+      padding-bottom: 8px;
+    }
+    a:hover {
+      color: white;
+      background-color: #0255bb;
+    }
+  }
+  .btn_signin {
+    margin: 0 0 0 0;
+    background-color: #f4bc44;
+    width: 60px;
+    text-align: right;
+    a {
+      padding-bottom: 8px;
+    }
+    a:hover {
+      color: white;
+      background-color: #b47e08;
+    }
+  }
+}

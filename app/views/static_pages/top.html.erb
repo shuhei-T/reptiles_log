@@ -1,6 +1,70 @@
-<div class='top-wrapper'>
-  <div class='top-inner-text'>
-  <span class="iconify" data-icon="noto-v1:snake" data-width="150" data-height="150"></span>
-    <h1>Reptiles_log</h1>
+<main>
+  <div class='top-wrapper'>
+    <div class="container">
+      <div class='top-inner-text'>
+      <%# <span class="iconify" data-icon="noto-v1:snake" data-width="150" data-height="150"></span> %>
+        <%# <h1>Reptiles_log</h1> %>
+        <h1>爬虫類飼育者のためのかんたん飼育記録サービス</h1>
+        <p>たいせつな爬虫類の飼育をかんたんに記録しよう!</p>
+      </div>
+    </div>
   </div>
-</div>
+  <div class="explanation-wrapper">
+    <div class="container">
+    <h2 class="label">爬虫類は他のペットと違う特性をもつ生き物です</h2>
+    <p class="red">「あれ？前回いつ餌をあげたっけ？」</p>
+    <p>
+      そんな風に思ったことがありませんか?<br>
+      爬虫類を飼育する際の給餌頻度は数日おきで良いので、どの生体にいつどんな餌を与えたのか忘れてしまいます。<br>
+      また、爬虫類は定期的に脱皮をしたり、シビアな温度管理、排泄の頻度も数日おきに発生したりと、<br>
+      他のペットにはないような特徴をうまく汲み取って飼育管理を行う必要があります。
+    </p>
+    <p>レプログ!は、そんな悩みを解消し、かんたんにお世話記録をすることができるサービスです。</p>
+    </div>
+  </div>
+  <div class="middle-wrapper">
+    <h2 class="middle_title label">レプログで飼育管理しよう</h2>
+    <div class="contents">
+      <div class="text-contents">
+        <h2 class="timeline">直感的で見やすいタイムライン</h2>
+        <p>お世話データを見やすいタイムライン上で確認することができます。<p>
+      </div>
+      <div class="image-contents">
+        <%= image_tag 'timeline.png', size: '250x250' %>
+      </div>
+    </div>
+    <div class="contents">
+      <div class="text-contents">
+        <h2 class="calendar">全体を見通せる月間カレンダー</h2>
+        <p>月間カレンダーでお世話データを確認することができます。<p>
+      </div>
+      <div class="image-contents">
+        <%= image_tag 'calendar.png', size: '250x250' %>
+      </div>
+    </div>
+    <div class="contents">
+      <div class="text-contents">
+        <h2 class="chart">ひと目で分かるグラフ</h2>
+        <p>生体の成長過程や温度データをグラフで確認することができます。<p>
+      </div>
+      <div class="image-contents">
+        <%= image_tag 'bar-chart.png', size: '250x250' %>
+      </div>
+    </div>
+  </div>
+  <div class="message-wrapper">
+    <h2 class="check">さあ、あなたもレプログ!で飼育管理をはじめましょう。</h2>
+      <div class="btn-wrapper">
+        <div class="reve_btn">
+          <%= link_to new_user_path, class: 'new-btn' do %>
+          <i class="fas fa-pen"></i> 会員登録を行う
+          <% end %>
+        </div>
+        <div class="guest_btn">
+          <%= link_to "#", class: 'guest-btn' do %>
+          <i class="fas fa-user"></i> ゲストログイン
+          <% end %>
+        </div>
+      </div>
+  </div>
+</main>

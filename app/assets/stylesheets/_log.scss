@@ -2,10 +2,9 @@
 @import 'variables';
 // log_new 記録画面
 .log_new {
+  padding: 1rem 1rem 2rem;
   overflow: hidden;
-  padding: 3rem 0;
-  
-
+  padding-bottom: 80px;
   .image {
     height: 192px;
     width: 192px;
@@ -48,8 +47,9 @@
   }
 }
 
-//  log_index   記録一覧
+//  log_index   飼育タイムライン
 .log_index {
+  padding-bottom: 60px;
   .right-column {
     img{
       height: 104px;
@@ -61,6 +61,10 @@
     .name {
       text-decoration: none;
       color: $font-color;
+    }
+    .log_btn {
+      font-size: 1.2rem;
+      margin-left: 1rem;
     }
 
 
@@ -345,7 +349,6 @@
 
 body {
   background: #e8cbc0;
-  background: -webkit-linear-gradient(to right, #E8CBC0, #636FA4);
-  background: linear-gradient(to right, #ffe285, #58967e);
+  background: linear-gradient(to right, #f2f1dd, #f7f9f6);
   min-height: 100vh;
 }

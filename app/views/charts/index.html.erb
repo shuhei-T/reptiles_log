@@ -1,7 +1,7 @@
 <% content_for(:title, @reptile.name + "|" + t('.title')) %>
 <div class="container chart-index">
+  <h1 class="chart"><%= t('.title') %></h1>
   <div class="row">
-    <h1><%= t('.title') %></h1>
     <div class="left_column">
       <%= image_tag @reptile.image.url, class: 'rounded-circle card-img-top', size: '20x20' %>
       <%= link_to reptile_path(@reptile) do %>
