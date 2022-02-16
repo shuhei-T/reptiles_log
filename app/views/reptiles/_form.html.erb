@@ -1,6 +1,6 @@
 <%= form_with model: reptile, local: true do |f| %>
-<%= render 'shared/error_messages', object: f.object %>
-<div class="container">
+  <%= render 'shared/error_messages', object: f.object %>
+
   <div class="row reptile_profile", id="edit_profile">
     <div class="col-sm-4">
       <div class="image">
@@ -62,8 +62,9 @@
         <%= f.text_area :comment, class: 'form-control', placeholder:"コメント" %>
       </div>
     </div>
+    <div class="btn-area">
+      <%= f.submit t('defaults.save'),class: 'save-btn' %>
+    </div>
   </div>
-</div>
 
-  <%= f.submit class: 'btn btn-primary mt-2 mb-2 mx-auto d-block' %>
 <% end %>

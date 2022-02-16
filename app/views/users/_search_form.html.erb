@@ -1,8 +1,8 @@
 <%= search_form_for q, url: url, class: 'search_container' do |f| %>
   <div class="input-group mb-3">
-    <%= f.search_field :name_cont, class: 'form-control input', placeholder: t('defaults.search_word'), required: true %>
-      <%= button_tag type: 'submit', class: 'btn btn-primary button' do %>
-        <span class="iconify" data-icon="akar-icons:search"></span>
+    <%= f.search_field :name_cont, class: 'form-control input', placeholder: t('defaults.search_word') %>
+      <%= button_tag type: 'submit', class: 'btn btn-light button' do %>
+        <i class="fas fa-search fa-lg"></i>
       <% end %>
   </div>
 <% end %>

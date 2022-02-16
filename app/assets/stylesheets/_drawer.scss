@@ -1,0 +1,71 @@
+@import 'variables';
+
+.drawer_header {
+  .drawer-menu-item {
+    &:hover {
+      text-decoration: none;
+      color: $vivid-hover;
+    }
+  }
+}
+
+
+/*+++ Default Navigation CSS +++*/
+.zdo_drawer_menu .zdo_drawer_nav {
+  padding: 112px 24px;
+}
+
+.zdo_drawer_menu .zdo_drawer_nav li {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/*+++ Default Button Color +++*/
+.zdo_drawer_menu .zdo_drawer_button {
+  color: #276490;
+}
+
+.zdo_drawer_menu .zdo_drawer_button .zdo_drawer_bar {
+  background-color: #276490;
+}
+
+
+// ハンバーガーアイコンの色を変える
+.drawer-hamburger-icon, 
+.drawer-hamburger-icon:after, 
+.drawer-hamburger-icon:before {
+    background: $drawer-color;
+}
+
+// ハンバーガーアイコンの線の太さを変える
+.drawer-hamburger-icon,
+.drawer-hamburger-icon:after, 
+.drawer-hamburger-icon:before {
+    height: 5px;
+}
+
+// ハンバーガーアイコンに背景色をつける
+.drawer-hamburger {
+  background: $drawer-background-color;
+  border-radius: 50px;
+  z-index: 9100;
+}
+
+// ハンバーガーアイコンの位置を調整する
+.drawer-hamburger {
+  // padding-top: 20px;
+  // padding-right: 20px;
+}
+
+// ドロワーメニューの背景色を変更する
+.drawer-nav {
+    background: $drawer-background-color;
+    z-index: 10000;
+}
+
+
+// オーバーレイの透明度を変更する
+.drawer-overlay {
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 9000;
+}

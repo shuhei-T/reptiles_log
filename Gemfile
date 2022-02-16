@@ -69,4 +69,9 @@ gem 'sorcery'
 gem 'rails-i18n'
 # Model
 gem 'enum_help'
+# search
 gem 'ransack'
+# Pagination
+gem 'kaminari'
+gem 'bootstrap5-kaminari-views'
+gem 'kaminari-i18n'

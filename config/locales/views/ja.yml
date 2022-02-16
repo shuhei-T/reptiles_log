@@ -10,8 +10,10 @@ ja:
     delete: '削除'
     password_reset: 'パスワードリセット'
     unspecified: '指定なし'
+    save: '保存'
     message:
       require_login: 'ログインしてください'
+      forbid_login_user: 'すでにログインしています'
       created: '%{item}を作成しました'
       not_created: '%{item}を作成できませんでした'
       updated: '%{item}を更新しました'
@@ -25,11 +27,13 @@ ja:
     show:
       title: 'ユーザープロフィール'
     new:
-      title: 'ユーザー登録'
+      title: '新規アカウント作成'
       to_login_page: 'ログインページへ'
     create:  
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
+    search:
+      title: 'ユーザー検索結果'
   user_sessions:
     new:
       title: 'ログイン'
@@ -55,11 +59,10 @@ ja:
       title: '生体プロフィール'
     create:
     edit:
-    update:
-    destroy:
+      title: '生体プロフィール編集'
   logs:
     index:
-      title: '飼育記録タイムライン'
+      title: '飼育タイムライン'
     new:
       title: '飼育記録'
     edit:

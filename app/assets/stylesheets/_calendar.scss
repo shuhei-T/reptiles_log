@@ -47,6 +47,12 @@
   a {
     text-decoration: none;
   }
+  .fc-daygrid-event-dot {
+    display: none;
+  }
+  .fc-event-time {
+    display: none;
+  }
 }
 
 // show modal
@@ -174,6 +180,7 @@
 
 
 .calendar-index {
+  padding-bottom: 70px;
   .left_column{
     img, div{
       height: 104px;

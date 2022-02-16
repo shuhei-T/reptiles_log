@@ -9,8 +9,15 @@ module ApplicationHelper
     page_title.empty? ? base_title : page_title + ' | ' + base_title
   end
 
-  def active_if(path)
+  def active_header(path)
     path == action_name ? 'active' : ''
   end
 
+  def active_footer(controller_name, action_path)
+      if controller_path == controller_name && action_path == action_name
+        'active'
+      else
+        ''
+      end
+  end
 end

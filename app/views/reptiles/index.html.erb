@@ -1,13 +1,24 @@
 <% content_for(:title, t('.title')) %>
-<div class="container pt-3">
-  <div class="col-12">
-    <h1><%= t('.title') %></h1>
-      <div class="row">
-        <% if @reptiles.present? %>
-          <%= render @reptiles %>
-        <% else %>
-          <p><%= t('.no_result') %></p>
-        <% end %> 
-      </div>
+<div class="container reptile_index">  
+  <h1 class="reptile"><%= t('.title') %></h1>
+  <div class="row">
+    <%= link_to new_reptile_path,  class: "new_btn" do %>
+    <span><i class="fas fa-plus"></i>生体登録</span>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col">
+      <% if @reptiles.present? %>
+        <%= render @reptiles %>
+      <% else %>
+        <p><%= t('.no_result') %></p>
+      <% end %>
+    </div>
+  </div>
+  <!-- ページネーション -->
+  <div class="row reptile_pagenate">
+    <div class="col-md-12">
+    <%= paginate @reptiles, theme: 'bootstrap-5' %>
+    </div>
   </div>
 </div>

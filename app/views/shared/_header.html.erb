@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #548c7c;">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag 'logo_1.png' %>
+      <%= image_tag 'replog4.png',size: '135x30' %>
     <% end %>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,16 +13,35 @@
           <%= render 'users/search_form', q: @q, url: search_users_path %>
         </li>
         <li class="nav-item">
-          <%= link_to t('reptiles.index.title'), reptiles_path, class: "nav-link #{ active_if('index') }" %>
+          <%= link_to reptiles_path, class: "nav-link #{ active_header('index') }" do %>
+            <span class="iconify" data-icon="mdi:snake" data-width="25" data-height="25"></span>
+            生体リスト
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to t('reptiles.new.title'), new_reptile_path, class: "nav-link #{ active_if('new') }" %>
+          <%= link_to profile_path, class: "nav-link #{ active_header('show') }" do %>
+            <i class="fas fa-user-cog fa-lg"></i>
+            マイプロフィール
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to t('profiles.show.title'), profile_path, class: "nav-link #{ active_if('show') }" %>
+          <%= link_to logout_path, class: 'nav-link', method: :delete do %>
+            <i class="fas fa-sign-out-alt fa-lg"></i>
+            ログアウト
+          <% end %>
         </li>
-        <li class="nav-item">
-          <%= link_to t('defaults.logout'), logout_path, class: 'nav-link', method: :delete %>
+
+        <li class='nav-item dropdown'>
+          <a href='#' class='nav-link dropdown-toggle' id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= image_tag current_user.avatar_url, class: 'rounded-circle mr15', size: '40x40'%>
+          </a>
+          <div class='dropdown-menu dropdown-menu-end' aria-labelledby="navbarDropdownMenuLink">
+            <div class='dropdown-item'><%= current_user.name %></div>
+            <div class='dropdown-divider'></div>
+            <%= link_to t('profiles.show.title'), profile_path, class: 'dropdown-item' %>
+            
+            <%= link_to t('defaults.logout'), logout_path, class: 'dropdown-item', method: :delete %>
+          </div>
         </li>
       </ul>
     </div>

@@ -2,44 +2,32 @@
 
 @import 'variables';
 
-// reptile _form
-.reptile_profile {
-  .attention {
-    color:$vivid-color;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  .disable input,.disable select{
-    pointer-events : none;
-    background: #cccccc;
-  }
-  
-  #image_btn{
-    display: block;
-    max-width:10rem;
-    padding: 0.3rem;
-    margin: 1rem auto;
-    background: #fff;
-  }
-  .image_form{
-    display: none;
+// reptiles/new
+.reptile_new {
+  padding-bottom: 60px; 
+}
+
+// reptiles/index
+.reptile_index {
+  padding-bottom: 80px;
+  .new_btn {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
 }
 
+
 // reptiles/_reptile
 .reptiles_list {
-  
-  .content {
+  .hover_box {
     background: #fff;
     border-radius: 3px;
     margin-bottom: 1rem;
     padding: 2rem;
-    border: solid 1px #DAD8D4;
+    border: solid 1px $border-color ;
     overflow: hidden;
   }
+
 
   .left_column{
     width: 104px;
@@ -94,10 +82,17 @@
 
 // reptiles/show
 .reptile_profile {
+  padding: 1rem 1rem 2rem;
   overflow: hidden;
-  // padding: 3rem 0;
-  
-
+  .name {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-right: 4rem;
+    line-height: 2.2;
+    .edit_link {
+      font-size: 1.2rem;
+    }
+  }
   .image {
     height: 192px;
     width: 192px;
@@ -107,12 +102,39 @@
     width: 160px;
     height: 160px;
   }
+}
 
-  .name {
-    font-size: 2rem;
-    font-weight: bold;
-    display: table-cell;
-    padding-right: 4rem;
-    line-height: 2.2;
+// reptile/edit.html.erb
+.reptile_edit {
+  padding-bottom: 60px;
+}
+
+// reptile _form
+.reptile_profile {
+  .attention {
+    color:$vivid-color;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .disable input,.disable select{
+    pointer-events : none;
+    background: #cccccc;
+  }
+  
+  #image_btn{
+    display: block;
+    max-width:10rem;
+    padding: 0.3rem;
+    margin: 1rem auto;
+    background: #fff;
+  }
+  .image_form{
+    display: none;
+  }
+  .btn-area {
+    text-align: center;
   }
 }

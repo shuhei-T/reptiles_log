@@ -1,0 +1,76 @@
+// ログイン・新規登録画面に関するスタイル
+
+@import 'variables';
+
+
+.content_accountForm {
+  margin: 0 auto 20px;
+  padding: 25px-15px;
+  width: 100%;
+  .actions {
+    margin: 30px 0 30px;
+    .btn-square-so-pop {
+      width: 100%;
+    }
+    .new_account_btn {
+      width: 100%;
+    }
+  }
+  p {
+    text-align: center;
+    font-size: 12px;
+    margin: 0;
+  }
+}
+
+.bg_paleblue {
+  background-color: #f4f6fa;
+}
+
+.bg_lightgray {
+  background-color: #ebebeb;
+}
+
+
+.balloon_box {
+  padding: 10px 13px;
+  border-radius: 0.25rem;
+  position: relative;
+  word-break: break-all;
+  font-size: 12px;
+  &::before {
+    content: "▲";
+    font-size: 13pt;
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: -14px;
+    left: 0;
+    text-align: center;
+  }
+  &::before {
+    color: #ebebeb;
+  }
+}
+
+ // 新規登録画面に関するスタイル
+.user_new {
+  p {
+    font-size: 13px;
+  }
+}
+
+
+
+@media screen and (min-width: 768px) {
+  /* 768px以上用（タブレット・PC用）の記述 */
+  .content_accountForm {
+    // padding: 40px;
+    // width: 40px;
+    .actions {
+      .btn-square-so-pop,.new_account_btn {
+        width: auto;
+      }
+    }
+  }
+}

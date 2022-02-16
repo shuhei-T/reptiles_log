@@ -79,7 +79,7 @@
           <div class="ml-1 mt-3 mb-2">全フォロー数:<%= @user.following.count %>人</div>
           <div class="modal-body">
             <% @user.following.each do |user| %>
-              <article>
+              <article class="user_article">
                 <div class="user_info_wrap">
                   <div class="user_info">
                     <%= link_to image_tag user.avatar.url, size: '50x50' %>
@@ -118,7 +118,7 @@
           <div class="ml-1 mt-5 mb-2">全フォロワー数: <%= @user.followers.count %>人</div>
           <div class="modal-body">
             <% @user.followers.each do |user| %>
-              <article>
+              <article class="user_article">
                 <div class="user_info_wrap">
                   <div class="user_info">
                     <%= link_to image_tag user.avatar.url, size: '50x50' %>

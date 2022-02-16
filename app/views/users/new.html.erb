@@ -1,30 +1,42 @@
 <% content_for(:title, t('.title')) %>
-<div class="container">
+<div class="container user_new">
   <div class="row">
     <div class='col-md-10 offset-md-1 col-lg-8 offset-lg-2'>
-      <h1><%= t '.title' %></h1>
+      <h1 class="user_new"><%= t '.title' %></h1>
+      <div>
+        <p>レプログ!をご利用になるには、アカウントの作成が必要です。</p>
+      <div>
       <%= form_with model: @user, local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-        <div class='form-group'>
-          <%= f.label :name %>
-          <%= f.text_field :name, class: 'form-control' %>
-        </div>
-        <div class='form-group'>
-          <%= f.label :email %>
-          <%= f.email_field :email, class: 'form-control' %>
-        </div>
-        <div class='form-group'>
-          <%= f.label :password %>
-          <%= f.password_field :password, class:'form-control' %>
-        </div>
-        <div class='form-group'>
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, class: 'form-control' %>
-        </div>
-        <%= f.submit '登録', class: 'btn btn-success' %>
+        <section class="content_accountForm bg_paleblue">
+          <div class='form-group'>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+          <div class='form-group'>
+            <%= f.label :email %>
+            <%= f.email_field :email, class: 'form-control' %>
+          </div>
+          <div class='form-group'>
+            <%= f.label :password %>
+            <%= f.password_field :password, class:'form-control' %>
+          </div>
+          <div class='form-group'>
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </div>
+          <div class="actions text-center">
+          <%= f.submit 'アカウントを作成する', class: 'new_account_btn' %>
+          </div>
+        </section>
       <% end %>
-      <div>
-        <%= link_to (t '.to_login_page'), login_path %>
+      <div class="text-center">
+        <p class="">
+          <%= link_to login_path do %>
+            すでにアカウントをお持ちの方はこちら
+          <% end %>
+        </p>
+        <%= link_to 'トップページへ', root_path %>
       </div>
     </div>
   </div>

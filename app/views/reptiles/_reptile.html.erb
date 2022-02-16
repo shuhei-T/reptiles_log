@@ -1,19 +1,20 @@
-<article class="reptiles_list">
-  <div class="content row">
-  <%= link_to reptile_path(reptile), id: "reptile_#{reptile.id}" do %>
-    <div class="left_column col-2">
-      <%= image_tag reptile.image.url, class: 'rounded-circle card-img-top', size: '20x20' %>
-    </div>
-    <div class="right_column col">
-      <h3 class="reptile_name"><%= reptile.name %></h3>
-      <span class="reptile_morph"><%= reptile.morph %></span>
-      <span class="reptile_comment">
-        <% if reptile.comment.present? %>
-          <i class="fas fa-comment"></i>
-          <%= truncate(reptile.comment, :length => 120) %>
-        <% end %>
-      </span>
-  <% end %>
-  </div>
-</div>
+<section class="reptiles_list">
+  <article class="hover_box">
+    <%= link_to reptile_path(reptile), id: "reptile_#{reptile.id}" do %>
+      <div class="left_column col-2">
+        <%= image_tag reptile.image.url, class: 'rounded-circle card-img-top', size: '20x20' %>
+      </div>
+      <div class="right_column col">
+        <h3 class="reptile_name"><%= reptile.name %></h3>
+        <span class="reptile_morph"><%= reptile.morph %></span>
+        <span class="reptile_comment">
+          <% if reptile.comment.present? %>
+            <i class="fas fa-comment"></i>
+            <%= truncate(reptile.comment, :length => 120) %>
+          <% end %>
+        </span>
+      </div>
+    <% end %>
+  </article>
+</section>
 
