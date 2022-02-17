@@ -1,8 +1,21 @@
 @import 'variables';
 
 .drawer_header {
+  
+  li.label {
+    background-color: #ebebeb;
+    margin-top: 1rem;
+  }
+  p {
+    margin-left: 1rem;
+    color: $font-color;
+    margin-bottom: 0;
+  }
   .drawer-menu-item {
+    color: $font-color;
+    border-top: 1px solid #e7e7e7;
     &:hover {
+      transition: all 0.5s;
       text-decoration: none;
       color: $vivid-hover;
     }
