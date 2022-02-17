@@ -80,10 +80,12 @@
         color: inherit;
     
         &:hover {
+          transition: all 0.5s;
           color: $font-color;
         }
     
         .reptile_name:hover{
+          transition: all 0.5s;
           color: $vivid-hover;
         }
       }

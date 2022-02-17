@@ -118,6 +118,12 @@ body {
   h1.sign-in::before {
     content: "\f2f6";
   }
+  h1.law::before {
+    content: "\f0e3";
+  }
+  h1.privacy::before {
+    content: "\f21b";
+  }
 
   h2.timeline::before {
     content: url('https://api.iconify.design/clarity/timeline-line.svg?color=%237eb63f&width=38&height=38');
@@ -132,6 +138,26 @@ body {
   }
   h2.chart::before {
     content: "\f080";
+    margin-right: 0.5rem;
+  }
+
+  h5 {
+    background: linear-gradient(transparent 80%, $borderline-color 80%);
+  }
+
+  p:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1em;
+    color: $font-color;
+  }
+
+  p.question::before {
+    content: "\f059";
+    margin-right: 0.5rem;
+  }
+  p.user::before {
+    content: "\f2bd";
     margin-right: 0.5rem;
   }
 

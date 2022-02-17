@@ -10,28 +10,37 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-        <div class="information">
-          <%= link_to login_path, class: 'login-link' do %>
-            <div class="font">運営情報</div>
-          <% end %>
-        </div>
-        <div class="contact">
-          <%= link_to login_path, class: 'login-link' do %>
-            <div class="font">お問い合わせ</div>
-          <% end %>
-        </div>
-        <div class="btn_login">
-          <%= link_to login_path, class: 'login-link' do %>
-            <i class="fas fa-sign-in-alt size"></i>
-            <div class="font">ログイン</div>
-          <% end %>
-        </div>
-        <div class="btn_signin">
-          <%= link_to new_user_path, class: 'login-link' do %>
-            <i class="fas fa-pen size"></i>
-            <div class="font">会員登録</div>
-          <% end %>
-        </div>
+          <li class="nav-item dropdown information">
+            <a class="nav-link dropdown-toggle login-link active" href="#" id="navbarDropdownMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="font">運営情報</div>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenu" style="background-color: rgba(107,145,111, 0.9);">
+              <%= link_to "プライバシーポリシー", privacy_path, class: "dropdown-item" %>
+              <%= link_to "利用規約", service_path, class: "dropdown-item" %>
+            </div>
+          
+            <%# <%= link_to login_path, class: 'login-link' do %>
+              <%# <div class="font">運営情報</div> %>
+            <%# <% end %>
+          </li>
+          <div class="contact">
+            <%= link_to login_path, class: 'login-link' do %>
+              <div class="font">お問い合わせ</div>
+            <% end %>
+          </div>
+          <div class="btn_login">
+            <%= link_to login_path, class: 'login-link' do %>
+              <i class="fas fa-sign-in-alt size"></i>
+              <div class="font">ログイン</div>
+            <% end %>
+          </div>
+          <div class="btn_signin">
+            <%= link_to new_user_path, class: 'login-link' do %>
+              <i class="fas fa-pen size"></i>
+              <div class="font">会員登録</div>
+            <% end %>
+          </div>
+        </ul>
       </div>
     </div>
   </nav>

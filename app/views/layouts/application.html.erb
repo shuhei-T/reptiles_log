@@ -30,7 +30,7 @@
 
     <%= render 'shared/flash_message' %>
     <%= yield %>
-    <% if current_page?(login_path) || current_page?(root_path) || current_page?(new_user_path)  %>
+    <% if current_page?(login_path) || current_page?(root_path) || current_page?(privacy_path) || current_page?(service_path) || current_page?(new_user_path)  %>
       <%= render 'shared/footer' %>
     <% else %>
       <%= render 'shared/footer_menu' %>

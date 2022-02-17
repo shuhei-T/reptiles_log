@@ -233,13 +233,13 @@
   padding: .75em 0.25em;
   text-decoration: none;
   color: #FFF;
-  background: #384860;/*色*/
+  background: #f4bc44;/*色*/
   border-radius: 4px;/*角の丸み*/
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
   font-weight: bold;
-  border: solid 2px #21324d;/*線色*/
+  border: solid 2px #fab522;/*線色*/
   &:hover {
-    background-color: #21324d;
+    background-color: #fab522;
   }
   &:active {
     /*押したとき*/
