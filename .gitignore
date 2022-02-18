@@ -39,3 +39,4 @@ yarn-debug.log*
 .irb_history
 erd.pdf
 /public/uploads
+/.env
