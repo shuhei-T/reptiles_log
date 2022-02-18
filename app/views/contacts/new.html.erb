@@ -1,0 +1,37 @@
+<% content_for(:title, t('.title')) %>
+<div class="container contact_new">
+  <div class="row">
+
+    
+
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1 class="contact_icon"><%= t '.title' %></h1>
+      <p class="text-center"><i class="fas fa-pen"></i> レプログ!へのご意見・ご感想・ご要望などのお問い合わせは<br>下記フォームよりお願いいたします。</p>
+      <div class="form-area">
+        <div class="frame-title">
+          <i class="fas fa-envelope-square"></i> お問合わせフォーム
+        </div>
+        <div class="frame">
+          <%= form_with model: @contact, local: true do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+            <div class="mb-3">
+              <%= f.label :name, class: 'form-label' %> <span class="badge bg-danger">必須</span>
+              <%= f.text_field :name, class: 'form-control mb-3' %> 
+            </div>
+            <div class="mb-3">
+              <%= f.label :email, class: 'form-label' %> <span class="badge bg-danger">必須</span>
+              <%= f.email_field :email, class: 'form-control mb-3' %>
+            </div>
+            <div class="mb-3">
+              <%= f.label :message, class: 'form-label' %> <span class="badge bg-danger">必須</span>
+              <%= f.text_area :message, class: 'form-control mb-3' %>
+            </div>
+            <div class="text-center">
+              <%= f.submit '送信', class: 'save-btn' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
