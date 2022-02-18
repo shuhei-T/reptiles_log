@@ -17,10 +17,11 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  resources :relationships, only: [:create, :update, :destroy]
+  resources :relationships, only: %i[create update destroy]
   resources :reptiles do
     resources :logs
     resources :events, only: %i[index new create show destroy]
     resources :charts, only: %i[index]
   end
+  resources :contacts, only: %i[new create]
 end
