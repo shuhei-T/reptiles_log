@@ -5,24 +5,24 @@
       <h1 class="user_new"><%= t '.title' %></h1>
       <div>
         <p>レプログ!をご利用になるには、アカウントの作成が必要です。</p>
-      <div>
+      </div>
       <%= form_with model: @user, local: true do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+        <%= render 'shared/error_messages', object: f.object %>
         <section class="content_accountForm bg_paleblue">
-          <div class='form-group'>
-            <%= f.label :name %>
+          <div class='mb-3'>
+            <%= f.label :name, class: 'form-label' %> <span class="badge bg-danger">必須</span>
             <%= f.text_field :name, class: 'form-control' %>
           </div>
-          <div class='form-group'>
-            <%= f.label :email %>
+          <div class='mb-3'>
+            <%= f.label :email, class: 'form-label' %> <span class="badge bg-danger">必須</span>
             <%= f.email_field :email, class: 'form-control' %>
           </div>
-          <div class='form-group'>
-            <%= f.label :password %>
+          <div class='mb-3'>
+            <%= f.label :password, class: 'form-label' %> <span class="badge bg-danger">必須</span>
             <%= f.password_field :password, class:'form-control' %>
           </div>
-          <div class='form-group'>
-            <%= f.label :password_confirmation %>
+          <div class='mb-3'>
+            <%= f.label :password_confirmation, class: 'form-label' %> <span class="badge bg-danger">必須</span>
             <%= f.password_field :password_confirmation, class: 'form-control' %>
           </div>
           <div class="actions text-center">

@@ -7,6 +7,7 @@ ja:
       user: 'ユーザー'
       reptile: '爬虫類'
       log: '生体記録'
+      contact: 'お問い合わせ'
     attributes:
       user:
         name: 'ユーザー名'
@@ -42,6 +43,10 @@ ja:
       log_feed:
         name: '給餌'
         count: '給餌の個数'
+      contact:
+        name: '名前'
+        email: 'メールアドレス'
+        message: 'お問い合わせ内容'
   attributes:
     id: 'ID'
     created_at: '作成日時'
