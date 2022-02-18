@@ -84,6 +84,12 @@ ja:
     update:
       success: 'パスワードが変更されました'
       fail: 'パスワードの変更に失敗しました'
+  contacts:
+    new:
+      title: 'お問合わせ'
+    create:
+      success: 'お問い合わせメールを送信しました'
+      fail: 'お問い合わせメールの送信に失敗しました'
   admin:
     user_sessions:
       new:

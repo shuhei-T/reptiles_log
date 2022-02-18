@@ -96,6 +96,10 @@ GEM
     crass (1.0.6)
     debug_inspector (1.1.0)
     diff-lcs (1.5.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     draper (4.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -364,6 +368,7 @@ DEPENDENCIES
   bootstrap5-kaminari-views
   byebug
   carrierwave
+  dotenv-rails
   draper
   enum_help
   factory_bot_rails

@@ -18,19 +18,16 @@
     <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
   </head>
   <body class="drawer drawer--right <%= controller.controller_name %>" data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>" data-tabolinks="false">
-
-      <% if logged_in? %>
-        <%# <%= render 'shared/header' %>
-        <%= render 'shared/drawer' %>
-      <% else %>
-
-          <%= render 'shared/before_login_header' %>
-
-      <% end %>
-
+    <div class="loader-wrap"><div class="loader"></div></div>
+    <% if logged_in? %>
+      <%# <%= render 'shared/header' %>
+      <%= render 'shared/drawer' %>
+    <% else %>
+        <%= render 'shared/before_login_header' %>
+    <% end %>
     <%= render 'shared/flash_message' %>
     <%= yield %>
-    <% if current_page?(login_path) || current_page?(root_path) || current_page?(privacy_path) || current_page?(service_path) || current_page?(new_user_path)  %>
+    <% if current_page?(login_path) || current_page?(root_path) || current_page?(privacy_path) || current_page?(service_path) || current_page?(new_user_path) || current_page?(new_contact_path)  %>
       <%= render 'shared/footer' %>
     <% else %>
       <%= render 'shared/footer_menu' %>

@@ -124,6 +124,9 @@ body {
   h1.privacy::before {
     content: "\f21b";
   }
+  h1.contact_icon::before {
+    content: "\f199";
+  }
 
   h2.timeline::before {
     content: url('https://api.iconify.design/clarity/timeline-line.svg?color=%237eb63f&width=38&height=38');
@@ -191,4 +194,19 @@ body {
 
 .user_pagenate {
   padding-bottom: 30px;
+}
+
+.pagination {
+  .page-item.active {
+    .page-link {
+      background-color: #9ccc6c;
+      border-color: #9ccc6c;
+    }
+  }
+  .page-link {
+    color: $font-color;
+    &:hover {
+      color: $font-color;
+    }
+  }
 }
