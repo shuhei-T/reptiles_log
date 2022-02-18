@@ -14,6 +14,7 @@ import "../src/reptile.js"
 import "../src/previews.js"
 import "../src/preview.js"
 import "../src/logs_modal.js"
+import "../src/loading.js"
 import Chart from "chart.js/auto";
 global.Chart = Chart;
 
