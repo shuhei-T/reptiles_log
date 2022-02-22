@@ -15,6 +15,7 @@ import "../src/previews.js"
 import "../src/preview.js"
 import "../src/logs_modal.js"
 import "../src/loading.js"
+import "../src/scroll.js";
 import Chart from "chart.js/auto";
 global.Chart = Chart;
 
