@@ -19,20 +19,27 @@
 
 // reptiles/_reptile
 .reptiles_list {
-  .hover_box {
+  article.hover_box {
     background: #fff;
     border-radius: 3px;
     margin-bottom: 1rem;
-    padding: 2rem;
+    padding: 1rem;
     border: solid 1px $border-color ;
     overflow: hidden;
+    color: $font-color;
+    a {
+      display: flex;
+      text-decoration: none;
+      color: inherit;
+      &:hover {
+        color: $vivid-hover;
+        transition: all 0.3s;
+      }
+    }
   }
-
-
   .left_column{
     width: 104px;
     padding-right:3rem;
-
     img, div{
       display: block;
       height: 104px;
@@ -41,43 +48,45 @@
       background: $border-color;
     }
   }
-
   .right_column{
     display: block;
     height: auto;
     width:100%;
     margin-left: 2rem;
-
+    .name-space {
+      display: flex;
+      .reptile_name {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .sex-category {
+        font-size: 1.2rem;
+        margin-left: 0.3rem;
+        svg.fa-question {
+          color: brown;
+        }
+        svg.fa-mars {
+          color: blue;
+        }
+        svg.fa-venus {
+          color: red;
+        }
+      }
+    }
     .reptile_comment{
       padding: 0.2rem 0 0.8rem;
     }
-
     span{
       display: block;
     }
-  }
-
-  .reptile_name{
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
-
-  .reptile_morph{
-    font-size: 1.4rem;
-    color: $font-color-light;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-    &:hover {
-      color: $font-color;
+    .reptile_status{
+      color: $font-color-light;
     }
   }
+}
 
-  a .reptile_name:hover{
-    color: $vivid-hover;
-    transition: all 0.5s;
+@media screen and (min-width: 767px) {
+  .reptiles_list {
   }
 }
 
@@ -85,15 +94,6 @@
 .reptile_profile {
   padding: 1rem 1rem 2rem;
   overflow: hidden;
-  .name {
-    font-size: 2rem;
-    font-weight: bold;
-    padding-right: 4rem;
-    line-height: 2.2;
-    .edit_link {
-      font-size: 1.2rem;
-    }
-  }
   .image {
     height: 192px;
     width: 192px;
@@ -102,6 +102,60 @@
     border-radius: 50%;
     width: 160px;
     height: 160px;
+  }
+  .name-space {
+    display: flex;
+    align-items: center;
+    .name {
+      font-size: 2rem;
+      font-weight: bold;
+      padding-right: 4rem;
+      line-height: 2.2;
+    }
+    .crud_menus {
+      a {
+        margin-right: 0.6rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .details {
+    color: $font-color;
+    .detail-content {
+      display: flex;
+      align-items: center;
+      .icon-area {
+
+      }
+      .text-area {
+        .icon-text {
+          font-size: 11px;
+        }
+        .icon-message {
+  
+        }
+      }
+    }
+    .morph, .sex, .birthday, .adoptaversary {
+      padding: .5rem 0;
+      border-top: solid 2px #aec9a3;
+    }
+    .comment {
+      padding: .5rem 0;
+      border-top: solid 2px #aec9a3;
+      border-bottom: solid 2px #aec9a3;
+    }
+    svg {
+      margin-right: .5rem;
+      font-size: x-large;
+      color: #aec9a3;
+    }
+    .icon-text {
+      color: #aec9a3;
+    }
+    .text-none {
+      color: $textnone-color;
+    }
   }
 }
 
@@ -114,6 +168,7 @@
 .reptile_profile {
   .attention {
     color:$vivid-color;
+    margin-left: 0.5rem;
   }
   
   .hidden {
@@ -130,12 +185,15 @@
     max-width:10rem;
     padding: 0.3rem;
     margin: 1rem auto;
-    background: #fff;
+    text-align: center;
   }
   .image_form{
     display: none;
   }
   .btn-area {
     text-align: center;
+  }
+  input[type=radio] {
+    // display: none;
   }
 }

@@ -5,7 +5,7 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
-      reptile: '爬虫類'
+      reptile: '生体'
       log: '生体記録'
       contact: 'お問い合わせ'
     attributes:
@@ -25,12 +25,12 @@ ja:
         birthday: '誕生日'
         adoptaversary: 'お迎え日'
         image: '生体の写真'
-        comment: 'コメント'
+        comment: '自己紹介'
         age: '年齢'
       log:
         remark: 'メモ'
-        condition: '状態'
-        shit: '糞'
+        condition: '調子'
+        shit: '排泄'
         bath: '温浴'
         handling: 'ハンドリング'
         creaning: '掃除'

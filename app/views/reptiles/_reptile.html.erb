@@ -1,18 +1,39 @@
 <section class="reptiles_list">
   <article class="hover_box">
     <%= link_to reptile_path(reptile), id: "reptile_#{reptile.id}" do %>
-      <div class="left_column col-2">
+      <div class="left_column">
         <%= image_tag reptile.image.url, class: 'rounded-circle card-img-top', size: '20x20' %>
       </div>
-      <div class="right_column col">
-        <h3 class="reptile_name"><%= reptile.name %></h3>
-        <span class="reptile_morph"><%= reptile.morph %></span>
-        <span class="reptile_comment">
-          <% if reptile.comment.present? %>
-            <i class="fas fa-comment"></i>
-            <%= truncate(reptile.comment, :length => 120) %>
+      <div class="right_column">
+        <div class="name-space">
+          <h3 class="reptile_name"><%= reptile.name %></h3>
+          <span class="sex-category">
+            <% case reptile.sex %>
+            <% when 'unknown' %>
+              <i class="fas fa-question"></i>
+            <% when 'male' %>
+              <i class="fas fa-mars"></i>
+            <% when 'female' %>
+              <i class="fas fa-venus"></i>
+            <% end %>
+          </span>
+        </div>
+        <div class="morph-space small">
+          <% if reptile.morph.present? %>
+            <span class="reptile_status"><span class="iconify" data-icon="carbon:category" data-width="17" data-height="17"></span><%= reptile.morph %></span>
           <% end %>
-        </span>
+        </div>
+        <div class="birthday-space small">
+          <% if reptile.birthday.present? %>
+            <span class="reptile_status"><i class="fas fa-birthday-cake"></i><%= reptile.birthday&.strftime("%Y年%-m月%-d日") %>(<%= reptile.decorate.full_age %>)</span>
+          <% end %>
+        </div>
+        <%# <span class="reptile_comment"> %>
+          <%# <% if reptile.comment.present? %> 
+            <%# <i class="fas fa-comment"></i> %>
+            <%# <%= truncate(reptile.comment, :length => 120) %> 
+          <%# <% end %> 
+        <%# </span> %>
       </div>
     <% end %>
   </article>
