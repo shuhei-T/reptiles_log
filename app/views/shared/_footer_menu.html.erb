@@ -2,26 +2,26 @@
   <div class="container-fulid">
     <div class="row">
       <div class="col-md-10 col-lg-8 mx-auto d-flex align-items-center justify-content-between" style="height: 60px;">
-        <%= link_to reptiles_path, class: "nav-link text-dark #{ active_footer('reptiles', 'index') }" do %>
+        <%= link_to reptiles_path, class: "nav-link text-dark #{ active_if('reptiles', 'index') }" do %>
           <span class="iconify" data-icon="mdi:snake" data-width="25" data-height="25"></span>
         <% end %>
         <% if (controller_name == 'reptiles' && action_name == 'show') || (controller_name == 'logs' && action_name == 'new') || (controller_name == 'logs' && action_name == 'index') || (controller_name == 'events' && action_name == 'index') || (controller_name == 'charts' && action_name == 'index') %>
-          <%= link_to reptile_logs_path(@reptile), class: "nav-link text-dark #{ active_footer('logs', 'index') }" do %>
+          <%= link_to reptile_logs_path(@reptile), class: "nav-link text-dark #{ active_if('logs', 'index') }" do %>
             <span class="iconify" data-icon="clarity:timeline-line" data-width="30" data-height="30"></span>
           <% end %>
         <% end %>
         <% if (controller_name == 'reptiles' && action_name == 'show') || (controller_name == 'logs' && action_name == 'index') || (controller_name == 'logs' && action_name == 'new') || (controller_name == 'events' && action_name == 'index') || (controller_name == 'charts' && action_name == 'index') %>
-          <%= link_to new_reptile_log_path(@reptile), class: "nav-link text-dark #{ active_footer('logs', 'new') }" do %>
+          <%= link_to new_reptile_log_path(@reptile), class: "nav-link text-dark #{ active_if('logs', 'new') }" do %>
             <i class="fas fa-plus fa-lg"></i>
           <% end %>
         <% end %>
         <% if (controller_name == 'reptiles' && action_name == 'show') || (controller_name == 'logs' && action_name == 'index') || (controller_name == 'logs' && action_name == 'new') || (controller_name == 'events' && action_name == 'index') || (controller_name == 'charts' && action_name == 'index') %>
-          <%= link_to reptile_events_path(@reptile), class: "nav-link text-dark #{ active_footer('events', 'index') }" do %>
+          <%= link_to reptile_events_path(@reptile), class: "nav-link text-dark #{ active_if('events', 'index') }" do %>
             <i class="fas fa-calendar fa-lg"></i>
           <% end %>
         <% end %>
         <% if (controller_name == 'reptiles' && action_name == 'show') || (controller_name == 'logs' && action_name == 'index') || (controller_name == 'logs' && action_name == 'new') || (controller_name == 'events' && action_name == 'index') || (controller_name == 'charts' && action_name == 'index') %>
-          <%= link_to reptile_charts_path(@reptile), class: "nav-link text-dark #{ active_footer('charts', 'index') }" do %>
+          <%= link_to reptile_charts_path(@reptile), class: "nav-link text-dark #{ active_if('charts', 'index') }" do %>
             <i class="fas fa-chart-bar fa-lg"></i>
           <% end %>
         <% end %>
