@@ -4,6 +4,8 @@ import interactionPlugin from "@fullcalendar/interaction";
 import googleCalendarApi from "@fullcalendar/google-calendar";
 import listPlugin from "@fullcalendar/list";
 import bootstrapPlugin from "@fullcalendar/bootstrap";
+import '@fullcalendar/common/main.css';
+import '@fullcalendar/daygrid/main.css';
 import { Modal } from 'bootstrap/dist/js/bootstrap.esm.min.js';
 
 // // <div id='calendar'></div>のidからオブジェクトを定義してカレンダーを作る
