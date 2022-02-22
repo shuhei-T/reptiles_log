@@ -2,7 +2,7 @@ class ReptilesController < ApplicationController
   before_action :params_modifi, only: [:create, :update]
 
   def index
-    @reptiles = Reptile.all.includes(:user).order(created_at: :desc).page(params[:page])
+    @reptiles = current_user.reptiles.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new

@@ -105,9 +105,11 @@
   }
   .name-space {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     .name {
       font-size: 2rem;
+      color: $font-color;
       font-weight: bold;
       padding-right: 4rem;
       line-height: 2.2;
@@ -156,6 +158,12 @@
     .text-none {
       color: $textnone-color;
     }
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .reptile_profile {
+
   }
 }
 

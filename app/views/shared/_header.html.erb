@@ -13,13 +13,13 @@
           <%= render 'users/search_form', q: @q, url: search_users_path %>
         </li>
         <li class="nav-item">
-          <%= link_to reptiles_path, class: "nav-link #{ active_header('index') }" do %>
+          <%= link_to reptiles_path, class: "nav-link #{ active_if('reptiles', 'index') }" do %>
             <span class="iconify" data-icon="mdi:snake" data-width="25" data-height="25"></span>
             生体リスト
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to profile_path, class: "nav-link #{ active_header('show') }" do %>
+          <%= link_to profile_path, class: "nav-link #{ active_if('profiles', 'show') }" do %>
             <i class="fas fa-user-cog fa-lg"></i>
             マイプロフィール
           <% end %>

@@ -13,13 +13,21 @@
     background: $border-color;
     border-radius: 50%;
   }
-  .name {
-    font-size: 2rem;
-    font-weight: bold;
-    padding-right: 4rem;
-    line-height: 2.2;
-    .edit_link {
-      font-size: 1.2rem;
+  .name-space {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .name {
+      font-size: 2rem;
+      color: $font-color;
+      font-weight: bold;
+      padding-right: 4rem;
+      line-height: 2.2;
+    }
+    .crud_menus {
+      .edit_link {
+        font-size: 1.2rem;
+      }
     }
   }
   #image_btn{
@@ -43,6 +51,35 @@
   }
   .btn-area {
     text-align: center;
+  }
+
+  .details {
+    color: $font-color;
+    .detail-content {
+      display: flex;
+      align-items: center;
+      .text-area {
+        .icon-text {
+          font-size: 11px;
+        }
+      }
+    }
+    .comment {
+      padding: .5rem 0;
+      border-top: solid 2px #aec9a3;
+      border-bottom: solid 2px #aec9a3;
+    }
+    svg {
+      margin-right: .5rem;
+      font-size: x-large;
+      color: #aec9a3;
+    }
+    .icon-text {
+      color: #aec9a3;
+    }
+    .text-none {
+      color: $textnone-color;
+    }
   }
 }
 

@@ -12,29 +12,39 @@
       </div>
     </div>
     <div class="col-sm-8">
-      <div class="name">
-        <%= current_user.name %>
-        <span class='edit_link'>
-          <%= link_to edit_profile_path do %>
-            <i class="fas fa-edit"></i>編集
-          <% end %>
-        </span>
+      <div class="name-space">
+        <div class="name">
+          <%= current_user.name %>
+        </div>
+        <div class="crud_menus">
+          <span class='edit_link'>
+            <%= link_to edit_profile_path do %>
+              <i class="fas fa-edit"></i>編集
+            <% end %>
+          </span>
+        </div>
       </div>
       <%= render 'profile_stats' %>
-      <ul class="count">
-        <li>
-        </li>
-        <li>
-        </li>
-      </ul>
-      <div class="comment">
-        <h6>コメント: </h6>
-        <p><%= current_user.comment %></p>
+
+      <div class="details">
+        <div class="comment detail-content">
+          <div class="icon-area">
+            <i class="fas fa-comment"></i>
+          </div>
+          <div class="text-area">
+            <div class="icon-text small">
+              ひとこと
+            </div>
+            <div class="icon-message">
+              <% if current_user.comment.present? %>
+                <%= current_user.comment %>
+              <% else %>
+                <span class="text-none">入力がありません</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <section class="raw card-list", id="family_list">
-    </section>
-    <section class="raw card-list", id="follower_list">
-    </section>
   </div>
 </div>
