@@ -12,36 +12,101 @@
       </div>
     </div>
     <div class="col-sm-8">
-      <div class="raw">
+      <div class="name-space">
         <div class="name">
           <%= @reptile.name %>
+        </div>
+        <div class="crud_menus">
           <%= render 'crud_menus', reptile: @reptile if current_user.own?(@reptile) %>
         </div>
       </div>
-      <div class="morph">
-        <p>モルフ: <%= @reptile.morph %></p>
-      </div>
-      <ul class="details">
-        <% if @reptile.sex.present? %>
-          <li class="sex">性別: <%= @reptile.sex_i18n %></li>
-        <% end %>
-        <% if @reptile.decorate.full_age.present? %>
-          <li class="age">年齢: <%= @reptile.decorate.full_age %></li>
-        <% end %>
 
-        <% if @reptile.birthday.present? %>
-          <li class="birthday">誕生日: <%= @reptile.birthday&.strftime("%Y年%-m月%-d日") %></li>
-        <% end %>
-        <% if @reptile.adoptaversary.present? %>
-          <li class="adoptaversary">お迎え日: <%= @reptile.adoptaversary&.strftime("%Y年%-m月%-d日") %></li>
-        <% end %>
-      </ul>
-      <ul class="comment">
-        <li class="comment">コメント: <%= @reptile.comment %></li>
-      </ul>
-      <ul class="count">
-      </ul>
-      <div class="owner">
+      <div class="details">
+        <div class="morph detail-content">
+          <div class="icon-area">
+            <span class="iconify" data-icon="carbon:category" data-width="30" data-height="30"></span>
+          </div>
+          <div class="text-area">
+            <div class="icon-text small">
+            モルフ
+            </div>
+            <div class="icon-message">
+              <% if @reptile.morph.present? %>
+                <%= @reptile.morph %>
+              <% else %>
+                <span class="text-none">入力がありません</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="sex detail-content">
+          <div class="icon-area">
+            <i class="fas fa-venus-mars fa-fw"></i>
+          </div>
+          <div class="text-area">
+            <div class="icon-text small">
+              性別
+            </div>
+            <div class="icon-message">
+              <% if @reptile.sex.present? %>
+                <%= @reptile.sex_i18n %>
+              <% else %>
+                <span class="text-none">入力がありません</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="birthday detail-content">
+          <div class="icon-area">
+            <i class="fas fa-birthday-cake fa-fw"></i>  
+          </div>
+          <div class="text-area">
+            <div class="icon-text small">
+              誕生日
+            </div>
+            <div class="icon-message">
+              <% if @reptile.birthday.present? %>
+                <%= @reptile.birthday&.strftime("%Y年%-m月%-d日") %>(<%= @reptile.decorate.full_age %>)
+              <% else %>
+                <span class="text-none">入力がありません</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="adoptaversary detail-content">
+          <div class="icon-area">
+            <i class="fas fa-home fa-fw"></i>  
+          </div>
+          <div class="text-area">
+            <div class="icon-text small">
+              お迎え日
+            </div>
+            <div class="icon-message">
+              <% if @reptile.adoptaversary.present? %>
+                <%= @reptile.adoptaversary&.strftime("%Y年%-m月%-d日") %>
+              <% else %>
+                <span class="text-none">入力がありません</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="comment detail-content">
+          <div class="icon-area">
+            <i class="fas fa-comment fa-fw"></i>
+          </div>
+          <div class="text-area">
+            <div class="icon-text small">
+              自己紹介
+            </div>
+            <div class="icon-message">
+              <% if @reptile.comment.present? %>
+                <%= @reptile.comment %>
+              <% else %>
+                <span class="text-none">入力がありません</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

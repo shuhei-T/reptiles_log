@@ -2,9 +2,10 @@ class LogsController < ApplicationController
   # before_action :set_reptile_id
 
   def index
+    page = params[:page] || 1
     @reptile = current_user.reptiles.find(params[:reptile_id])
-    logs = @reptile.logs.includes(:reptile).includes(:user).includes(:log_feeds).all.order(created_at: :desc)
-    @logs_by_date = logs.group_by{|log|log.updated_at.to_date}
+    @logs = @reptile.logs.includes(:reptile).includes(:user).includes(:log_feeds).all.order(created_at: :desc).page(page).per(15)
+    @logs_by_date = @logs.group_by{|log|log.created_at.to_date}
   end
 
   def new

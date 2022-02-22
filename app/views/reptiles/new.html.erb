@@ -1,7 +1,7 @@
 <% content_for(:title, t('.title')) %>
-<div class="container pt-3 reptile_new">
+<div class="container reptile_new">
+  <h1><%= t('.title') %></h1>
   <div class="col-12">
-    <h1><%= t('.title') %></h1>
       <div class="row">
       <%= render 'form', { reptile: @reptile } %>
       </div>
