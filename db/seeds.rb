@@ -29,30 +29,3 @@ if Feed.count == 0
     { name: 'ヒヨコ'},
   ]
 end
-
-# 50.times do
-# User.create!(
-#   name: Faker::Name.unique.name,
-#   email: Faker::Internet.unique.email,
-#   password: "1234",
-#   password_confirmation: '1234'
-# )
-# end
-
-# users = User.all
-# user = User.first
-# following = users[1..25]
-# followers = users[3..25]
-# following.each { |followed| user.follow(followed) }
-# followers.each { |follower| follower.follow(user) }
-
-20.times do |index|
-  Reptile.create!(
-    user: User.first,
-    name: Faker::Creature::Animal.unique.name,
-    morph: 'テスト',
-    sex: 'unknown',
-    comment: "コメント#{index}",
-    
-  )
-end
