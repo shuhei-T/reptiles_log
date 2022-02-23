@@ -104,9 +104,9 @@
     height: 160px;
   }
   .name-space {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    // display: flex;
+    // flex-wrap: wrap;
+    // align-items: center;
     .name {
       font-size: 2rem;
       color: $font-color;
@@ -163,7 +163,24 @@
 
 @media screen and (min-width: 767px) {
   .reptile_profile {
-
+    .name-space {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      .name {
+        font-size: 2rem;
+        color: $font-color;
+        font-weight: bold;
+        padding-right: 4rem;
+        line-height: 2.2;
+      }
+      .crud_menus {
+        a {
+          margin-right: 0.6rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
   }
 }
 
