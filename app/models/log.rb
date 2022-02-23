@@ -1,9 +1,9 @@
 class Log < ApplicationRecord
-  # has_many :log_feeds, dependent: :destroy
-  # has_many :feeds, through: :log_feeds
-  # belongs_to :user
-  # belongs_to :reptile
-  # accepts_nested_attributes_for :log_feeds, allow_destroy: true
+  has_many :log_feeds, dependent: :destroy
+  has_many :feeds, through: :log_feeds
+  belongs_to :user
+  belongs_to :reptile
+  accepts_nested_attributes_for :log_feeds, allow_destroy: true
 
   validates :bath, inclusion: [true, false]
   validates :handling, inclusion: [true, false]
