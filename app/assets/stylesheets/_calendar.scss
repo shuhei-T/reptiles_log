@@ -57,84 +57,92 @@
 
 // show modal
 #modal {
-  .modal-body {
-    .feed {
-      .cricket, .cockroach {
-        margin-top: 0.5rem;
-        filter: invert(40%) sepia(36%) saturate(599%) hue-rotate(345deg) brightness(97%) contrast(93%);
-      }
-
-      .mouse, .rat {
-        margin-top: 0.5rem;
-        filter: invert(52%) sepia(2%) saturate(2516%) hue-rotate(227deg) brightness(99%) contrast(95%);
-      }
-
-      .worm {
-        margin-top: 0.5rem;
-        filter: invert(47%) sepia(75%) saturate(414%) hue-rotate(359deg) brightness(91%) contrast(86%);
-      }
-
-      .vegetable {
-        margin-top: 0.5rem;
-        filter: invert(60%) sepia(55%) saturate(1726%) hue-rotate(92deg) brightness(103%) contrast(106%);
-      }
-
-      .apple {
-        margin-top: 0.5rem;
-        filter: invert(8%) sepia(72%) saturate(7420%) hue-rotate(347deg) brightness(99%) contrast(122%);
-      }
-
-      .chick {
-        margin-top: 0.5rem;
-        filter: invert(98%) sepia(60%) saturate(5160%) hue-rotate(324deg) brightness(89%) contrast(107%);
+  .modal-content {
+    .modal-header {
+      h5 {
+        background: none;
       }
     }
-
-    .shit {
-      .good {
+    .modal-body {
+      .feed {
+        .cricket, .cockroach {
+          margin-top: 0.5rem;
+          filter: invert(40%) sepia(36%) saturate(599%) hue-rotate(345deg) brightness(97%) contrast(93%);
+        }
+  
+        .mouse, .rat {
+          margin-top: 0.5rem;
+          filter: invert(52%) sepia(2%) saturate(2516%) hue-rotate(227deg) brightness(99%) contrast(95%);
+        }
+  
+        .worm {
+          margin-top: 0.5rem;
+          filter: invert(47%) sepia(75%) saturate(414%) hue-rotate(359deg) brightness(91%) contrast(86%);
+        }
+  
+        .vegetable {
+          margin-top: 0.5rem;
+          filter: invert(60%) sepia(55%) saturate(1726%) hue-rotate(92deg) brightness(103%) contrast(106%);
+        }
+  
+        .apple {
+          margin-top: 0.5rem;
+          filter: invert(8%) sepia(72%) saturate(7420%) hue-rotate(347deg) brightness(99%) contrast(122%);
+        }
+  
+        .chick {
+          margin-top: 0.5rem;
+          filter: invert(98%) sepia(60%) saturate(5160%) hue-rotate(324deg) brightness(89%) contrast(107%);
+        }
+      }
+  
+      .shit {
+        .good {
+          margin-top: 0.5rem;
+          svg {
+            color: rgb(184, 124, 13);
+            font-size: 25px;
+          }
+        }
+  
+        .bad {
+          margin-top: 0.5rem;
+          svg {
+            color: rgb(108, 131, 8);
+            font-size: 25px;
+          }
+        }
+      }
+  
+      .crean {
         margin-top: 0.5rem;
         svg {
-          color: rgb(184, 124, 13);
+          color: rgb(1, 47, 248);
           font-size: 25px;
         }
       }
-
-      .bad {
-        margin-top: 0.5rem;
+  
+      .hand {
+        margin-bottom: 0.5rem;
         svg {
-          color: rgb(108, 131, 8);
+          color: rgb(250, 220, 121);
           font-size: 25px;
         }
       }
-    }
-
-    .crean {
-      margin-top: 0.5rem;
-      svg {
-        color: rgb(1, 47, 248);
-        font-size: 25px;
+  
+      .bath {
+        margin-top: 0.5rem;
+        filter: invert(19%) sepia(45%) saturate(4035%) hue-rotate(338deg) brightness(80%) contrast(125%);
       }
-    }
-
-    .hand {
-      margin-bottom: 0.5rem;
-      svg {
-        color: rgb(250, 220, 121);
-        font-size: 25px;
+  
+      p {
+        margin-bottom: 0;
       }
-    }
-
-    .bath {
-      margin-top: 0.5rem;
-      filter: invert(19%) sepia(45%) saturate(4035%) hue-rotate(338deg) brightness(80%) contrast(125%);
-    }
-
-    p {
-      margin-bottom: 0;
-    }
-
-    .weight, .length, .temperature, .humidity {
-      margin: 0.1rem 0;
+  
+      .weight, .length, .temperature, .humidity {
+        margin: 0.1rem 0;
+      }
+  
     }
 
   }
@@ -209,4 +217,12 @@
       }
     }
   }
+}
+
+
+.modal-dialog{
+  // display: flex;
+  // align-items: center;
+  // min-height: 100%;
+  padding-top: 20%;
 }

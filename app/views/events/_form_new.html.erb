@@ -6,8 +6,6 @@
         </button>
       </div>
       <div class="modal-body event-log-form">
-
-          <div class="form">
         <%= form_with model: [@reptile, @event], url: reptile_events_path do |f| %>
           <h3 class="date"><%= l Date.current, format: :long %></h3>
           <div class="mb-3">
