@@ -3,7 +3,8 @@ import monthGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import googleCalendarApi from "@fullcalendar/google-calendar";
 import listPlugin from "@fullcalendar/list";
-import bootstrapPlugin from "@fullcalendar/bootstrap";
+import bootstrap5Plugin from '@fullcalendar/bootstrap5';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import '@fullcalendar/common/main.css';
 import '@fullcalendar/daygrid/main.css';
 import { Modal } from 'bootstrap/dist/js/bootstrap.esm.min.js';
@@ -13,14 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
   let calendarEl = document.getElementById('calendar');
 
   let calendar = new Calendar(calendarEl, {
-    plugins: [ monthGridPlugin, interactionPlugin, googleCalendarApi, listPlugin, bootstrapPlugin ],
+    plugins: [ monthGridPlugin, interactionPlugin, googleCalendarApi, bootstrap5Plugin ],
     // initialView: 'dayGridMonth',
     events: 'events.json',
     // 細かな設定
     locale: 'ja',
     timeZone: 'Asia/Tokyo',
     firstDay: 0,
-    themeSystem: '',
+    themeSystem: 'bootstrap5',
     nowIndicator: true,
     headerToolbar: {
       start: 'prev,next',
