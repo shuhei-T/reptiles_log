@@ -58,10 +58,10 @@
           </div>
 
           <div class="mb-3">
-            <%= f.fields_for :log_feeds do |log_feeds_f| %>
+            <%= f.fields_for :log_feeds, @log.log_feeds.build do |log_feeds_f| %>
               <div class="mb-3">
                 <%= log_feeds_f.label :name, class: 'form-label' %>
-                <%= log_feeds_f.collection_select(:feed_id, @feeds, :id, :name, {prompt: "--"}, {class: 'form-select', style: 'display: inline-block;width: auto;'}) %>
+                <%= log_feeds_f.collection_select(:feed_id, Feed.all, :id, :name, {prompt: "--"}, {class: 'form-select', style: 'display: inline-block;width: auto;'}) %>
               </div>
               <div class="mb-3">
                 <%= log_feeds_f.label :count, class: 'form-label'%>
