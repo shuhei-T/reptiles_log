@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "@fullcalendar/bootstrap": "^5.10.1",
+    "@fullcalendar/bootstrap5": "^5.10.2",
     "@fullcalendar/core": "^5.10.1",
     "@fullcalendar/daygrid": "^5.10.1",
     "@fullcalendar/google-calendar": "^5.10.1",
@@ -15,6 +15,7 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
     "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.8.1",
     "chart.js": "^3.7.0",
     "css-ui-lib": "^0.2.0",
     "jquery": "^3.6.0",
