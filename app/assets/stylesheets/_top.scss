@@ -106,7 +106,7 @@ body {
     }
     .explanation-wrapper {
       max-width: 960px;
-      margin: 0 auto;
+      margin: 0 0.3rem;
       margin-bottom: 75px;
       h2 {
         margin: 2rem 0;
@@ -114,14 +114,14 @@ body {
         font-weight: 500;
       }
       p.red {
-        font-size: 24px;
+        font-size: 22px;
         color: red;
       }
     }
 
     .middle-wrapper {
       max-width: 960px;
-      margin: 0 auto;
+      margin: 0 0.3rem;
       .middle_title {
         text-align: center;
         margin: 50px 0 20px;
@@ -166,7 +166,7 @@ body {
 
     .message-wrapper {
       max-width: 960px;
-      margin: 0 auto;
+      margin: 0 0.3rem;
       margin-top: 50px;
       margin-bottom: 50px;
       text-align: center;
@@ -210,7 +210,7 @@ h2.label {
 
 h2.check {
   position: relative;/*相対位置*/
-  padding: 0.5em 0.5em 0.5em 2em;/*アイコン分のスペース*/
+  padding: 0.5em 0.5em 0.5em 1.5em;/*アイコン分のスペース*/
   line-height: 1.4;/*行高*/
   color: $font-color;/*文字色*/
   border-top: dotted 1px gray;
@@ -222,7 +222,7 @@ h2.check {
     font-weight: 900;
     position: absolute;/*絶対位置*/
     font-size: 1em;/*サイズ*/
-    left: 2.0em;/*アイコンの位置*/
+    left: 0.6em;/*アイコンの位置*/
     top: 0.5em;/*アイコンの位置*/
     color: $highlight-color; /*アイコン色*/
   }
@@ -263,10 +263,17 @@ h2.check {
       }
 
       .explanation-wrapper {
-
+        max-width: 960px;
+        margin: 0 auto;
+        margin-bottom: 75px;
+        p.red {
+          font-size: 24px;
+        }
       }
 
       .middle-wrapper {
+        max-width: 960px;
+        margin: 0 auto;
         .contents {
           flex-direction: row;
           justify-content: space-between;
@@ -287,6 +294,11 @@ h2.check {
       }
 
       .message-wrapper {
+        max-width: 960px;
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        text-align: center;
         .btn-wrapper {
           .reve_btn {
             width: 50%;
@@ -295,7 +307,27 @@ h2.check {
             width: 50%;
           }
         }
+        h2.check {
+          position: relative;/*相対位置*/
+          padding: 0.5em 0.5em 0.5em 2em;/*アイコン分のスペース*/
+          line-height: 1.4;/*行高*/
+          color: $font-color;/*文字色*/
+          border-top: dotted 1px gray;
+          border-bottom: dotted 1px gray;
+          background: #fffff4;
+          &:before {
+            font-family: "Font Awesome 5 Free";/*忘れずに*/
+            content: "\f058";/*アイコンのユニコード*/
+            font-weight: 900;
+            position: absolute;/*絶対位置*/
+            font-size: 1em;/*サイズ*/
+            left: 2.0em;/*アイコンの位置*/
+            top: 0.5em;/*アイコンの位置*/
+            color: $highlight-color; /*アイコン色*/
+          }
+        }
       }
+
     }
   }
 }

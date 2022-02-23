@@ -13,7 +13,7 @@ body {
   // フッター固定用--------------------------
   @media screen and (max-width: 479px) {
     .footer-bottom {
-    height: 175px;
+    height: 100px;
     }
   }
   // background-color: #f2f2f2;
@@ -129,10 +129,10 @@ body {
   }
 
   h2.timeline::before {
-    content: url('https://api.iconify.design/clarity/timeline-line.svg?color=%237eb63f&width=38&height=38');
-    vertical-align: middle;
+    content: url('https://api.iconify.design/clarity/timeline-line.svg?color=%237eb63f&width=33&height=33');
+    // vertical-align: middle;
     position: relative;
-    bottom: -0.1em;
+    bottom: -0.3em;
     margin-right: 0.5rem;
   }
   h2.calendar::before {

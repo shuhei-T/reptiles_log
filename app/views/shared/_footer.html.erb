@@ -1,17 +1,15 @@
-<div id='footer' class='footer-bottom py-3 text-light' style="background-color: rgba(107,145,111, 0.9);">
+<div class='footer-bottom py-4'>
   <div class='container'>
-    <ul class='nav justify-content-center'>
-      <li class='nav-item me-auto'>
-        <a class="nav-link" style="color: white"><small> &copy; レプログ!</small></a>
+    <span class="copy-light"><small> &copy; レプログ!</small></span>
+    <ul class='footer-menu'>
+      <li>
+        <%= link_to t('contacts.new.title'), new_contact_path %>
       </li>
-      <li class='nav-item'>
-        <a class='nav-link' href='#' style="color: white">お問い合わせ</a>
+      <li>
+        <%= link_to "プライバシーポリシー", privacy_path %>
       </li>
-      <li class='nav-item'>
-        <%= link_to "プライバシーポリシー", privacy_path, class: "nav-link", style: "color: white" %>
-      </li>
-      <li class='nav-item'>
-        <%= link_to "利用規約", service_path, class: "nav-link", style: "color: white" %>
+      <li>
+        <%= link_to "利用規約", service_path %>
       </li>
     </ul>
   </div>
