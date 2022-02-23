@@ -12,8 +12,7 @@ class LogsController < ApplicationController
     @reptile = current_user.reptiles.find(params[:reptile_id])
     @log = @reptile.logs.new
     @log.log_feeds.build
-    @feeds = Feed.all
-
+    # @feeds = Feed.all
   end
 
   def create
