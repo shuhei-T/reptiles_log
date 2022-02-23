@@ -2,7 +2,6 @@ import { Calendar } from '@fullcalendar/core';
 import monthGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import googleCalendarApi from "@fullcalendar/google-calendar";
-import listPlugin from "@fullcalendar/list";
 import bootstrap5Plugin from '@fullcalendar/bootstrap5';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '@fullcalendar/common/main.css';
