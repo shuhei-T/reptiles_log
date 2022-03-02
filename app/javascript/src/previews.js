@@ -1,5 +1,6 @@
 $(document).on('DOMContentLoaded', function() {
-  $('#log_images').on('change', function (e) {
+  // $('#log_images').on('change', function (e) {
+  $(document).on("change", "#log_images", function(e) {
     if(e.target.files.length > 5){
       alert('一度に投稿できるのは5枚までです');
       // 5枚以上の画像を選択していた場合、選択したファイルをリセット

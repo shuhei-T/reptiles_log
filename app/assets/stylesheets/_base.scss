@@ -16,7 +16,14 @@ body {
     height: 100px;
     }
   }
-  // background-color: #f2f2f2;
+  
+  // 背景カラー
+  background: #e8cbc0;
+  background: linear-gradient(to right, #f2f1dd, #f7f9f6);
+  min-height: 100vh;
+  
+  // テキスト選択させない
+  user-select: none;
 
   .container {
     max-width: 960px;
@@ -219,4 +226,9 @@ body {
       word-wrap: break-word;
     }
   }
+}
+
+
+.c-error-message {
+  color: red;
 }

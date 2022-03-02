@@ -91,6 +91,7 @@ GEM
       mini_mime (>= 0.1.3)
       ssrf_filter (~> 1.0)
     choice (0.2.0)
+    cocoon (1.2.15)
     coderay (1.1.3)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
@@ -160,6 +161,11 @@ GEM
     formatador (0.3.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    gon (6.4.0)
+      actionpack (>= 3.0.20)
+      i18n (>= 0.7)
+      multi_json
+      request_store (>= 1.0)
     hirb (0.7.3)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
@@ -388,12 +394,14 @@ DEPENDENCIES
   bootstrap5-kaminari-views
   byebug
   carrierwave
+  cocoon
   dotenv-rails
   draper
   enum_help
   factory_bot_rails
   faker
   fog-aws
+  gon
   hirb
   jbuilder (~> 2.7)
   jquery-rails
