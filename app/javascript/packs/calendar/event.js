@@ -40,12 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
     height: "auto",
 
     dateClick: function(info){
-      // 日付をクリックしたときのイベント
-      // クリックした日付の情報を取得
-      // const year = info.date.getFullYear();
-      // const month = (info.date.getMonth() + 1);
-      // const day = info.date.getDate();
-
       // ajaxでevents/newを着火させ、htmlを受け取る
       $.ajax({
         type: 'GET',
@@ -54,17 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // 成功処理
         // 受け取ったhtmlをさっき追加したmodalのbodyの中に挿入
         $('#modal').html(res);
-        
-        // フォームの年、月、日を自動入力
-        // $('#event_start_1i').val(year);
-        // $('#event_start_2i').val(month);
-        // $('#event_start_3i').val(day);
-        
-        // $('#event_end_li').val(day);
-        // $('#event_end_2i').val(day);
-        // $('#event_end_3i').val(day);
-        
-        // ここのidはevents/newのurlにアクセスするとhtmlがコードとして表示されるので、開始時間と終了時間のフォームをアワラしているところのidを確認してもらうことが確実
         
         let modal = document.getElementById('modal')
         let modalObj = new Modal(modal)
@@ -103,7 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 成功、失敗modalを閉じたときに予定を再更新してくれる
   // これがないと追加しても自動更新されない
-  $('.error').click(function() {
-    calendar.refetchEvents();
+  $(function(){
+    $(document).on('click', '#fetch', function(){
+      calendar.refetchEvents();
+    });
   });
 });
