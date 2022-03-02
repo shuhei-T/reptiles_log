@@ -20,7 +20,7 @@
 <%# ===============タイムライン================================================================= %>
   <ul class="timeline scroll-list jscroll">
     <% @logs_by_date.each do |date, logs| %>
-    <li class="timeline-item bg-light rounded mt-3 ms-3 p-4 shadow">
+    <li class="timeline-item bg-light rounded mt-3  p-4 shadow">
       <div class="timeline-arrow"></div>
       <h2 class="h5 mb-0"><%= l date, format: :long %></h2>
       <% logs.each do |log| %>
@@ -29,200 +29,7 @@
           <%= link_to reptile_log_path(@reptile, log), class: 'delete-icon', method: :delete, data: { confirm: "#{l log.created_at, format: :long}の記録を削除しますか？" } do %>
           <i class="fas fa-trash"></i>
           <% end %>
-          <% if log.condition == 'smile' %>
-            <div class="smile">
-              <i class="fas fa-smile"></i>
-            </div>
-          <% elsif log.condition == 'meh' %>
-            <div class="meh">
-              <i class="fas fa-meh"></i>
-            </div>
-          <% elsif log.condition == 'tired' %>
-            <div class="tired">
-              <i class="fas fa-tired"></i>
-            </div>
-          <% end %>
-
-          <%# ===============給餌================================================================= %>
-          <% if log.log_feeds.present? %>
-            <div class="feed">
-              <% log.log_feeds.each do |log_feed| %>
-                <% if log_feed.feed_id == 1 %>
-                  <% if log_feed.count.present? %>
-                    <%= log_feed.count.times do %>
-                      <%= image_tag 'hutahoshikorogi.png', class: 'cricket', size: '40x40' %>
-                    <% end %>
-                  <% else %>
-                    <%= image_tag 'hutahoshikorogi.png', class: 'cricket', size: '40x40' %>
-                  <% end %>
-                <% elsif log_feed.feed_id == 2 %>
-                  <% if log_feed.count.present? %>
-                    <% log_feed.count.times do %>
-                      <%= image_tag 'iekorogi.png', class: 'cricket', size: '40x40' %>
-                    <% end %>
-                  <% else %>
-                    <%= image_tag 'iekorogi.png', class: 'cricket', size: '40x40' %>
-                  <% end %>
-                <% elsif log_feed.feed_id == 3 %>
-                  <% if log_feed.count.present? %>
-                    <% log_feed.count.times do %>
-                      <%= image_tag 'dubia.png', class: 'cockroach', size: '40x40' %>
-                    <% end %>
-                  <% else %>
-                    <%= image_tag 'dubia.png', class: 'cockroach', size: '40x40' %>
-                  <% end %>
-                <% elsif log_feed.feed_id == 4 %>
-                  <% if log_feed.count.present? %>
-                    <% log_feed.count.times do %>
-                      <%= image_tag 'redroach.png', class: 'cockroach', size: '40x40' %>
-                    <% end %>
-                  <% else %>
-                    <%= image_tag 'redroach.png', class: 'cockroach', size: '40x40' %>
-                  <% end %>
-                <% elsif log_feed.feed_id == 5 %>
-                  <% if log_feed.count.present? %>
-                    <% log_feed.count.times do %>
-                      <%= image_tag 'worm.png', class: 'worm', size: '20x20' %>
-                    <% end %>
-                  <% else %>
-                    <%= image_tag 'worm.png', class: 'worm', size: '20x20' %>
-                  <% end %>
-                <% elsif log_feed.feed_id == 6 || log_feed.feed_id == 7 || log_feed.feed_id == 8 || log_feed.feed_id == 9 || log_feed.feed_id == 10 %>
-                  <% if log_feed.count.present? %>
-                    <% log_feed.count.times do %>
-                      <%= image_tag 'mouse.png', class: 'mouse', size: '40x40' %>
-                    <% end %>
-                  <% else %>
-                    <%= image_tag 'mouse.png', class: 'mouse', size: '40x40' %>
-                  <% end %>
-                <% elsif log_feed.feed_id == 11 || log_feed.feed_id == 12 || log_feed.feed_id == 13 || log_feed.feed_id == 14 || log_feed.feed_id == 15 %>
-                  <% if log_feed.count.present? %>
-                    <% log_feed.count.times do %>
-                      <%= image_tag 'rat.png', class: 'rat', size: '40x40' %>
-                    <% end %>
-                  <% else %>
-                    <%= image_tag 'rat.png', class: 'rat', size: '40x40' %>
-                  <% end %>
-                <% elsif log_feed.feed_id == 16 %>
-                  <% if log_feed.count.present? %>
-                    <% log_feed.count.times do %>
-                      <%= image_tag 'artificial_food.png', class: 'artificial_food', size: '40x40' %>
-                    <% end %>
-                  <% else %>
-                      <%= image_tag 'artificial_food.png', class: 'artificial_food', size: '40x40' %>
-                  <% end %>
-                <% elsif log_feed.feed_id == 17 %>
-                  <% if log_feed.count.present? %>
-                    <% log_feed.count.times do %>
-                      <%= image_tag 'vegetable.png', class: 'vegetable', size: '30x30' %>
-                    <% end %>
-                  <% else %>
-                    <%= image_tag 'vegetable.png', class: 'vegetable', size: '30x30' %>
-                  <% end %>
-                <% elsif log_feed.feed_id == 18 %>
-                  <% if log_feed.count.present? %>
-                    <% log_feed.count.times do %>
-                      <%= image_tag 'apple.png', class: 'apple', size: '40x40' %>
-                    <% end %>
-                  <% else %>
-                    <%= image_tag 'apple.png', class: 'apple', size: '40x40' %>
-                  <% end %>
-                <% elsif log_feed.feed_id == 19 %>
-                  <% if log_feed.count.present? %>
-                    <% log_feed.count.times do %>
-                      <%= image_tag 'chick.png', class: 'chick', size: '30x30' %>
-                    <% end %>
-                  <% else %>
-                    <%= image_tag 'chick.png', class: 'chick', size: '30x30' %>
-                  <% end %>
-                <% end %>
-              <% end %>
-            </div>
-          <% end %>
-
-          <%# =============== 排泄 ============================================================== %>
-          <div class="shit">
-            <% if log.shit == 'good' %>
-              <div class='good'>
-                <i class="fas fa-poop"></i>
-              </div>
-            <% elsif log.shit == 'bad' %>
-              <div class="bad">
-                <i class="fas fa-poop"></i>
-              </div>
-            <% end %>
-          </div>
-
-          <%# =============== 掃除 ============================================================== %>
-          <div class="crean">
-            <% if log.creaning == true %>
-              <i class="fas fa-broom"></i>
-            <% end %>
-          </div>
-
-          <%# =============== ハンドリング ====================================================== %>
-          <div class="hand">
-            <% if log.handling.present? %>
-              <i class="fas fa-hand-holding"></i>
-            <% end %>
-          </div>
-
-          <%# =============== 脱皮 ============================================================== %>
-          <div class="sheding">
-            <% if log.sheding == 'shed' %>
-              <%= image_tag 'shed.png', class: 'shed', size: '30x30' %>
-            <% elsif log.sheding == 'white' %>
-              <%= image_tag 'white.png', class: 'white', size: '30x30' %>
-            <% end %>  
-          </div>
-
-          <%# =============== 温浴 ============================================================== %>
-          <div class="bath">
-            <% if log.bath.present? %>
-              <i class="fas fa-bath"></i>
-            <% end %>
-          </div>
-
-          <%# =============== 体重 ============================================================== %>
-          <% if log.weight.present? %>
-            <div class="weight">
-              <p><i class="fas fa-weight"></i> <%=  log.weight %>g</p>
-            </div>
-          <% end %>
-
-          <%# =============== 体長 ============================================================== %>
-          <% if log.length.present? %>
-            <div class="length">
-              <p><i class="fas fa-ruler"></i>   <%=  log.length %>cm</p>
-            </div>
-          <% end %>
-          
-          <%# =============== 温度 ============================================================== %>
-          <% if log.temperature.present? %>
-            <div class="temperature">
-              <p><i class="fas fa-thermometer-half"></i> <%= log.temperature %>℃</p>
-            </div>
-          <% end %>
-
-          <%# =============== 温度 ============================================================== %>
-          <% if log.humidity.present? %>
-            <div class="humidity">
-              <p><%= image_tag 'humidity.png', size: '20x20' %> <%= log.humidity %>%</p>
-            </div>
-          <% end %>
-          <%# =============== メモ ============================================================== %>
-          <% if log.remark.present? %>
-            <p class="text-small mt-2 fw-light"><i class="fas fa-pen"></i> <%= log.remark %></p>
-          <% end %>
-
-          <%# =============== 画像 ============================================================== %>
-          <% if log.images %>
-          <div class="course-item">
-            <% log.images.each do |image| %>
-                <%= image_tag image.to_s %>
-            <% end %>
-          </div>
-          <% end %>
+          <%= render 'logs/logs', log: log %>
         </div>
       <% end %>
     <% end %>
@@ -233,10 +40,8 @@
         <%= paginate @logs %>
       </div>
     </div>
+<%# ===== 画像のモーダル時のグレー背景 ==================================================== %>
+    <div id="grayDisplay"></div>
   </ul>
 <%# =============== タイムラインここまで ================================================================= %>
 </div>
-
-
-<%# ===== 画像のモーダル時のグレー背景 ==================================================== %>
-    <div id="grayDisplay"></div>
