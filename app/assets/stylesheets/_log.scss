@@ -15,21 +15,22 @@
     height: 160px;
   }
 
-  .name {
-    font-size: 2rem;
-    font-weight: bold;
-    display: table-cell;
-    padding-right: 4rem;
-    line-height: 2.2;
+  a {
+    text-decoration: none;
+    color: inherit;
+    .name {
+      font-size: 1.8rem;
+      font-weight: bold;
+      display: table-cell;
+      line-height: 2.2;
+      color: $font-color;
+      &:hover{
+        color: $vivid-hover;
+        transition: all 0.3s;
+      }
+    }
   }
 
-  #images_btn{
-    display: block;
-    max-width:10rem;
-    padding: 0.3rem;
-    // margin: 1rem auto;
-    text-align: center;
-  }
   .images_form{
     display: none;
   }
@@ -45,7 +46,306 @@
       width: 120px;
     }
   }
+
+  .feed_count-column {
+    margin-left: .1rem;
+  }
+  .js-remove-log_feeds-btn {
+    margin-left: .6rem;
+    color: #0d6dfd;
+  }
+  .js-add-log_feeds-field-btn {
+    color: #0d6dfd;
+    &.disabled {
+      color: #a4c1ec;
+    }
+  }
+
+  .remark-area, .condition-area, .feed-area, .shit-area, .creaning-area, .handling-area, .shit-area, .bath-area, .weight-area, .length-area, .temperature-area, .humidity-area, .images-area {
+    border-top: solid 2px #aec9a3;
+  }
 }
+
+#images_btn{
+  display: block;
+  max-width:10rem;
+  padding: 0.3rem;
+  // margin: 1rem auto;
+  text-align: center;
+}
+.file-btn-content {
+  width: 160px;
+}
+
+// _log_feeds_fields.html.erb
+.feed-area {
+  .feed_image-area {
+    ul li:nth-of-type(n+1) {
+      display: none;
+    }
+  }
+}
+
+// _logs.html.erb
+
+.smile {
+  margin-top: 0.5rem;
+  svg {
+    color: rgb(199, 10, 10);
+    font-size: 30px;
+  }
+}
+
+.meh {
+  margin-top: 0.5rem;
+  svg {
+    color: rgb(230, 187, 0);
+    font-size: 30px;
+  }
+}
+
+.tired {
+  margin-top: 0.5rem;
+  svg {
+    color:rgb(1, 47, 248);
+    font-size: 30px;
+  }
+}
+.shit {
+  .good {
+    margin-top: 0.5rem;
+    svg {
+      color: rgb(184, 124, 13);
+      font-size: 25px;
+    }
+  }
+
+  .bad {
+    margin-top: 0.5rem;
+    svg {
+      color: rgb(108, 131, 8);
+      font-size: 25px;
+    }
+  }
+}
+
+.crean {
+  margin-top: 0.5rem;
+  svg {
+    color: rgb(1, 47, 248);
+    font-size: 25px;
+  }
+}
+
+.hand {
+  margin-bottom: 0.5rem;
+  svg {
+    color: rgb(250, 220, 121);
+    font-size: 25px;
+  }
+}
+
+.bath {
+  margin: 0.5rem 0 0.5rem;
+  color: rgb(10, 216, 243);
+  font-size: 25px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.weight, .length, .temperature, .humidity {
+  margin: 0.1rem 0;
+}
+.weight {
+  svg {
+    margin-right: 0.3rem;
+  }
+}
+.temperature {
+  svg {
+    margin-left: 0.3rem;
+    margin-right: 0.5rem;
+  }
+}
+
+// 共通の餌に関するスタイル
+.pink-mouse {
+  margin-top: 0.5rem;
+  path:nth-child(2) {
+    fill: #f1bb99;
+  }
+  path:nth-child(3) {
+    fill: #f1bb99;
+  }
+  path:nth-child(4) {
+    fill: #f1bb99;
+  }
+}
+
+.fuzzy-mouse {
+  margin-top: 0.5rem;
+  path:nth-child(2) {
+    fill: #dfc8b6;
+  }
+  path:nth-child(3) {
+    fill: #dfc8b6;
+  }
+  path:nth-child(4) {
+    fill: #dfc8b6;
+  }
+}
+
+.hopper-mouse {
+  margin-top: 0.5rem;
+  path:nth-child(2) {
+    fill: #cfc9c1;
+  }
+  path:nth-child(3) {
+    fill: #cfc9c1;
+  }
+  path:nth-child(4) {
+    fill: #cfc9c1;
+  }
+}
+
+.adult-mouse {
+  margin-top: 0.5rem;
+  path:nth-child(2) {
+    fill: #b9b6b4;
+  }
+  path:nth-child(3) {
+    fill: #b9b6b4;
+  }
+  path:nth-child(4) {
+    fill: #b9b6b4;
+  }
+}
+
+.retire-mouse {
+  margin-top: 0.5rem;
+  path:nth-child(2) {
+    fill: #9b9b9b;
+  }
+  path:nth-child(3) {
+    fill: #9b9b9b;
+  }
+  path:nth-child(4) {
+    fill: #9b9b9b;
+  }
+}
+
+.pink-rat {
+  margin-top: 0.5rem;
+  path:nth-child(2) {
+    fill: #f1bb99;
+  }
+  path:nth-child(3) {
+    fill: #f1bb99;
+  }
+  path:nth-child(4) {
+    fill: #f1bb99;
+  }
+  path:nth-child(7) {
+    fill: #f1bb99;
+  }
+}
+
+.fuzzy-rat {
+  margin-top: 0.5rem;
+  path:nth-child(2) {
+    fill: #dfc8b6;
+  }
+  path:nth-child(3) {
+    fill: #dfc8b6;
+  }
+  path:nth-child(4) {
+    fill: #dfc8b6;
+  }
+  path:nth-child(7) {
+    fill: #dfc8b6;
+  }
+}
+
+.hopper-rat {
+  margin-top: 0.5rem;
+  path:nth-child(2) {
+    fill: #cfc9c1;
+  }
+  path:nth-child(3) {
+    fill: #cfc9c1;
+  }
+  path:nth-child(4) {
+    fill: #cfc9c1;
+  }
+  path:nth-child(7) {
+    fill: #cfc9c1;
+  }
+}
+
+.adult-rat {
+  margin-top: 0.5rem;
+  path:nth-child(2) {
+    fill: #b9b6b4;
+  }
+  path:nth-child(3) {
+    fill: #b9b6b4;
+  }
+  path:nth-child(4) {
+    fill: #b9b6b4;
+  }
+  path:nth-child(7) {
+    fill: #b9b6b4;
+  }
+}
+
+.retire-rat {
+  margin-top: 0.5rem;
+  path:nth-child(2) {
+    fill: #9b9b9b;
+  }
+  path:nth-child(3) {
+    fill: #9b9b9b;
+  }
+  path:nth-child(4) {
+    fill: #9b9b9b;
+  }
+  path:nth-child(7) {
+    fill: #9b9b9b;
+  }
+}
+
+.cricket, .cockroach {
+  margin-top: 0.5rem;
+  filter: invert(40%) sepia(36%) saturate(599%) hue-rotate(345deg) brightness(97%) contrast(93%);
+}
+
+.worm {
+  margin-top: 0.5rem;
+  filter: invert(47%) sepia(75%) saturate(414%) hue-rotate(359deg) brightness(91%) contrast(86%);
+}
+
+.vegetable {
+  margin-top: 0.5rem;
+  filter: invert(60%) sepia(55%) saturate(1726%) hue-rotate(92deg) brightness(103%) contrast(106%);
+}
+
+.apple {
+  margin-top: 0.5rem;
+  filter: invert(8%) sepia(72%) saturate(7420%) hue-rotate(347deg) brightness(99%) contrast(122%);
+}
+
+.chick {
+  margin-top: 0.5rem;
+  filter: invert(98%) sepia(60%) saturate(5160%) hue-rotate(324deg) brightness(89%) contrast(107%);
+}
+
+.cricket, .cockroach {
+  margin-top: 0.5rem;
+  filter: invert(40%) sepia(36%) saturate(599%) hue-rotate(345deg) brightness(97%) contrast(93%);
+}
+
 
 //  log_index   飼育タイムライン
 .log_index {
@@ -67,24 +367,18 @@
       font-size: 1.2rem;
       margin-left: 1rem;
     }
-
-
     .name-link {
-    
       .reptile_name {
         font-size: 1.8rem;
         font-weight: bold;
-      }
-  
+      } 
       a {
         text-decoration: none;
         color: inherit;
-    
         &:hover {
           transition: all 0.5s;
           color: $font-color;
         }
-    
         .reptile_name:hover{
           transition: all 0.5s;
           color: $vivid-hover;
@@ -92,7 +386,6 @@
       }
     }
   }
-
 
   // Timeline holder
   // ul.timeline {
@@ -159,132 +452,19 @@
       margin-left: 0.5rem;
       text-decoration: none;
     }
-
-    .smile {
-      margin-top: 0.5rem;
-      svg {
-        color: rgb(199, 10, 10);
-        font-size: 25px;
-      }
-    }
-
-    .meh {
-      margin-top: 0.5rem;
-      svg {
-        color: rgb(230, 187, 0);
-        font-size: 25px;
-      }
-    }
-
-    .tired {
-      margin-top: 0.5rem;
-      svg {
-        color:rgb(1, 47, 248);
-        font-size: 25px;
-      }
-    }
-
-    .feed {
-      .cricket, .cockroach {
-        margin-top: 0.5rem;
-        filter: invert(40%) sepia(36%) saturate(599%) hue-rotate(345deg) brightness(97%) contrast(93%);
-      }
-
-      .mouse, .rat {
-        margin-top: 0.5rem;
-        filter: invert(52%) sepia(2%) saturate(2516%) hue-rotate(227deg) brightness(99%) contrast(95%);
-      }
-
-      .worm {
-        margin-top: 0.5rem;
-        filter: invert(47%) sepia(75%) saturate(414%) hue-rotate(359deg) brightness(91%) contrast(86%);
-      }
-
-      .vegetable {
-        margin-top: 0.5rem;
-        filter: invert(60%) sepia(55%) saturate(1726%) hue-rotate(92deg) brightness(103%) contrast(106%);
-      }
-
-      .apple {
-        margin-top: 0.5rem;
-        filter: invert(8%) sepia(72%) saturate(7420%) hue-rotate(347deg) brightness(99%) contrast(122%);
-      }
-
-      .chick {
-        margin-top: 0.5rem;
-        filter: invert(98%) sepia(60%) saturate(5160%) hue-rotate(324deg) brightness(89%) contrast(107%);
-      }
-    }
-
-    .shit {
-      .good {
-        margin-top: 0.5rem;
-        svg {
-          color: rgb(184, 124, 13);
-          font-size: 25px;
-        }
-      }
-
-      .bad {
-        margin-top: 0.5rem;
-        svg {
-          color: rgb(108, 131, 8);
-          font-size: 25px;
-        }
-      }
-    }
-
-    .crean {
-      margin-top: 0.5rem;
-      svg {
-        color: rgb(1, 47, 248);
-        font-size: 25px;
-      }
-    }
-
-    .hand {
-      margin-bottom: 0.5rem;
-      svg {
-        color: rgb(250, 220, 121);
-        font-size: 25px;
-      }
-    }
-
-    .bath {
-      margin: 0.5rem 0 0.5rem;
-      color: rgb(10, 216, 243);
-      font-size: 25px;
-    }
-
-    p {
-      margin-bottom: 0;
-    }
-
-    .weight, .length, .temperature, .humidity {
-      margin: 0.1rem 0;
-    }
-    .weight {
-      svg {
-        margin-right: 0.3rem;
-      }
-    }
-    .temperature {
-      svg {
-        margin-left: 0.3rem;
-        margin-right: 0.5rem;
-      }
-    }
-
   }
 
-  .course-item a:hover {
-    opacity: 0.8;
-
+  .course-item span{
     img {
-    width: 100%;
+    // width: 100%;
+    width: 100px;
+    height: 100px;
+    }
+    &:hover {
+      // opacity: 0.8;
+      cursor: pointer;
     }
   }
-
 }
 
 #grayDisplay {
@@ -307,57 +487,10 @@
   left: 0;
   right: 0;
   margin: auto;
-  max-width: 90%;
-  max-height: 90%;
-  height: 90%;
+  max-width: 80%;
+  max-height: 80%;
+  height: 80%;
   object-fit: contain;
-}
-
-
-
-// logs/edit  記録編集画面
-.log-edit {
-
-  .image {
-    height: 192px;
-    width: 192px;
-    margin: auto;
-    background: $border-color;
-    border-radius: 50%;
-    width: 160px;
-    height: 160px;
-  }
-
-  .name {
-    font-size: 2rem;
-    font-weight: bold;
-    display: table-cell;
-    padding-right: 4rem;
-    line-height: 2.2;
-  }
-
-  #images_btn{
-    display: block;
-    max-width:10rem;
-    padding: 0.3rem;
-    margin: 1rem auto;
-    background: #fff;
-  }
-  .images_form{
-    display: none;
-  }
-
-  .image_field {
-    display: flex;
-    flex-wrap: wrap;
-    width: auto;
-
-
-    .preview_size {
-      height: 120px;
-      width: 120px;
-    }
-  }
 }
 
 .log-paginate {
@@ -368,23 +501,6 @@
 .scroll-list {
   padding: 0;
 }
-
-
-
-body {
-  background: #e8cbc0;
-  background: linear-gradient(to right, #f2f1dd, #f7f9f6);
-  min-height: 100vh;
-}
-
-
-
-
-
-
-
-
-$primary-color: #079ad9;
 
 .condition-container {
   display: flex;
@@ -682,4 +798,8 @@ $primary-color: #079ad9;
       color: rgb(10, 216, 243);
     }
   }
+}
+
+#grayDisplay {
+  z-index: 5;
 }

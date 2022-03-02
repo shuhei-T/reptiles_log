@@ -1,0 +1,167 @@
+<h3 class="date"><%= l Date.current, format: :long %></h3>
+<div class="mb-3 remark-area">
+  <%= f.label :remark, class: 'form-label' %>
+  <%= f.text_area :remark, class: 'form-control', placeholder:"例)メモを書いてください" %>
+</div>
+<div class="condition-area">
+  <span>調子</span>
+  <div class="condition-container">
+    <div class="radio-tile-group">
+      <div class="input-container">
+        <%= f.radio_button :condition, :smile, class: 'radio-button' %>
+        <div class="radio-tile">
+          <div class="icon smile-icon">
+            <i class="fas fa-smile"></i>
+          </div>
+          <%= f.label :condition, :smile, class: 'radio-tile-label smile' %>
+        </div>
+      </div>
+      <div class="input-container">
+        <%= f.radio_button :condition, :meh, class: 'radio-button' %>
+        <div class="radio-tile">
+          <div class="icon meh-icon">
+            <i class="fas fa-meh"></i>
+          </div>
+          <%= f.label :meh, class: 'radio-tile-label meh' %>
+        </div>
+      </div>
+      <div class="input-container">
+        <%= f.radio_button :condition, :tired, class: 'radio-button' %>
+        <div class="radio-tile">
+          <div class="icon tired-icon">
+            <i class="fas fa-tired"></i>
+          </div>
+          <%= f.label :tired, class: 'radio-tile-label tired' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mb-3 feed-area", id='activity-logs'>
+  <%= f.fields_for :log_feeds, local: true, id: 'js-log_feeds-field' do |log_feeds_f| %>
+    <%= log_feeds_f.label :name, class: 'form-label' %>
+    <%= render 'logs/log_feeds_fields', f: log_feeds_f %>
+  <% end %>
+  <div class="links">
+    <div id="js-feed-name"></div>
+    <%= link_to_add_association f, :log_feeds, partial: 'logs/log_feeds_fields', class: 'js-add-log_feeds-field-btn' do %>
+      <i class="fas fa-plus-circle"></i>
+    <% end %>
+  </div>
+</div>
+<div class="shit-area">
+  <span>排泄</span>
+  <div class="shit-container">
+    <div class="radio-tile-group">
+      <div class="input-container">
+        <%= f.radio_button :shit, :good, class: 'radio-button' %>
+        <div class="radio-tile">
+          <div class="icon good-icon">
+            <i class="fas fa-poop good"></i>
+          </div>
+          <%= f.label :good, class: 'radio-tile-label good' %>
+        </div>
+      </div>
+      <div class="input-container">
+        <%= f.radio_button :shit, :bad, class: 'radio-button' %>
+        <div class="radio-tile">
+          <div class="icon bad-icon">
+            <i class="fas fa-poop bad"></i>
+          </div>
+          <%= f.label :bad, class: 'radio-tile-label bad' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="creaning-area">
+  <span>掃除</span>
+  <div class="creaning-container">
+    <label>
+      <%= f.check_box :creaning, class: 'checkbox' %>
+      <span class="checkbox-fontas"></span>
+    </label>
+  </div> 
+</div>
+<div class="handling-area">
+  <span>ハンドリング</span>
+  <div class="handling-container">
+    <label>
+      <%= f.check_box :handling, class: 'checkbox' %>
+      <span class="checkbox-fontas"></span>
+    </label>
+  </div>
+</div>
+<div class="shit-area">
+  <span>脱皮状態</span>
+  <div class="sheding-container">
+    <div class="radio-tile-group">
+      <div class="input-container">
+        <%= f.radio_button :sheding, :shed, class: 'radio-button' %>
+        <div class="radio-tile">
+          <div class="icon shed-icon ">
+            <%=  embedded_svg("gray-shed.svg") %>
+          </div>
+        </div>
+      </div>
+      <div class="input-container">
+        <%= f.radio_button :sheding, :white, class: 'radio-button' %>
+        <div class="radio-tile">
+          <div class="icon white-icon">
+            <%=  embedded_svg("gray-white.svg") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bath-area">
+  <span>温浴</span>
+  <div class="bath-container">
+    <label>
+      <%= f.check_box :bath, class: 'checkbox' %>
+      <span class="checkbox-fontas"></span>
+    </label>
+  </div>
+</div>
+<div class="weight-area">
+  <div class="mb-3 w-25">
+    <%= f.label :weight,  class: 'form-label' %>
+    <%= f.number_field :weight, class: 'form-control', step: '0.1', placeholder:"例)100", in: 1..10000 %>
+  </div>
+</div>
+<div class="length-area">
+  <div class="mb-3 w-25">
+    <%= f.label :length, class: 'form-label' %>
+    <%= f.number_field :length, class: 'form-control', step: '0.1', placeholder:"例)100", in: 1..10000 %>
+  </div>
+</div>
+<div class="temperature-area">
+  <div class="mb-3 w-25">
+    <%= f.label :temperature, class: 'form-label' %>
+    <%= f.number_field :temperature, class: 'form-control', step: '0.1', placeholder:"例)27", in: 1..100 %>
+  </div>
+</div>
+<div class="humidity-area">
+  <div class="mb-3 w-25">
+    <%= f.label :humidity, class: 'form-label' %>
+    <%= f.number_field :humidity, class: 'form-control', step: '0.1', placeholder:"例)60", in: 1..100 %>
+  </div>
+</div>
+<div class="images-area">
+  <div class="mb-3 mt-3 file-btn-content">
+    <%= f.label :images, class: 'form-label d-block' do %>
+      <span class="btn-flat-dashed-border", id="images_btn"><i class="fas fa-image"></i>ファイルを選択</span>
+      <%= f.file_field :images, class: "images_form hidden", accept: 'image/*', multiple: true %>
+      <%= f.hidden_field :images_cache %>
+    <% end %>
+  </div>
+</div>
+<div class="image_field">
+  <img id='preview_0'>
+  <img id='preview_1'>
+  <img id='preview_2'>
+  <img id='preview_3'>
+  <img id='preview_4'>
+</div>
+<%= f.submit class: 'btn btn-primary my-2 mx-auto d-block' %>

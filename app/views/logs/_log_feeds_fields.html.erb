@@ -1,0 +1,72 @@
+<div class="nested-fields">
+  <div class="field mb-3">
+    <div class="form-area">
+      <%= f.collection_select(:feed_id, Feed.all, :id, :name, {prompt: "--"}, {class: 'form-select feed_name-column js-select-form', id: 'js-feed-select-form', style: 'display: inline-block;width: 230px;'}) %>
+      <%= f.number_field :count, class: 'form-control feed_count-column', style: 'display: inline-block;width: auto;', in: 1..10 %> 個
+      <%= link_to_remove_association  f, class: 'js-remove-log_feeds-btn' do %>
+        <i class="fas fa-minus-circle"></i>
+      <% end %>
+    </div>
+    <div class="feed_image-area">
+      <ul>
+        <li id="1">
+          <%= image_tag 'hutahoshikorogi.png', class: 'cricket', size: '55x55' %>
+        </li>
+        <li id="2">
+          <%= image_tag 'iekorogi.png', class: 'cricket', size: '55x55' %>
+        </li>
+        <li id="3">
+          <%= image_tag 'dubia.png', class: 'cockroach', size: '45x45' %>
+        </li>
+        <li id="4">
+          <%= image_tag 'redroach.png', class: 'cockroach', size: '45x45' %>
+        </li>
+        <li id="5">
+          <%= image_tag 'worm.png', class: 'worm', size: '25x25' %>
+        </li>
+        <li id="6">
+          <span class="iconify pink-mouse" data-icon="twemoji:mouse" data-width="40" data-height="40"></span>
+        </li>
+        <li id="7">
+          <span class="iconify fuzzy-mouse" data-icon="twemoji:mouse" data-width="45" data-height="45"></span>
+        </li>
+        <li id="8">
+          <span class="iconify hopper-mouse" data-icon="twemoji:mouse" data-width="50" data-height="50"></span>
+        </li>
+        <li id="9">
+          <span class="iconify adult-mouse" data-icon="twemoji:mouse" data-width="55" data-height="55"></span>
+        </li>
+        <li id="10">
+          <span class="iconify retire-mouse" data-icon="twemoji:mouse" data-width="60" data-height="60"></span>
+        </li>
+        <li id="11">
+          <span class="iconify pink-rat" data-icon="twemoji:rat" data-width="50" data-height="50"></span>
+        </li>
+        <li id="12">
+          <span class="iconify fuzzy-rat" data-icon="twemoji:rat" data-width="55" data-height="55"></span>
+        </li>
+        <li id="13">
+          <span class="iconify hopper-rat" data-icon="twemoji:rat" data-width="60" data-height="60"></span>
+        </li>
+        <li id="14">
+          <span class="iconify adult-rat" data-icon="twemoji:rat" data-width="65" data-height="65"></span>
+        </li>
+        <li id="15">
+          <span class="iconify retire-rat" data-icon="twemoji:rat" data-width="70" data-height="70"></span>
+        </li>
+        <li id="16">
+          <%= image_tag 'artificial_food.png', class: 'artificial_food', size: '50x50' %>
+        </li>
+        <li id="17">
+          <%= image_tag 'vegetable.png', class: 'vegetable', size: '40x40' %>
+        </li>
+        <li id="18">
+          <%= image_tag 'apple.png', class: 'apple', size: '50x50' %>
+        </li>
+        <li id="19">
+          <%= image_tag 'chick.png', class: 'chick', size: '40x40' %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>

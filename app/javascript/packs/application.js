@@ -10,14 +10,16 @@ import "bootstrap";
 import '@fortawesome/fontawesome-free/js/all';
 import "../stylesheets/application.scss";
 import "jquery";
-import "../src/reptile.js"
-import "../src/previews.js"
-import "../src/preview.js"
-import "../src/logs_modal.js"
-import "../src/loading.js"
+import "../src/reptile"
+import "../src/previews"
+import "../src/preview"
+import "../src/scroll"
+import "../src/logs_modal"
+import "../src/loading"
+import "../src/cocoon"
+require("@nathanvda/cocoon")
 import moment from 'moment'
 window.moment = moment
-import "../src/scroll.js";
 import Chart from "chart.js/auto";
 global.Chart = Chart;
 

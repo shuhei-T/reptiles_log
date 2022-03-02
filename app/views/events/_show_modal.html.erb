@@ -2,7 +2,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel"><%= l @event.created_at, format: :long %>
-          <%= link_to reptile_event_path(@reptile, @event), class: 'delete-icon', method: :delete, data: { confirm: "#{l @event.created_at, format: :long}の記録を削除しますか？" } do %>
+          <%= link_to reptile_event_path(@reptile, @event), class: 'delete-icon', method: :delete, data: { confirm: "#{l @event.created_at, format: :long}の記録を削除しますか？" }, remote: true do %>
             <i class="fas fa-trash"></i>
           <% end %>
         </h5>
@@ -10,207 +10,16 @@
         </button>
       </div>
       <div class="modal-body">
-      <%# ===============給餌================================================================= %>
-        <% if @event.log_feeds.present? %>
-          <div class="feed">
-            <% @event.log_feeds.each do |log_feed| %>
-              <% if log_feed.feed_id == 1 %>
-                <% if log_feed.count.present? %>
-                  <%= log_feed.count.times do %>
-                    <%= image_tag 'hutahoshikorogi.png', class: 'cricket', size: '40x40' %>
-                  <% end %>
-                <% else %>
-                  <%= image_tag 'hutahoshikorogi.png', class: 'cricket', size: '40x40' %>
-                <% end %>
-              <% elsif log_feed.feed_id == 2 %>
-                <% if log_feed.count.present? %>
-                  <% log_feed.count.times do %>
-                    <%= image_tag 'iekorogi.png', class: 'cricket', size: '40x40' %>
-                  <% end %>
-                <% else %>
-                  <%= image_tag 'iekorogi.png', class: 'cricket', size: '40x40' %>
-                <% end %>
-              <% elsif log_feed.feed_id == 3 %>
-                <% if log_feed.count.present? %>
-                  <% log_feed.count.times do %>
-                    <%= image_tag 'dubia.png', class: 'cockroach', size: '40x40' %>
-                  <% end %>
-                <% else %>
-                  <%= image_tag 'dubia.png', class: 'cockroach', size: '40x40' %>
-                <% end %>
-              <% elsif log_feed.feed_id == 4 %>
-                <% if log_feed.count.present? %>
-                  <% log_feed.count.times do %>
-                    <%= image_tag 'redroach.png', class: 'cockroach', size: '40x40' %>
-                  <% end %>
-                <% else %>
-                  <%= image_tag 'redroach.png', class: 'cockroach', size: '40x40' %>
-                <% end %>
-              <% elsif log_feed.feed_id == 5 %>
-                <% if log_feed.count.present? %>
-                  <% log_feed.count.times do %>
-                    <%= image_tag 'worm.png', class: 'worm', size: '20x20' %>
-                  <% end %>
-                <% else %>
-                  <%= image_tag 'worm.png', class: 'worm', size: '20x20' %>
-                <% end %>
-              <% elsif log_feed.feed_id == 6 || log_feed.feed_id == 7 || log_feed.feed_id == 8 || log_feed.feed_id == 9 || log_feed.feed_id == 10 %>
-                <% if log_feed.count.present? %>
-                  <% log_feed.count.times do %>
-                    <%= image_tag 'mouse.png', class: 'mouse', size: '40x40' %>
-                  <% end %>
-                <% else %>
-                  <%= image_tag 'mouse.png', class: 'mouse', size: '40x40' %>
-                <% end %>
-              <% elsif log_feed.feed_id == 11 || log_feed.feed_id == 12 || log_feed.feed_id == 13 || log_feed.feed_id == 14 || log_feed.feed_id == 15 %>
-                <% if log_feed.count.present? %>
-                  <% log_feed.count.times do %>
-                    <%= image_tag 'rat.png', class: 'rat', size: '40x40' %>
-                  <% end %>
-                <% else %>
-                  <%= image_tag 'rat.png', class: 'rat', size: '40x40' %>
-                <% end %>
-              <% elsif log_feed.feed_id == 16 %>
-                <% if log_feed.count.present? %>
-                  <% log_feed.count.times do %>
-                    <%= image_tag 'artificial_food.png', class: 'artificial_food', size: '40x40' %>
-                  <% end %>
-                <% else %>
-                    <%= image_tag 'artificial_food.png', class: 'artificial_food', size: '40x40' %>
-                <% end %>
-              <% elsif log_feed.feed_id == 17 %>
-                <% if log_feed.count.present? %>
-                  <% log_feed.count.times do %>
-                    <%= image_tag 'vegetable.png', class: 'vegetable', size: '30x30' %>
-                  <% end %>
-                <% else %>
-                  <%= image_tag 'vegetable.png', class: 'vegetable', size: '30x30' %>
-                <% end %>
-              <% elsif log_feed.feed_id == 18 %>
-                <% if log_feed.count.present? %>
-                  <% log_feed.count.times do %>
-                    <%= image_tag 'apple.png', class: 'apple', size: '40x40' %>
-                  <% end %>
-                <% else %>
-                  <%= image_tag 'apple.png', class: 'apple', size: '40x40' %>
-                <% end %>
-              <% elsif log_feed.feed_id == 19 %>
-                <% if log_feed.count.present? %>
-                  <% log_feed.count.times do %>
-                    <%= image_tag 'chick.png', class: 'chick', size: '30x30' %>
-                  <% end %>
-                <% else %>
-                  <%= image_tag 'chick.png', class: 'chick', size: '30x30' %>
-                <% end %>
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
-
-        <%# =============== 排泄 ============================================================== %>
-        <div class="shit">
-          <% if @event.shit == 'good' %>
-            <div class='good'>
-              <i class="fas fa-poop"></i>
-            </div>
-          <% elsif @event.shit == 'bad' %>
-            <div class="bad">
-              <i class="fas fa-poop"></i>
-            </div>
-          <% end %>
-        </div>
-
-        <%# =============== 掃除 ============================================================== %>
-        <div class="crean">
-          <% if @event.creaning == true %>
-            <i class="fas fa-broom"></i>
-          <% end %>
-        </div>
-
-        <%# =============== ハンドリング ====================================================== %>
-        <div class="hand">
-          <% if @event.handling.present? %>
-            <i class="fas fa-hand-holding"></i>
-          <% end %>
-        </div>
-
-        <%# =============== 脱皮 ============================================================== %>
-        <div class="sheding">
-          <% if @event.sheding == 'shed' %>
-            <%= image_tag 'shed.png', class: 'shed', size: '30x30' %>
-          <% elsif @event.sheding == 'white' %>
-            <%= image_tag 'white.png', class: 'white', size: '30x30' %>
-          <% end %>  
-        </div>
-
-        <%# =============== 温浴 ============================================================== %>
-        <div class="bath">
-          <% if @event.bath.present? %>
-            <%= image_tag 'onsen.svg', class: 'onsen', size: '30x30' %>
-          <% end %>
-        </div>
-
-        <%# =============== 体重 ============================================================== %>
-        <% if @event.weight.present? %>
-          <div class="weight">
-            <p><i class="fas fa-weight"></i> <%=  @event.weight %>g</p>
-          </div>
-        <% end %>
-
-        <%# =============== 体長 ============================================================== %>
-        <% if @event.length.present? %>
-          <div class="length">
-            <p><i class="fas fa-ruler"></i>   <%=  @event.length %>cm</p>
-          </div>
-        <% end %>
-        
-        <%# =============== 温度 ============================================================== %>
-        <% if @event.temperature.present? %>
-          <div class="temperature">
-            <p><i class="fas fa-thermometer-half"></i> <%= @event.temperature %>℃</p>
-          </div>
-        <% end %>
-
-        <%# =============== 温度 ============================================================== %>
-        <% if @event.humidity.present? %>
-          <div class="humidity">
-            <p><%= image_tag 'humidity.png', size: '20x20' %> <%= @event.humidity %>%</p>
-          </div>
-        <% end %>
-        <%# =============== メモ ============================================================== %>
-        <% if @event.remark.present? %>
-          <p class="text-small mt-2 fw-light"><i class="fas fa-pen"></i> <%= @event.remark %></p>
-        <% end %>
-
-        <%# =============== 画像 ============================================================== %>
-        <% if @event.images %>
-        <div class="course-item">
-          <% @event.images.each do |image| %>
-              <%= image_tag image.to_s %>
-          <% end %>
-        </div>
-        <% end %>
-
+        <%= render 'logs/logs', log: @event %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+        <button type="button" class="btn btn-secondary" id="fetch" data-bs-dismiss="modal">閉じる</button>
       </div>
     </div>
   </div>
 
-
-
-
-
-
 <%# ===== 画像のモーダル時のグレー背景 ==================================================== %>
     <div id="grayDisplay"></div>
-
-
-
-
-
-
 
 <script>
   // コース画像モーダル表示イベント

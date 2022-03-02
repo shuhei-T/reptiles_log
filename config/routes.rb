@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: %i[create update destroy]
   resources :reptiles do
-    resources :logs
+    resources :logs, only: %i[index new create destroy]
     resources :events, only: %i[index new create show destroy]
     resources :charts, only: %i[index]
   end

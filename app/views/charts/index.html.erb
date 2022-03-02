@@ -8,56 +8,129 @@
         <span class="reptile_name"><%= @reptile.name %></span>
       <% end %>
     </div>
-<div class="chart-container" style="position: relative; height:50vh; width:100vw;">
-  <canvas id="myChart"></canvas>
-</div>
+    <div class="chart-container" style="position: relative; height:50vh; width:100vw;">
+      <canvas id="myChart"></canvas>
+    </div>
   </div>
+  <%#<button type="button" id="button14">14日</button>
+  <button type="button" id="button30">30日</button>
+  <button type="button" id="button60">60日</button>
+  <button type="button" id="button-year">年</button>%>
+
 </div>
 
 
 <script>
-const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: <%= @chartlabels %>,
-        datasets: [{
-            label: '体重(g)',
-            data: <%= @weightdata %>,
-            backgroundColor: 'rgba(58, 50, 168, 0.2)',
-            borderColor: 'rgba(58, 50, 168, 1.0)',
-            borderWidth: 2,
-        },{
-            label: '体長(cm)',
-            data: <%= @lengthdata %>,
-            backgroundColor: 'rgba(255, 80, 120, 0.2)',
-            borderColor: 'rgba(255, 80, 120, 1.0)',
-            borderWidth: 2,
-            type: 'line',
-        },{
-            label: '温度(℃)',
-            data: <%= @temperature_data %>,
-            backgroundColor: 'rgba(252, 94, 3, 0.2)',
-            borderColor: 'rgba(252, 94, 3, 1.0)',
-            borderWidth: 2,
-            type: 'bar',
-        },{
-            label: '湿度(%)',
-            data: <%= @humidity_data %>,
-            backgroundColor: 'rgba(3, 248, 252, 0.2)',
-            borderColor: 'rgba(3, 248, 252, 1.0)',
-            borderWidth: 2,
-            type: 'bar',
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        },
-        maintainAspectRatio: false
-    }
+document.addEventListener('DOMContentLoaded', function() {
+
+  let myData = [
+    {labels: []}
+  ]
+
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: gon.day,
+          datasets: [{
+              label: '体重(g)',
+              data: gon.weight,
+              backgroundColor: 'rgba(58, 50, 168, 0.2)',
+              borderColor: 'rgba(58, 50, 168, 1.0)',
+              borderWidth: 2,
+              type: 'line',
+              spanGaps: true,
+          },{
+              label: '体長(cm)',
+              data: gon.length,
+              backgroundColor: 'rgba(255, 80, 120, 0.2)',
+              borderColor: 'rgba(255, 80, 120, 1.0)',
+              borderWidth: 2,
+              type: 'line',
+              spanGaps: true,
+          },{
+              label: '温度(℃)',
+              data: gon.temperature,
+              backgroundColor: 'rgba(252, 94, 3, 0.2)',
+              borderColor: 'rgba(252, 94, 3, 1.0)',
+              borderWidth: 2,
+              type: 'bar',
+              spanGaps: true,
+          },{
+              label: '湿度(%)',
+              data: gon.humidity,
+              backgroundColor: 'rgba(3, 248, 252, 0.2)',
+              borderColor: 'rgba(3, 248, 252, 1.0)',
+              borderWidth: 2,
+              type: 'bar',
+              spanGaps: true,
+          }]
+      },
+      options: {
+          scales: {
+              x: {
+                ticks: {
+                  autoSkip: true,
+                  maxTicksLimit: '14'
+                },
+              },
+              y: {
+                  beginAtZero: true
+              },
+          },
+          maintainAspectRatio: false
+      }
+  });
+
+
+
+  // document.getElementById("button14").addEventListener('click', function() {
+  //   // let xScale = myChart.scales.x;
+
+  //   myChart.options.scales = {
+  //     x: {
+  //       ticks: {
+  //         maxTicksLimit: '14'
+  //       }
+  //     }
+  //   };
+  //   myChart.update();
+  // });
+
+  // document.getElementById("button30").addEventListener('click', function() {
+  //   // let xScale = myChart.scales.x;
+
+  //   myChart.options.scales = {
+  //     x: {
+  //       ticks: {
+  //         maxTicksLimit: '30'
+  //       }
+  //     }
+  //   };
+  //   myChart.update();
+  // });
+
+  // document.getElementById("button60").addEventListener('click', function() {
+  //   // let xScale = myChart.scales.x;
+
+  //   myChart.options.scales = {
+  //     x: {
+  //       ticks: {
+  //         maxTicksLimit: '60'
+  //       }
+  //     }
+  //   };
+  //   myChart.update();
+  // });
+
+  // document.getElementById("button-year").addEventListener('click', function() {
+  
+  //   myChart.data.labels = <%= @year %>;
+  //   myChart.update();
+  // });
+
 });
+
+
 </script>
 

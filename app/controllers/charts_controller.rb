@@ -2,46 +2,45 @@ class ChartsController < ApplicationController
 
   def index
     @reptile = current_user.reptiles.find(params[:reptile_id])
-    @charts = @reptile.logs.includes(:reptile).includes(:user).includes(:log_feeds).all.order(created_at: :asc)
+    @charts = @reptile.logs.all.order(created_at: :asc)
+
+    this_month = Date.today.all_month
+
+
 
     # 日付
     day = []
     @charts.each do |chart|
-      day << chart.created_at.strftime('%Y%m%d').to_s
+      day << chart.created_at.strftime("%Y年%m月%d日 %H:%M").to_s
     end
-    @charts_by_day = day.each_with_object(Hash.new(0)){ |value, hash| hash[value] += 1 }
-    @chartlabels = @charts_by_day.map(&:first).to_json.html_safe
+    gon.day = day
+
+    # 今月
+    month = []
+    @charts.each do |chart|
+      if (this_month.include?(Date.parse(chart[:created_at].to_s)))
+        month << chart.created_at.strftime("%Y年%m月%d日 %H:%M").to_s
+      end
+    end
+    # => ["2022年03月01日 02:58", "2022年03月01日 12:35", "2022年03月01日 13:16", "2022年03月01日 13:19", "2022年03月01日 13:22", "2022
+    #   03月01日 16:09"]
+
+    # year = []
+    # @charts.each do |chart|
+    #   year << chart.created_at.strftime('')
+    # end
 
     # 体重
-    weight = []
-    @charts.each do |chart|
-      weight << chart.weight
-    end
-    @weight_by_day = weight.each_with_object(Hash.new(0)){ |value, hash| hash[value] += 1 }
-    @weightdata = @weight_by_day.map(&:first).to_json.html_safe
-    # binding.pry
+    gon.weight = @reptile.logs.pluck(:weight)
+
     # 体長
-    length = []
-    @charts.each do |chart|
-      length << chart.length
-    end
-    @length_by_day = length.each_with_object(Hash.new(0)){ |value, hash| hash[value] += 1 }
-    @lengthdata = @length_by_day.map(&:first).to_json.html_safe
+    gon.length = @reptile.logs.pluck(:length)
 
     # 温度
-    temperature = []
-    @charts.each do |chart|
-      temperature << chart.temperature
-    end
-    @temperature_by_day = temperature.each_with_object(Hash.new(0)){ |value, hash| hash[value] += 1 }
-    @temperature_data = @temperature_by_day.map(&:first).to_json.html_safe
+    gon.temperature = @reptile.logs.pluck(:temperature)
 
     # 湿度
-    humidity = []
-    @charts.each do |chart|
-      humidity << chart.humidity
-    end
-    @humidity_by_day = humidity.each_with_object(Hash.new(0)){ |value, hash| hash[value] += 1 }
-    @humidity_data = @humidity_by_day.map(&:first).to_json.html_safe
+    gon.humidity = @reptile.logs.pluck(:humidity)
+
   end
 end

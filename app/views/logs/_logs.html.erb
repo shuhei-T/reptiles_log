@@ -1,0 +1,259 @@
+<%# =============== 調子 ================================================================= %>
+<% case log.condition %>
+<% when'smile' %>
+  <div class="smile">
+    <i class="fas fa-smile"></i>
+  </div>
+<% when 'meh' %>
+  <div class="meh">
+    <i class="fas fa-meh"></i>
+  </div>
+<% when 'tired' %>
+  <div class="tired">
+    <i class="fas fa-tired"></i>
+  </div>
+<% end %>
+<%# =============== 給餌 ============================================================ %>
+<div class="feed">
+  <% log.log_feeds.each do |log_feed| %>
+    <% case log_feed.feed_id %>
+    <% when Constants::GRYLLUS_BIMACULATUS %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <%= image_tag 'hutahoshikorogi.png', class: 'cricket', size: '50x50' %>
+        <% end %>
+      <% else %>
+        <%= image_tag 'hutahoshikorogi.png', class: 'cricket', size: '50x50' %>
+      <% end %>
+    <% when  Constants::ACHETA_DOMESTICA %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <%= image_tag 'iekorogi.png', class: 'cricket', size: '50x50' %>
+        <% end %>
+      <% else %>
+        <%= image_tag 'iekorogi.png', class: 'cricket', size: '50x50' %>
+      <% end %>
+    <% when Constants::BLAPTICA_DUBIA %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <%= image_tag 'dubia.png', class: 'cockroach', size: '40x40' %>
+        <% end %>
+      <% else %>
+        <%= image_tag 'dubia.png', class: 'cockroach', size: '40x40' %>
+      <% end %>
+    <% when  Constants::TURKISH_ROACH %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <%= image_tag 'redroach.png', class: 'cockroach', size: '40x40' %>
+        <% end %>
+      <% else %>
+        <%= image_tag 'redroach.png', class: 'cockroach', size: '40x40' %>
+      <% end %>
+    <% when Constants::WORM %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <%= image_tag 'worm.png', class: 'worm', size: '25x25' %>
+        <% end %>
+      <% else %>
+        <%= image_tag 'worm.png', class: 'worm', size: '25x25' %>
+      <% end %>
+    
+    <% when Constants::PINK_MOUSE %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <span class="iconify pink-mouse" data-icon="twemoji:mouse" data-width="40" data-height="40"></span>
+        <% end %>
+      <% else %>
+        <span class="iconify pink-mouse" data-icon="twemoji:mouse" data-width="40" data-height="40"></span>
+      <% end %>
+    
+    <% when Constants::FUZZY_MOUSE %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <span class="iconify fuzzy-mouse" data-icon="twemoji:mouse" data-width="45" data-height="45"></span>
+        <% end %>
+      <% else %>
+        <span class="iconify fuzzy-mouse" data-icon="twemoji:mouse" data-width="45" data-height="45"></span>
+      <% end %>
+
+    <% when Constants::HOPPER_MOUSE %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <span class="iconify hopper-mouse" data-icon="twemoji:mouse" data-width="50" data-height="50"></span>
+        <% end %>
+      <% else %>
+        <span class="iconify hopper-mouse" data-icon="twemoji:mouse" data-width="50" data-height="50"></span>
+      <% end %>
+
+    <% when Constants::ADULT_MOUSE %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <span class="iconify adult-mouse" data-icon="twemoji:mouse" data-width="55" data-height="55"></span>
+        <% end %>
+      <% else %>
+        <span class="iconify adult-mouse" data-icon="twemoji:mouse" data-width="55" data-height="55"></span>
+      <% end %>
+
+    <% when Constants::RETIRE_MOUSE %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <span class="iconify retire-mouse" data-icon="twemoji:mouse" data-width="60" data-height="60"></span>
+        <% end %>
+      <% else %>
+        <span class="iconify retire-mouse" data-icon="twemoji:mouse" data-width="60" data-height="60"></span>
+      <% end %>
+
+    <% when Constants::PINK_RAT %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <span class="iconify pink-rat" data-icon="twemoji:rat" data-width="40" data-height="40"></span>
+        <% end %>
+      <% else %>
+        <span class="iconify pink-rat" data-icon="twemoji:rat" data-width="40" data-height="40"></span>
+      <% end %>
+
+    <% when Constants::FUZZY_RAT %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <span class="iconify fuzzy-rat" data-icon="twemoji:rat" data-width="45" data-height="45"></span>
+        <% end %>
+      <% else %>
+        <span class="iconify fuzzy-rat" data-icon="twemoji:rat" data-width="45" data-height="45"></span>
+      <% end %>
+
+    <% when Constants::HOPPER_RAT %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <span class="iconify hopper-rat" data-icon="twemoji:rat" data-width="50" data-height="50"></span>
+        <% end %>
+      <% else %>
+        <span class="iconify hopper-rat" data-icon="twemoji:rat" data-width="50" data-height="50"></span>
+      <% end %>
+
+    <% when Constants::ADULT_RAT %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <span class="iconify adult-rat" data-icon="twemoji:rat" data-width="55" data-height="55"></span>
+        <% end %>
+      <% else %>
+        <span class="iconify adult-rat" data-icon="twemoji:rat" data-width="55" data-height="55"></span>
+      <% end %>
+      
+    <% when Constants::RETIRE_RAT %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <span class="iconify retire-rat" data-icon="twemoji:rat" data-width="60" data-height="60"></span>
+        <% end %>
+      <% else %>
+        <span class="iconify retire-rat" data-icon="twemoji:rat" data-width="60" data-height="60"></span>
+      <% end %>
+
+    <% when Constants::ARTIFICIAL_FOOD %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <%= image_tag 'artificial_food.png', class: 'artificial_food', size: '50x50' %>
+        <% end %>
+      <% else %>
+          <%= image_tag 'artificial_food.png', class: 'artificial_food', size: '50x50' %>
+      <% end %>
+    <% when Constants::VEGETABLE %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <%= image_tag 'vegetable.png', class: 'vegetable', size: '30x30' %>
+        <% end %>
+      <% else %>
+        <%= image_tag 'vegetable.png', class: 'vegetable', size: '30x30' %>
+      <% end %>
+    <% when Constants::FLUITS %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <%= image_tag 'apple.png', class: 'apple', size: '40x40' %>
+        <% end %>
+      <% else %>
+        <%= image_tag 'apple.png', class: 'apple', size: '40x40' %>
+      <% end %>
+    <% when Constants::CHICK %>
+      <% if log_feed.count.present? %>
+        <% log_feed.count.times do %>
+          <%= image_tag 'chick.png', class: 'chick', size: '30x30' %>
+        <% end %>
+      <% else %>
+        <%= image_tag 'chick.png', class: 'chick', size: '30x30' %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+<%# =============== 排泄 ============================================================== %>
+<div class="shit">
+  <% if log.shit == 'good' %>
+    <div class='good'>
+      <i class="fas fa-poop"></i>
+    </div>
+  <% elsif log.shit == 'bad' %>
+    <div class="bad">
+      <i class="fas fa-poop"></i>
+    </div>
+  <% end %>
+</div>
+<%# =============== 掃除 ============================================================== %>
+<div class="crean">
+  <% if log.creaning == true %>
+    <i class="fas fa-broom"></i>
+  <% end %>
+</div>
+<%# =============== ハンドリング ====================================================== %>
+<div class="hand">
+  <% if log.handling.present? %>
+    <i class="fas fa-hand-holding"></i>
+  <% end %>
+</div>
+<%# =============== 脱皮 ============================================================== %>
+<div class="sheding">
+  <% if log.sheding == 'shed' %>
+    <%= image_tag 'shed.png', class: 'shed', size: '35x35' %>
+  <% elsif log.sheding == 'white' %>
+    <%= image_tag 'white.png', class: 'white', size: '35x35' %>
+  <% end %>  
+</div>
+<%# =============== 温浴 ============================================================== %>
+<div class="bath">
+  <% if log.bath.present? %>
+    <i class="fas fa-bath"></i>
+  <% end %>
+</div>
+<%# =============== 体重 ============================================================== %>
+<% if log.weight.present? %>
+  <div class="weight">
+    <p><i class="fas fa-weight"></i> <%=  log.weight %>g</p>
+  </div>
+<% end %>
+<%# =============== 体長 ============================================================== %>
+<% if log.length.present? %>
+  <div class="length">
+    <p><i class="fas fa-ruler"></i>   <%=  log.length %>cm</p>
+  </div>
+<% end %>
+<%# =============== 温度 ============================================================== %>
+<% if log.temperature.present? %>
+  <div class="temperature">
+    <p><i class="fas fa-thermometer-half"></i> <%= log.temperature %>℃</p>
+  </div>
+<% end %>
+<%# =============== 温度 ============================================================== %>
+<% if log.humidity.present? %>
+  <div class="humidity">
+    <p><%= image_tag 'humidity.png', size: '20x20' %> <%= log.humidity %>%</p>
+  </div>
+<% end %>
+<%# =============== メモ ============================================================== %>
+<% if log.remark.present? %>
+  <p class="text-small mt-2 fw-light"><i class="fas fa-pen"></i> <%= log.remark %></p>
+<% end %>
+<%# =============== 画像 ============================================================== %>
+<% if log.images %>
+  <div class="course-item">
+    <% log.images.each do |image| %>
+    <span><%= image_tag image.to_s %></span>
+    <% end %>
+  </div>
+<% end %>
