@@ -3,6 +3,7 @@
   <head>
     <title><%= page_title(yield(:title)) %></title>
     <%= favicon_link_tag('favicon.ico') %>
+    <%= display_meta_tags(default_meta_tags) %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -22,7 +23,6 @@
   <body class="drawer drawer--right <%= controller.controller_name %>" data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>" data-tabolinks="false">
     <div class="loader-wrap"><div class="loader"></div></div>
     <% if logged_in? %>
-      <%# <%= render 'shared/header' %>
       <%= render 'shared/drawer' %>
     <% else %>
         <%= render 'shared/before_login_header' %>

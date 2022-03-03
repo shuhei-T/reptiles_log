@@ -1,9 +1,9 @@
 module ApplicationHelper
   def page_title(page_title = '', admin = false)
     base_title = if admin
-      'Reptiles_log(管理画面)'
+      'レプログ!(管理画面)'
     else
-      'Reptiles_log'
+      'レプログ!'
     end
     
     page_title.empty? ? base_title : page_title + ' | ' + base_title
@@ -30,5 +30,34 @@ module ApplicationHelper
       svg['class'] = options[:class]
     end
     doc.to_html.html_safe
+  end
+
+  def default_meta_tags
+    {
+      site: 'レプログ!',
+      title: 'タイトル',
+      reverse: true,
+      separator: '|',
+      og: default_og,
+      twitter: default_twitter_card
+    }
+  end
+
+  private
+
+  def default_og
+    {
+      title: :full_title,
+      description: :description,
+      url: request.url,
+      image: image_url('reptile_top.jpg')
+    }
+  end
+
+  def default_twitter_card
+    {
+      card: 'summary_large_image',
+      site: '@reptileslog'
+    }
   end
 end
