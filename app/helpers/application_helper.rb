@@ -35,9 +35,10 @@ module ApplicationHelper
   def default_meta_tags
     {
       site: 'レプログ!',
-      title: 'タイトル',
+      title: '爬虫類飼育者のためのかんたん飼育記録サービス',
       reverse: true,
       separator: '|',
+      description: '爬虫類のための飼育記録アプリならレプログ!。爬虫類は他のペットと違う特性をもつ生き物なので、特徴をうまく汲み取って飼育管理を行う必要があります。爬虫類飼育者の悩みを解消し、かんたんにお世話記録をすることができるサービスです。',
       og: default_og,
       twitter: default_twitter_card
     }
