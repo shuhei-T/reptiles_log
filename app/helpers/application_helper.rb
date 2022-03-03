@@ -50,7 +50,7 @@ module ApplicationHelper
       title: :full_title,
       description: :description,
       url: request.url,
-      image: image_url('reptile_top.jpg')
+      image: image_url('replog_ogp.png')
     }
   end
 
