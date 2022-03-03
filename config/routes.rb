@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'static_pages#top'
-
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
+  post 'guest_login', to: 'user_sessions#guest_login'
   get 'privacy', to: 'static_pages#privacy'
   get 'service', to: 'static_pages#service'
 

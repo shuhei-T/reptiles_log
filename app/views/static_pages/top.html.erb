@@ -61,7 +61,7 @@
           <% end %>
         </div>
         <div class="guest_btn">
-          <%= link_to "#", class: 'guest-btn' do %>
+          <%= link_to guest_login_path, class: 'guest-btn', method: :post do %>
           <i class="fas fa-user"></i> ゲストログイン
           <% end %>
         </div>

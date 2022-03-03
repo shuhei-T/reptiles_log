@@ -35,4 +35,10 @@ class User < ApplicationRecord
     following.include?(other_user)
     # active_relationships.find_by(followed_id: other_user.id)
   end
+
+  def self.guest
+    find_or_create_by(email: "guest@example.com") do |user|
+      user.password = ENV['SECRETS_TEST_ACCOUNT_PASS']
+    end
+  end
 end
