@@ -44,6 +44,8 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+    guest_login:
+      success: 'ゲストとしてログインしました'
   profiles:
     show:
       title: 'マイプロフィール'
