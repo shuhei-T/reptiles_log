@@ -8,6 +8,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= include_gon %>
+    <% if Rails.env.production? %>
+      <%= render './google_analytics' %>
+    <% end %>
     <!-- drawer.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.1/css/drawer.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
