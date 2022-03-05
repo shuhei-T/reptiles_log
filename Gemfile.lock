@@ -91,6 +91,7 @@ GEM
       mini_mime (>= 0.1.3)
       ssrf_filter (~> 1.0)
     choice (0.2.0)
+    chronic (0.10.2)
     cocoon (1.2.15)
     coderay (1.1.3)
     concurrent-ruby (1.1.9)
@@ -349,6 +350,8 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
+    sitemap_generator (6.2.1)
+      builder (~> 3.0)
     sorcery (0.16.2)
       bcrypt (~> 3.1)
       oauth (~> 0.5, >= 0.5.5)
@@ -383,6 +386,8 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    whenever (1.0.0)
+      chronic (>= 0.6.3)
     zeitwerk (2.5.3)
 
 PLATFORMS
@@ -424,12 +429,14 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   sass-rails (>= 6)
+  sitemap_generator
   sorcery
   spring
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
   webpacker (~> 5.0)
+  whenever
 
 RUBY VERSION
    ruby 3.0.3p157
