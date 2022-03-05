@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'guest_login', to: 'user_sessions#guest_login'
   get 'privacy', to: 'static_pages#privacy'
   get 'service', to: 'static_pages#service'
-  get 'sitemap', to: redirect("https://s3-northeast-1.amazonaws.com/#{ENV['AWS_S3_BADGET_NAME']}/sitemap.xml.gz")
+  get 'sitemap', to: redirect("https://#{ENV['AWS_DEFAULT_REGION']}.amazonaws.com/#{ENV['AWS_S3_BADGET_NAME']}/sitemap.xml.gz")
 
   resources :users, only: %i[new create index show] do
     collection do
