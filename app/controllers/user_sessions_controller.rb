@@ -1,6 +1,7 @@
 class UserSessionsController < ApplicationController
   skip_before_action :require_login, only: %i[new create guest_login]
   before_action :forbid_login_user, only: %i[new create]
+  skip_before_action :verify_authenticity_token
 
   def new;end
 
