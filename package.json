@@ -19,7 +19,6 @@
     "bootstrap-icons": "^1.8.1",
     "chart.js": "^3.7.0",
     "css-ui-lib": "^0.2.0",
-    "dotenv": "^16.0.0",
     "jquery": "^3.6.0",
     "moment": "^2.29.1",
     "turbolinks": "^5.2.0",
