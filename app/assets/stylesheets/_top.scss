@@ -3,72 +3,24 @@
 
 body {
   main {
-    // margin-bottom: 100px;
-    // margin-top: 15px;
     .top-wrapper {
-      // padding: 50px 0 230px 0;
-      background-image: image-url("reptile_top.jpg");
-      background-size: cover;
-      background-color:rgba(255,255,255,0.2);
-      // background-blend-mode:lighten;
-      // background-repeat: no-repeat;
+      margin: auto;
       width: 100vw;
       height: 100vh;
-      position: relative;
-      // height: calc(100vh - 100px);
-      // position: relative;
-      // background-position: center;
-      background-position: 85% 95%;
-      // &::before {
-      //   content: '';
-      //   position: absolute;
-      //   /* 輪郭がぼやけてしまうのでブラー範囲を広げる */
-      //   top: -5px;
-      //   bottom: -5px;
-      //   left: -5px;
-      //   right: -5px;
-      //   background: inherit;
-      //   filter: blur(0px);
-      // }
-      .container {
+
+      background-position: center;
+      .contents {
         .top-inner-text {
-          padding-top: calc(100vh / 2 - 280px);
-          // position: absolute;
-          // top: 50%;
-          // left: 50%;
-          // transform: translate(-50%, -50%);
-          // width: 100%;
           text-align: center;
-          text-shadow: 0 0 1px #333;
-          h1 {
-            font-size: 24px;
-            margin: 45px 0 60px 0 ;
-            opacity: 0.8;
-            color: $font-color;
-            letter-spacing: 2px;
-            font-weight: 700;
-            &::after {
-              background: none;
-            }
+          img.pc-replog-top {
+            display: none;
           }
-          p {
-            font-size: 14px;
-            color: $font-color;
-            opacity: 0.8;
-            
+          img.sp-replog-top  {
+            display: block;
+            object-fit: cover;
+            height: 100vh;
+            width: 100%;
           }
-          @media screen and (min-width: 767px) {
-            // img {
-            //   width: 450px;
-            //   height: 98px;
-            // }
-            // font-size: 5rem;
-            // h1 {
-            //   margin-top: 4rem;
-            //   color: #0EB784;
-            //   font-size: 3rem;
-            // }
-          } 
         }
         .btn-wrapper {
           margin-top: 230px;
@@ -76,34 +28,14 @@ body {
           .btn-square-so-pop {
             width: 100%;
             margin-bottom: 15px;
-            // position: absolute;
-            // top: 95%;
-            // left: 30%;
-            // transform: translate(-50%, -50%);
-            @media screen and (min-width: 767px) {
-              // position: absolute;
-              // top: 80%;
-              // left: 40%;
-              // transform: translate(-50%, -50%);
-            }
           }
           .btn-guest-square-so-pop {
             width: 100%;
-            // position: absolute;
-            // top: 95%;
-            // left: 70%;
-            // transform: translate(-50%, -50%);
-            @media screen and (min-width: 767px) {
-              // position: absolute;
-              // top: 80%;
-              // left: 60%;
-              // transform: translate(-50%, -50%);
-              // text-align: center;
-            }
           }
         }
       }
     }
+
     .explanation-wrapper {
       max-width: 960px;
       margin: 0 0.3rem;
@@ -237,17 +169,23 @@ h2.check {
   body {
     main {
       .top-wrapper {
-        background-position: 50% 90%;
-        .container {
+        margin: auto;
+        background-image: image-url("replog_top_v4_cover.png");
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+        background-position: center;
+        .contents {
           .top-inner-text {
-            padding-top: calc(100vh / 2 - 115px);
-            h1 {
-              font-size: 32px;
-              margin: 45px 0 20px 0 ;
+            img.pc-replog-top {
+              display: block;
+              margin: 0 auto;
+              max-width: 2045px;
+              height: 100vh;
+              object-fit: cover;
             }
-            p {
-              font-size: 16px;
-
+            img.sp-replog-top  {
+              display: none;
             }
           }
         }
@@ -268,6 +206,7 @@ h2.check {
         margin-bottom: 75px;
         p.red {
           font-size: 24px;
+          text-align: center;
         }
       }
 
