@@ -5,16 +5,14 @@ class Log < ApplicationRecord
   belongs_to :reptile
   accepts_nested_attributes_for :log_feeds, allow_destroy: true
   validates_associated :log_feeds
-  # validates :log_feeds, presence: :true
 
   validates :bath, inclusion: [true, false]
   validates :handling, inclusion: [true, false]
   validates :creaning, inclusion: [true, false]
-  validates :weight, numericality: { greater_than_or_equal_to: 1, less_than: 10000 }, allow_nil: true
-  validates :length, numericality: { greater_than_or_equal_to: 1, less_than: 10000 }, allow_nil: true
+  validates :weight, numericality: { greater_than_or_equal_to: 1, less_than: 100000 }, allow_nil: true
+  validates :length, numericality: { greater_than_or_equal_to: 1, less_than: 100000 }, allow_nil: true
   validates :temperature, numericality: { greater_than_or_equal_to: 1, less_than: 100 }, allow_nil: true
   validates :humidity, numericality: { greater_than_or_equal_to: 1, less_than: 100 }, allow_nil: true
-
 
   mount_uploaders :images, ImagesUploader
 
