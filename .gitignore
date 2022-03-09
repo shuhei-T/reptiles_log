@@ -41,3 +41,5 @@ erd.pdf
 /public/uploads
 /.env
 public/sitemaps
+
+.DS_Store
