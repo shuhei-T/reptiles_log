@@ -733,7 +733,6 @@ p {
 
 .creaning-container {
   margin: .3rem 0 1rem 1rem;
-  cursor: pointer;
   .checkbox {
     display: none;
   }
@@ -741,6 +740,7 @@ p {
     position: relative;
     vertical-align: middle;
     font-size: 33px;
+    cursor: pointer;
   }
   .checkbox + .checkbox-fontas:before {
     font-weight: 900;
@@ -755,7 +755,6 @@ p {
 
 .handling-container {
   margin: 0 0 1rem 1rem;
-  cursor: pointer;
   .checkbox {
     display: none;
   }
@@ -763,6 +762,7 @@ p {
     position: relative;
     vertical-align: middle;
     font-size: 33px;
+    cursor: pointer;
   }
   .checkbox + .checkbox-fontas:before {
     font-weight: 900;
@@ -777,7 +777,6 @@ p {
 
 .bath-container {
   margin: .7rem 0 1rem 1rem;
-  cursor: pointer;
   label {
     .checkbox {
       display: none;
@@ -787,6 +786,7 @@ p {
       position: relative;
       vertical-align: middle;
       font-size: 33px;
+      cursor: pointer;
     }
     .checkbox + .checkbox-fontas:before {
       font-weight: 900;
