@@ -59,6 +59,12 @@
     overflow: hidden;
   }
 }
+.holiday-event {
+  pointer-events:none;
+  .fc-event-title {
+    display:none;
+  }
+}
 
 // show modal
 #modal {

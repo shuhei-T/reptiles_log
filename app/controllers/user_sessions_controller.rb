@@ -9,8 +9,7 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_back_or_to reptiles_path, success: t('.success')
     else
-      flash.now[:danger] = t('.fail')
-      render :new
+      redirect_to new_user_path, danger: t('.fail')
     end
   end
 

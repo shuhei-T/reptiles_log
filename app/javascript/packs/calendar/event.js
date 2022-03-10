@@ -8,12 +8,20 @@ import '@fullcalendar/common/main.css';
 import '@fullcalendar/daygrid/main.css';
 import { Modal } from 'bootstrap/dist/js/bootstrap.esm.min.js';
 
-// // <div id='calendar'></div>のidからオブジェクトを定義してカレンダーを作る
+// <div id='calendar'></div>のidからオブジェクトを定義してカレンダーを作る
 document.addEventListener('DOMContentLoaded', function() {
   let calendarEl = document.getElementById('calendar');
-
   let calendar = new Calendar(calendarEl, {
     plugins: [ monthGridPlugin, interactionPlugin, googleCalendarApi, bootstrap5Plugin ],
+    eventSources: [
+      {
+        googleCalendarApiKey: process.env.GOOGLE_CALENDAR_API_KEY,
+        googleCalendarId: 'japanese__ja@holiday.calendar.google.com',
+        display: 'background',
+        color: '#ffd4d4',
+        className: 'holiday-event',
+      }
+    ],
     // initialView: 'dayGridMonth',
     events: 'events.json',
     // 細かな設定
