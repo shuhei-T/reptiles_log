@@ -1,5 +1,4 @@
 // 爬虫類に関するスタイル
-
 @import 'variables';
 
 // reptiles/new
@@ -15,7 +14,6 @@
     margin-bottom: 1rem;
   }
 }
-
 
 // reptiles/_reptile
 .reptiles_list {
@@ -85,11 +83,6 @@
   }
 }
 
-@media screen and (min-width: 767px) {
-  .reptiles_list {
-  }
-}
-
 // reptiles/show
 .reptile_profile {
   padding: 1rem 1rem 2rem;
@@ -104,9 +97,6 @@
     height: 160px;
   }
   .name-space {
-    // display: flex;
-    // flex-wrap: wrap;
-    // align-items: center;
     .name {
       font-size: 2rem;
       color: $font-color;
@@ -126,34 +116,26 @@
     .detail-content {
       display: flex;
       align-items: center;
-      .icon-area {
-
-      }
       .text-area {
         .icon-text {
           font-size: 11px;
         }
-        .icon-message {
-  
-        }
       }
     }
-    .morph, .sex, .birthday, .adoptaversary {
+    .category, .morph, .sex, .birthday, .adoptaversary, .comment {
       padding: .5rem 0;
-      border-top: solid 2px #aec9a3;
+      border-top: solid 2px $font-color-light;
     }
     .comment {
-      padding: .5rem 0;
-      border-top: solid 2px #aec9a3;
-      border-bottom: solid 2px #aec9a3;
+      border-bottom: solid 2px $font-color-light;
     }
     svg {
       margin-right: .5rem;
       font-size: x-large;
-      color: #aec9a3;
+      color: $font-color-light;
     }
     .icon-text {
-      color: #aec9a3;
+      color: $font-color-light;
     }
     .text-none {
       color: $textnone-color;
@@ -217,8 +199,5 @@
   }
   .btn-area {
     text-align: center;
-  }
-  input[type=radio] {
-    // display: none;
   }
 }

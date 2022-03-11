@@ -18,6 +18,11 @@
             <% end %>
           </span>
         </div>
+        <div class="reptile_category-space small">
+          <% if reptile.reptile_category.present? %>
+            <span class="reptile_status"><span class="iconify" data-icon="dashicons:category" data-width="17" data-height="17"></span><%= reptile.reptile_category %></span>
+          <% end %>
+        </div>
         <div class="morph-space small">
           <% if reptile.morph.present? %>
             <span class="reptile_status"><span class="iconify" data-icon="carbon:category" data-width="17" data-height="17"></span><%= reptile.morph %></span>

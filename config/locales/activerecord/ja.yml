@@ -20,6 +20,7 @@ ja:
         updated_at: '更新日時'
       reptile:
         name: '生体の名前'
+        reptile_category: '種類'
         morph: 'モルフ'
         sex: '性別'
         birthday: '誕生日'

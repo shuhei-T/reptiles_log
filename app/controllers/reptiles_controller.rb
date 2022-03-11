@@ -1,5 +1,6 @@
 class ReptilesController < ApplicationController
-  before_action :params_modifi, only: [:create, :update]
+  before_action :set_reptile, only: %i[show edit update destroy]
+  before_action :params_modifi, only: %i[create update]
 
   def index
     @reptiles = current_user.reptiles.includes(:user).order(created_at: :desc).page(params[:page])
@@ -10,7 +11,6 @@ class ReptilesController < ApplicationController
   end
 
   def create
-    # binding.pry
     @reptile = current_user.reptiles.build(reptile_params)
     if @reptile.save
       redirect_to reptiles_path, success: t('defaults.message.created', item: Reptile.model_name.human)
@@ -20,16 +20,11 @@ class ReptilesController < ApplicationController
     end
   end
 
-  def show
-    @reptile = Reptile.find(params[:id])
-  end
+  def show;end
 
-  def edit
-    @reptile = current_user.reptiles.find(params[:id])
-  end
+  def edit;end
 
   def update
-    @reptile = current_user.reptiles.find(params[:id])
     if @reptile.update(reptile_params)
       redirect_to @reptile, success: t('defaults.message.updated', item: Reptile.model_name.human)
     else
@@ -39,16 +34,18 @@ class ReptilesController < ApplicationController
   end
 
   def destroy
-    @reptile = current_user.reptiles.find(params[:id])
     @reptile.destroy!
     redirect_to reptiles_path, success: t('defaults.message.deleted', item: Reptile.model_name.human)
   end
 
   private
 
+  def set_reptile
+    @reptile = current_user.reptiles.find(params[:id])
+  end
 
   def reptile_params
-    params.require(:reptile).permit(:name, :morph, :sex, :birthday, :adoptaversary, :comment, :image, :image_cache, :age)
+    params.require(:reptile).permit(:name, :reptile_category, :morph, :sex, :birthday, :adoptaversary, :comment, :image, :image_cache, :age)
   end
 
   def params_modifi
