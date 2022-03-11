@@ -22,6 +22,23 @@
       </div>
 
       <div class="details">
+        <div class="category detail-content">
+          <div class="icon-area">
+            <span class="iconify" data-icon="dashicons:category" data-width="30" data-height="30"></span>
+          </div>
+          <div class="text-area">
+            <div class="icon-text small">
+            種類
+            </div>
+            <div class="icon-message">
+              <% if @reptile.reptile_category.present? %>
+                <%= @reptile.reptile_category %>
+              <% else %>
+                <span class="text-none">入力がありません</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
         <div class="morph detail-content">
           <div class="icon-area">
             <span class="iconify" data-icon="carbon:category" data-width="30" data-height="30"></span>
