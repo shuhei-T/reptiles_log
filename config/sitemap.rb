@@ -7,10 +7,12 @@ SitemapGenerator::Sitemap.public_path = 'tmp/'
 # pick a namespace within your bucket to organize your maps
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 # store on S3 using Fog (pass in configuration values as shown above if needed)
-SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(fog_provider: 'AWS',
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(
+  ENV['AWS_S3_BADGET_NAME'],
+  # fog_provider: 'AWS',
                                       aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
                                       aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-                                      fog_directory: ENV['AWS_S3_BADGET_NAME'],
+                                      # fog_directory: ENV['AWS_S3_BADGET_NAME'],
                                       aws_region: ENV['AWS_DEFAULT_REGION'])
 
 SitemapGenerator::Sitemap.create do
