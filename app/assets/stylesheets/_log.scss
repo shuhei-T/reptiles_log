@@ -14,19 +14,20 @@
     width: 160px;
     height: 160px;
   }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-    .name {
-      font-size: 1.8rem;
-      font-weight: bold;
-      display: table-cell;
-      line-height: 2.2;
-      color: $font-color;
-      &:hover{
-        color: $vivid-hover;
-        transition: all 0.3s;
+  .name-space {
+    a {
+      text-decoration: none;
+      color: inherit;
+      .name {
+        font-size: 1.8rem;
+        font-weight: bold;
+        // display: table-cell;
+        line-height: 2.2;
+        color: $font-color;
+        &:hover{
+          color: $vivid-hover;
+          transition: all 0.3s;
+        }
       }
     }
   }
@@ -63,6 +64,13 @@
 
   .remark-area, .condition-area, .feed-area, .shit-area, .creaning-area, .handling-area, .shit-area, .bath-area, .weight-area, .length-area, .temperature-area, .humidity-area, .images-area {
     border-top: solid 2px #aec9a3;
+  }
+
+  @media screen and (min-width: 767px) {
+    .name-space {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 }
 
