@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 選択したoptionのvalueを取得
     let val = $(this).val();
     // 親要素から画像リストを取得
-    let $imageList = $(this).parent().parent().find('ul li');
+    let $imageList = $(this).parent().parent().parent().find('ul li');
     // 先頭に#を付けてvalueの値をidに変換
     let selectFeedId = '#' + val;
     // 一度すべてのブロックを非表示にする
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (selectFeedId === '#') {
       return 
     } else {
-      $(this).parent().parent().find('ul').find(selectFeedId).show(); 
+      $(this).parent().parent().parent().find('ul').find(selectFeedId).show(); 
     }
   });
 });
