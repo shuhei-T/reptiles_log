@@ -13,6 +13,7 @@ class LogsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @log = current_user.logs.build(log_params)
     if @log.save
       redirect_to reptile_logs_path, success: "#{l @log.created_at, format: :long} に記録しました"
@@ -36,6 +37,6 @@ class LogsController < ApplicationController
 
   def log_params
     params.require(:log).permit(:remark, :condition, :shit, :bath, :handling, :creaning, :creaning, :sheding, :weight, :length, { images: [] }, {images_cache: [] }, :temperature, :humidity,
-    log_feeds_attributes:[:id, :count, :feed_id, :_destroy]).merge(reptile_id: params[:reptile_id])
+    log_feeds_attributes:[:id, :count, :size, :feed_id, :_destroy]).merge(reptile_id: params[:reptile_id])
   end
 end

@@ -44,6 +44,6 @@ class EventsController < ApplicationController
 
   def log_params
     params.require(:log).permit(:remark, :condition, :shit, :bath, :handling, :creaning, :creaning, :sheding, :weight, :length, { images: [] }, {images_cache: [] }, :temperature, :humidity,
-    log_feeds_attributes:[:id, :count, :feed_id]).merge(reptile_id: params[:reptile_id])
+    log_feeds_attributes:[:id, :count, :size, :feed_id]).merge(reptile_id: params[:reptile_id])
   end
 end

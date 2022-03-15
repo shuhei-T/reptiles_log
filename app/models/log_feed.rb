@@ -7,6 +7,7 @@ class LogFeed < ApplicationRecord
   validates :count, numericality: { greater_than_or_equal_to: 1, less_than: 10 }, allow_nil: true
   validate :required_feed_column
 
+  enum size: {S: 0, M: 1, L: 2}
 
   private
 

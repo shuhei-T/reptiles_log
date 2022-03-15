@@ -1,11 +1,22 @@
 <div class="nested-fields">
   <div class="field mb-3">
     <div class="form-area">
-      <%= f.collection_select(:feed_id, Feed.all, :id, :name, {prompt: "--"}, {class: 'form-select feed_name-column js-select-form', id: 'js-feed-select-form', style: 'display: inline-block;width: 230px;'}) %>
-      <%= f.number_field :count, class: 'form-control feed_count-column', style: 'display: inline-block;width: auto;', in: 1..10 %> 個
-      <%= link_to_remove_association  f, class: 'js-remove-log_feeds-btn' do %>
+      <div class="mb-1">
+        <%= f.label :name, class: 'form-label' %>
+              <%= link_to_remove_association  f, class: 'js-remove-log_feeds-btn' do %>
         <i class="fas fa-minus-circle"></i>
       <% end %>
+        <br>
+        <%= f.collection_select(:feed_id, Feed.all, :id, :name, {prompt: "--"}, {class: 'form-select feed_name-column js-select-form', id: 'js-feed-select-form', style: 'display: inline-block;width: 230px;'}) %>
+      </div>
+      <div class="mb-1">
+        <%= f.label :size, class: 'form-label' %><br>
+        <%= f.select :size, LogFeed.sizes.keys, {prompt: "指定なし"}, class: 'form-select', style: 'display: inline-block;width: auto;' %>
+      </div>
+      <div class="mb-1">
+        <%= f.label :count, class: 'form-label' %><br>
+        <%= f.number_field :count, class: 'form-control feed_count-column', style: 'display: inline-block;width: auto;', in: 1..10, placeholder: '1' %> 個
+      </div>
     </div>
     <div class="feed_image-area">
       <ul>

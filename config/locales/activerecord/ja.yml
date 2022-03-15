@@ -44,7 +44,8 @@ ja:
         log_feeds: '給餌'
       log_feed:
         name: '給餌'
-        count: '給餌の個数'
+        count: '個数'
+        size: 'サイズ'
       contact:
         name: '名前'
         email: 'メールアドレス'

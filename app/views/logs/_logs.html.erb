@@ -21,164 +21,267 @@
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <%= image_tag 'hutahoshikorogi.png', class: 'cricket', size: '50x50' %>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <%= image_tag 'hutahoshikorogi.png', class: 'cricket', size: '50x50' %>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
     <% when  Constants::ACHETA_DOMESTICA %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <%= image_tag 'iekorogi.png', class: 'cricket', size: '50x50' %>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <%= image_tag 'iekorogi.png', class: 'cricket', size: '50x50' %>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
     <% when Constants::BLAPTICA_DUBIA %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <%= image_tag 'dubia.png', class: 'cockroach', size: '40x40' %>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <%= image_tag 'dubia.png', class: 'cockroach', size: '40x40' %>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
     <% when  Constants::TURKISH_ROACH %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <%= image_tag 'redroach.png', class: 'cockroach', size: '40x40' %>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <%= image_tag 'redroach.png', class: 'cockroach', size: '40x40' %>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
     <% when Constants::WORM %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <%= image_tag 'worm.png', class: 'worm', size: '25x25' %>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <%= image_tag 'worm.png', class: 'worm', size: '25x25' %>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
-    
     <% when Constants::PINK_MOUSE %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <span class="iconify pink-mouse" data-icon="twemoji:mouse" data-width="40" data-height="40"></span>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <span class="iconify pink-mouse" data-icon="twemoji:mouse" data-width="40" data-height="40"></span>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
-    
     <% when Constants::FUZZY_MOUSE %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <span class="iconify fuzzy-mouse" data-icon="twemoji:mouse" data-width="45" data-height="45"></span>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <span class="iconify fuzzy-mouse" data-icon="twemoji:mouse" data-width="45" data-height="45"></span>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
-
     <% when Constants::HOPPER_MOUSE %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <span class="iconify hopper-mouse" data-icon="twemoji:mouse" data-width="50" data-height="50"></span>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <span class="iconify hopper-mouse" data-icon="twemoji:mouse" data-width="50" data-height="50"></span>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
-
     <% when Constants::ADULT_MOUSE %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <span class="iconify adult-mouse" data-icon="twemoji:mouse" data-width="55" data-height="55"></span>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <span class="iconify adult-mouse" data-icon="twemoji:mouse" data-width="55" data-height="55"></span>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
-
     <% when Constants::RETIRE_MOUSE %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <span class="iconify retire-mouse" data-icon="twemoji:mouse" data-width="60" data-height="60"></span>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <span class="iconify retire-mouse" data-icon="twemoji:mouse" data-width="60" data-height="60"></span>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
-
     <% when Constants::PINK_RAT %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <span class="iconify pink-rat" data-icon="twemoji:rat" data-width="40" data-height="40"></span>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <span class="iconify pink-rat" data-icon="twemoji:rat" data-width="40" data-height="40"></span>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
-
     <% when Constants::FUZZY_RAT %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <span class="iconify fuzzy-rat" data-icon="twemoji:rat" data-width="45" data-height="45"></span>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <span class="iconify fuzzy-rat" data-icon="twemoji:rat" data-width="45" data-height="45"></span>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
-
     <% when Constants::HOPPER_RAT %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <span class="iconify hopper-rat" data-icon="twemoji:rat" data-width="50" data-height="50"></span>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <span class="iconify hopper-rat" data-icon="twemoji:rat" data-width="50" data-height="50"></span>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
-
     <% when Constants::ADULT_RAT %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <span class="iconify adult-rat" data-icon="twemoji:rat" data-width="55" data-height="55"></span>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <span class="iconify adult-rat" data-icon="twemoji:rat" data-width="55" data-height="55"></span>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
-      
     <% when Constants::RETIRE_RAT %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <span class="iconify retire-rat" data-icon="twemoji:rat" data-width="60" data-height="60"></span>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <span class="iconify retire-rat" data-icon="twemoji:rat" data-width="60" data-height="60"></span>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 2px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
-
     <% when Constants::ARTIFICIAL_FOOD %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
-          <%= image_tag 'artificial_food.png', class: 'artificial_food', size: '50x50' %>
+          <%= image_tag 'artificial_food.png', class: 'artificial_food', size: '45x45' %>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
-          <%= image_tag 'artificial_food.png', class: 'artificial_food', size: '50x50' %>
+        <%= image_tag 'artificial_food.png', class: 'artificial_food', size: '45x45' %>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
     <% when Constants::VEGETABLE %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <%= image_tag 'vegetable.png', class: 'vegetable', size: '30x30' %>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <%= image_tag 'vegetable.png', class: 'vegetable', size: '30x30' %>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
     <% when Constants::FLUITS %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <%= image_tag 'apple.png', class: 'apple', size: '40x40' %>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <%= image_tag 'apple.png', class: 'apple', size: '40x40' %>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 13px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
     <% when Constants::CHICK %>
       <% if log_feed.count.present? %>
         <% log_feed.count.times do %>
           <%= image_tag 'chick.png', class: 'chick', size: '30x30' %>
+          <% if log_feed.size %>
+            <span style="font-size: x-small; position: relative; top: 12px; right: 10px"><%= log_feed.size %></span>
+          <% end %>
         <% end %>
       <% else %>
         <%= image_tag 'chick.png', class: 'chick', size: '30x30' %>
+        <% if log_feed.size %>
+          <span style="font-size: x-small; position: relative; top: 12px; right: 10px"><%= log_feed.size %></span>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
