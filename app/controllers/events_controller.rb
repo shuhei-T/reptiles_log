@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_reptile_id, only: %i[index new show create]
 
   def index
-    @events = @reptile.logs.includes(:reptile).includes(:user).includes(:log_feeds).all.order(created_at: :desc)
+    @events = @reptile.logs.includes(:log_feeds).all.order(logged_at: :desc)
   end
   
   def new
@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     @event = current_user.logs.build(log_params)
     if @event.save
       respond_to do |format|
-      format.html { redirect_to reptile_events_path, success: "#{l @event.created_at, format: :long} に記録しました" }
+      format.html { redirect_to reptile_events_path, success: "#{l @event.logged_at, format: :long} に記録しました" }
       format.js # create.js.erbを探してその中を実行
       end
     end
@@ -30,7 +30,7 @@ class EventsController < ApplicationController
     @event = current_user.logs.find(params[:id])
     if @event.destroy!
       respond_to do |format|
-        format.html { redirect_to reptile_events_path, success: "#{l @event.created_at, format: :long}の記録を削除しました" }
+        format.html { redirect_to reptile_events_path, success: "#{l @event.logged_at, format: :long}の記録を削除しました" }
         format.js
       end
     end
@@ -43,7 +43,7 @@ class EventsController < ApplicationController
   end
 
   def log_params
-    params.require(:log).permit(:remark, :condition, :shit, :bath, :handling, :creaning, :creaning, :sheding, :weight, :length, { images: [] }, {images_cache: [] }, :temperature, :humidity,
+    params.require(:log).permit(:remark, :condition, :shit, :bath, :handling, :creaning, :creaning, :sheding, :weight, :length, :logged_at, { images: [] }, :images_cache, :temperature, :humidity,
     log_feeds_attributes:[:id, :count, :size, :feed_id]).merge(reptile_id: params[:reptile_id])
   end
 end

@@ -1,40 +1,22 @@
 <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><%= l @event.created_at, format: :long %>
-          <%= link_to reptile_event_path(@reptile, @event), class: 'delete-icon', method: :delete, data: { confirm: "#{l @event.created_at, format: :long}の記録を削除しますか？" }, remote: true do %>
-            <i class="fas fa-trash"></i>
-          <% end %>
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= render 'logs/logs', log: @event %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" id="fetch" data-bs-dismiss="modal">閉じる</button>
-      </div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel"><%= l @event.logged_at, format: :long %>
+        <%= link_to reptile_event_path(@reptile, @event), class: 'delete-icon', method: :delete, data: { confirm: "#{l @event.logged_at, format: :long}の記録を削除しますか？" }, remote: true do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+      </button>
+    </div>
+    <div class="modal-body">
+      <%= render 'logs/logs', log: @event %>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" id="fetch" data-bs-dismiss="modal">閉じる</button>
     </div>
   </div>
+</div>
 
 <%# ===== 画像のモーダル時のグレー背景 ==================================================== %>
-    <div id="grayDisplay"></div>
-
-<script>
-  // コース画像モーダル表示イベント
-  $(".course-item img").click(function () {
-    // まず、クリックした画像の HTML(<img>タグ全体)を#frayDisplay内にコピー
-    $("#grayDisplay").html($(this).prop("outerHTML"));
-    //そして、fadeInで表示する。
-    $("#grayDisplay").fadeIn(200);
-    return false;
-  });
-  // コース画像モーダル非表示イベント
-  // モーダル画像背景 または 拡大画像そのものをクリックで発火
-  $("#grayDisplay").click(function () {
-    // 非表示にする
-    $("#grayDisplay").fadeOut(200);
-    return false;
-  });
-</script>
+<div id="grayDisplay"></div>

@@ -1,18 +1,17 @@
 <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">飼育記録</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-        </button>
-      </div>
-      <div class="modal-body event-log-form">
-        <%= form_with model: @event, url: {controller: 'events', action: 'create'}, local: false, id: 'new_event' do |f| %>
-          <%= render 'logs/form', f: f %>
-        <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" id="fetch" data-bs-dismiss="modal">閉じる</button>
-      </div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title log" id="exampleModalLabel" style="width: 100%;">飼育記録</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+      </button>
+    </div>
+    <div class="modal-body event-log-form">
+      <%= form_with model: @event, url: {controller: 'events', action: 'create'}, local: false, id: 'new_event' do |f| %>
+        <%= render 'logs/form', f: f %>
+      <% end %>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" id="fetch" data-bs-dismiss="modal">閉じる</button>
     </div>
   </div>
-
+</div>
