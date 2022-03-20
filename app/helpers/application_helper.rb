@@ -55,7 +55,7 @@ module ApplicationHelper
       description: :description,
       type: 'website',
       url: request.original_url,
-      image: image_url('replog_ogp.png'),
+      image: image_url('ogp.png'),
       locale: 'ja_JP'
     }
   end
