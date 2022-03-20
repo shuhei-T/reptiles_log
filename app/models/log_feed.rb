@@ -1,11 +1,11 @@
 class LogFeed < ApplicationRecord
-  # belongs_to :feed, optional: true
-  # belongs_to :log, optional: true
+  belongs_to :feed, optional: true
+  belongs_to :log, optional: true
 
-  # validates :feed, presence: true, if: :feed_id?
-  # validates :log, presence: true, if: :log_id?
-  # validates :count, numericality: { greater_than_or_equal_to: 1, less_than: 10 }, allow_nil: true
-  # validate :required_feed_column
+  validates :feed, presence: true, if: :feed_id?
+  validates :log, presence: true, if: :log_id?
+  validates :count, numericality: { greater_than_or_equal_to: 1, less_than: 10 }, allow_nil: true
+  validate :required_feed_column
 
   enum size: {S: 0, M: 1, L: 2}
 
