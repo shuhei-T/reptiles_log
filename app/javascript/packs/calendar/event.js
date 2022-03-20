@@ -102,6 +102,30 @@ document.addEventListener('DOMContentLoaded', function() {
         $("#grayDisplay").fadeOut(200);
         return false;
       });
+
+      let $addFieldBtn = $('.js-add-log_feeds-field-btn');
+      let counter = 1;
+      let $cocoonField = $('#activity-logs');
+      let $headerFeedName = $('#js-feed-name');
+      let $feedAmount = 5;
+
+      $cocoonField
+      .on('cocoon:after-insert', function() {
+        counter++;
+        checkCount(counter);
+      });
+
+      function checkCount(count) {
+        if (count >= $feedAmount) {
+          // 要素はdisabledのpropで動作しなくなるが、見た目はdisabledを付けないと変化しない
+          $addFieldBtn.prop('disabled', true);
+          $addFieldBtn.addClass('disabled');
+        } else if (count < $feedAmount) {
+          $addFieldBtn.prop('disabled', false);
+          $addFieldBtn.removeClass('disabled');
+        }
+      };
+
       }).fail(function (result) {
       //   // 失敗処理
         alert("show failed");
