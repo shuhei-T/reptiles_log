@@ -3,8 +3,8 @@ class LogsController < ApplicationController
 
   def index
     page = params[:page] || 1
-    @logs = @reptile.logs.includes(:reptile).includes(:user).includes(:log_feeds).all.order(created_at: :desc).page(page).per(15)
-    @logs_by_date = @logs.group_by{|log|log.created_at.to_date}
+    @logs = @reptile.logs.includes(:log_feeds).all.order(logged_at: :desc).page(page).per(15)
+    @logs_by_date = @logs.group_by{|log|log.logged_at.to_date}
   end
 
   def new
@@ -13,10 +13,9 @@ class LogsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @log = current_user.logs.build(log_params)
     if @log.save
-      redirect_to reptile_logs_path, success: "#{l @log.created_at, format: :long} に記録しました"
+      redirect_to reptile_logs_path, success: "#{l @log.logged_at, format: :long} に記録しました"
     else
       render :new
     end
@@ -25,7 +24,7 @@ class LogsController < ApplicationController
   def destroy
     @log = current_user.logs.find(params[:id])
     if @log.destroy!
-      redirect_to reptile_logs_path, success: "#{l @log.created_at, format: :long}の記録を削除しました"
+      redirect_to reptile_logs_path, success: "#{l @log.logged_at, format: :long}の記録を削除しました"
     end
   end
 
@@ -36,7 +35,7 @@ class LogsController < ApplicationController
   end
 
   def log_params
-    params.require(:log).permit(:remark, :condition, :shit, :bath, :handling, :creaning, :creaning, :sheding, :weight, :length, { images: [] }, {images_cache: [] }, :temperature, :humidity,
+    params.require(:log).permit(:remark, :condition, :shit, :bath, :handling, :creaning, :creaning, :sheding, :weight, :length, :logged_at, { images: [] }, :images_cache, :temperature, :humidity,
     log_feeds_attributes:[:id, :count, :size, :feed_id, :_destroy]).merge(reptile_id: params[:reptile_id])
   end
 end

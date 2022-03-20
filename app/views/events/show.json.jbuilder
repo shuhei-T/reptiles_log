@@ -10,5 +10,5 @@ json.weight @event.weight
 json.length @event.length
 json.temperature @event.temperature
 json.humidity @event.humidity
-json.created_at @event.created_at.strftime("%Y年%m月%d日 %H:%M:%S")
+json.logged_at @event.logged_at.strftime("%Y年%m月%d日 %H:%M:%S")
 json.log_feeds @event.log_feeds

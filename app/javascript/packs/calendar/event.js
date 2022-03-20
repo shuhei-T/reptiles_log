@@ -47,7 +47,12 @@ document.addEventListener('DOMContentLoaded', function() {
     allDayText: '終日',
     height: "auto",
 
+    // 日付をクリックした時に発生させるイベント
     dateClick: function(info){
+      // クリックした日付の情報を取得
+      const year = info.date.getFullYear();
+      const month = (info.date.getMonth() + 1);
+      const day = info.date.getDate();
       // ajaxでevents/newを着火させ、htmlを受け取る
       $.ajax({
         type: 'GET',
@@ -56,11 +61,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // 成功処理
         // 受け取ったhtmlをさっき追加したmodalのbodyの中に挿入
         $('#modal').html(res);
-        
         let modal = document.getElementById('modal')
         let modalObj = new Modal(modal)
-          modalObj.show();
+        modalObj.show();
 
+        // フォームの年、月、日を自動入力
+        $('#log_logged_at_1i').val(year);
+        $('#log_logged_at_2i').val(month);
+        $('#log_logged_at_3i').val(day);
       }).fail(function (result) {
         // 失敗処理
         alert("new failed");
@@ -77,8 +85,23 @@ document.addEventListener('DOMContentLoaded', function() {
       $('#modal').html(res);
         let modal = document.getElementById('modal')
         let modalObj = new Modal(modal)
-          modalObj.show();
-        
+        modalObj.show();
+
+      // コース画像モーダル表示イベント
+      $(".course-item img").click(function () {
+        // まず、クリックした画像の HTML(<img>タグ全体)を#frayDisplay内にコピー
+        $("#grayDisplay").html($(this).prop("outerHTML"));
+        //そして、fadeInで表示する。
+        $("#grayDisplay").fadeIn(200);
+        return false;
+      });
+      // コース画像モーダル非表示イベント
+      // モーダル画像背景 または 拡大画像そのものをクリックで発火
+      $("#grayDisplay").click(function () {
+        // 非表示にする
+        $("#grayDisplay").fadeOut(200);
+        return false;
+      });
       }).fail(function (result) {
       //   // 失敗処理
         alert("show failed");
