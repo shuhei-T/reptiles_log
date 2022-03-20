@@ -37,7 +37,10 @@ module ApplicationHelper
       site: 'レプログ!',
       title: '爬虫類飼育者のためのかんたん飼育記録サービス',
       reverse: true,
+      charset: 'utf-8',
+      keywords: '爬虫類,蛇,飼育,ヒョウモントカゲモドキ',
       separator: '|',
+      connonical: 'request.original_url',
       description: '爬虫類のための飼育記録アプリならレプログ!。爬虫類は他のペットと違う特性をもつ生き物なので、特徴をうまく汲み取って飼育管理を行う必要があります。爬虫類飼育者の悩みを解消し、かんたんにお世話記録をすることができるサービスです。',
       og: default_og,
       twitter: default_twitter_card
@@ -50,8 +53,10 @@ module ApplicationHelper
     {
       title: :full_title,
       description: :description,
-      url: request.url,
+      type: 'website',
+      url: request.original_url,
       image: image_url('replog_ogp.png')
+      locale: 'ja_JP'
     }
   end
 
