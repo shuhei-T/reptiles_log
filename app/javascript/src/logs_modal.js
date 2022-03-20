@@ -1,6 +1,5 @@
 $(document).on('DOMContentLoaded', function() {
   // 記録画像モーダル表示イベント
-  // $(".course-item img").click(function () {
   $(document).on("click", ".course-item img", function() {
     $('body').css('overflow-y', 'hidden');
     // まず、クリックした画像の HTML(<img>タグ全体)を#grayDisplay内にコピー

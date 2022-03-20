@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-  let $addFieldBtn = $('.js-add-log_feeds-field-btn')
-      counter = 1
-      $cocoonField = $('#activity-logs')
-      $headerFeedName = $('#js-feed-name')
-      $feedAmount = 5
+  let $addFieldBtn = $('.js-add-log_feeds-field-btn');
+  let counter = 1;
+  let $cocoonField = $('#activity-logs');
+  let $headerFeedName = $('#js-feed-name');
+  let $feedAmount = 5;
 
   // cocoonのコールバック
   $cocoonField

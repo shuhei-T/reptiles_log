@@ -21,9 +21,9 @@
       .name {
         font-size: 1.8rem;
         font-weight: bold;
-        // display: table-cell;
         line-height: 2.2;
         color: $font-color;
+        width: auto;
         &:hover{
           color: $vivid-hover;
           transition: all 0.3s;
@@ -62,7 +62,7 @@
     }
   }
 
-  .remark-area, .condition-area, .feed-area, .shit-area, .creaning-area, .handling-area, .shit-area, .bath-area, .weight-area, .length-area, .temperature-area, .humidity-area, .images-area {
+  .logged_at-area, .remark-area, .condition-area, .feed-area, .shit-area, .creaning-area, .handling-area, .shit-area, .bath-area, .weight-area, .length-area, .temperature-area, .humidity-area, .images-area {
     border-top: solid 2px #aec9a3;
   }
 
