@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
           // 給餌数のカウントを減らす
           counter--;
           checkCount(counter);
-
           // 新しいnameListを定義
           let nameList = [],
           $nestedFields = $cocoonField.find('.nested-fields'),
@@ -123,9 +122,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // 要素はdisabledのpropで動作しなくなるが、見た目はdisabledを付けないと変化しない
             $addFieldBtn.prop('disabled', true);
             $addFieldBtn.addClass('disabled');
+            console.log("chckout関数 count >= $feedAmount");
           } else if (count < $feedAmount) {
             $addFieldBtn.prop('disabled', false);
             $addFieldBtn.removeClass('disabled');
+            console.log("chckout関数 count < $feedAmount");
           }
         };
 
