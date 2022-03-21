@@ -17,7 +17,7 @@ import "../src/scroll"
 import "../src/logs_modal"
 import "../src/loading"
 import "../src/cocoon"
-require("@nathanvda/cocoon")
+// require("@nathanvda/cocoon")
 import moment from 'moment'
 window.moment = moment
 import Chart from "chart.js/auto";

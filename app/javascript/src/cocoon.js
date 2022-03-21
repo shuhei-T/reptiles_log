@@ -66,6 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 名前が重複していることを通知する処理----------------
   $(document).on("change", ".js-select-form", function(event) {
+    console.log("cocoon.js側の名前が重複していることを通知する処理");
+
     let blankList = [];
     alertMessage = document.createElement('span');
     alertContent = document.createTextNode('給餌が重複しています');
