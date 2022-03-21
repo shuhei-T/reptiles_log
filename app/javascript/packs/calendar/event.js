@@ -7,6 +7,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import '@fullcalendar/common/main.css';
 import '@fullcalendar/daygrid/main.css';
 import { Modal } from 'bootstrap/dist/js/bootstrap.esm.min.js';
+require("@nathanvda/cocoon")
 
 // <div id='calendar'></div>のidからオブジェクトを定義してカレンダーを作る
 document.addEventListener('DOMContentLoaded', function() {
@@ -81,10 +82,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // cocoonのコールバック
         $cocoonField
         .on('cocoon:after-insert', function() {
+          console.log("cocoonコールバック after-insert");
           counter++;
           checkCount(counter);
         })
         .on('cocoon:before-remove', function(event) {
+          console.log("cocoonコールバック before-remove");
           // 削除ボタンを押すとアラートメッセージが入る
           let confirmation = confirm('給餌記録を削除します。よろしいですか？');
           if(!confirmation) {
@@ -92,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         })
         .on('cocoon:after-remove', function() {
+          console.log("cocoonコールバック after-remove");
           // 給餌数のカウントを減らす
           counter--;
           checkCount(counter);
