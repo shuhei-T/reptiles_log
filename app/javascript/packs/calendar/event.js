@@ -77,17 +77,13 @@ document.addEventListener('DOMContentLoaded', function() {
         let $headerFeedName = $('#js-feed-name');
         let $feedAmount = 5;
   
-        console.log($cocoonField);
-
         // cocoonのコールバック
         $cocoonField
         .on('cocoon:after-insert', function() {
-          console.log("cocoonコールバック after-insert");
           counter++;
           checkCount(counter);
         })
         .on('cocoon:before-remove', function(event) {
-          console.log("cocoonコールバック before-remove");
           // 削除ボタンを押すとアラートメッセージが入る
           let confirmation = confirm('給餌記録を削除します。よろしいですか？');
           if(!confirmation) {
@@ -95,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         })
         .on('cocoon:after-remove', function() {
-          console.log("cocoonコールバック after-remove");
           // 給餌数のカウントを減らす
           counter--;
           checkCount(counter);
@@ -122,11 +117,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // 要素はdisabledのpropで動作しなくなるが、見た目はdisabledを付けないと変化しない
             $addFieldBtn.prop('disabled', true);
             $addFieldBtn.addClass('disabled');
-            console.log("chckout関数 count >= $feedAmount");
           } else if (count < $feedAmount) {
             $addFieldBtn.prop('disabled', false);
             $addFieldBtn.removeClass('disabled');
-            console.log("chckout関数 count < $feedAmount");
           }
         };
 
@@ -144,7 +137,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // 名前が重複していることを通知する処理----------------
         $(document).on("change", ".js-select-form", function(event) {
-          console.log("event.js側の名前が重複していることを通知する処理");
 
           let blankList = [];
           alertMessage = document.createElement('span');
@@ -233,7 +225,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }).fail(function (result) {
       //   // 失敗処理
         alert("show failed");
-        console.log(result);
       });
     },
     eventClassNames: function(arg){

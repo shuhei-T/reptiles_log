@@ -1,6 +1,5 @@
 <div class="mb-3 logged_at-area">
   <%= f.label :logged_at, class: 'form-label' %><br/>
-  <%# <%= f.datetime_field :logged_at, class: 'form-control', value: Time.current.strftime('%Y-%m-%dT%T') %>
   <%= raw sprintf(f.datetime_select( :logged_at, { use_month_numbers: true, date_separator: '%s', datetime_separator: '%s', time_separator: '%s' }, {class: 'form-control', style: 'display: inline-block; width: auto;'}),'年','月', '日', '時')+'分' %>
 </div>
 <div class="mb-3 remark-area">
