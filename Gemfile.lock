@@ -1375,11 +1375,6 @@ GEM
     formatador (0.3.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    gon (6.4.0)
-      actionpack (>= 3.0.20)
-      i18n (>= 0.7)
-      multi_json
-      request_store (>= 1.0)
     hirb (0.7.3)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
@@ -1621,7 +1616,6 @@ DEPENDENCIES
   factory_bot_rails
   faker
   fog-aws
-  gon
   hirb
   jbuilder (~> 2.7)
   jquery-rails

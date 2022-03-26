@@ -62,7 +62,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'sitemap_generator'
 gem 'aws-sdk'
 gem 'meta-tags'
-gem 'gon'
 gem 'cocoon'
 gem 'fog-aws'
 gem 'dotenv-rails'
