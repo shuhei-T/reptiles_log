@@ -1,5 +1,5 @@
 <% content_for(:title, @reptile.name + "|" + t('.title')) %>
-<div class="container chart-index">
+<div class="container chart-index" style="margin-bottom: 60px;">
   <h1 class="chart"><%= t('.title') %></h1>
   <div class="row">
     <div class="left_column">
@@ -8,81 +8,197 @@
         <span class="reptile_name"><%= @reptile.name %></span>
       <% end %>
     </div>
-    <div class="chart-container" style="position: relative; height:50vh; width:100vw;">
+    <div class="button-type border-bottom pb-2 mb-2">
+      種別
+      <button type="button" class="btn btn-outline-primary active" data-mode="weight">体重</button>
+      <button type="button" class="btn btn-outline-primary" data-mode="length">体長</button>
+      <button type="button" class="btn btn-outline-primary" data-mode="temperature">温度</button>
+      <button type="button" class="btn btn-outline-primary" data-mode="humidity">湿度</button>
+    </div>
+    <div class="period">
+      期間 <input type="datetime-local" class="form-control d-inline-block datepicker" style="width: 230px;" id="startDate">
+      〜 <input type="datetime-local" class="form-control d-inline-block datepicker" style="width: 230px;" id="endDate">
+    </div>
+    <div style="position: relative; height:60vh; width:100vw;">
       <canvas id="myChart"></canvas>
     </div>
   </div>
-  <%#<button type="button" id="button14">14日</button>
-  <button type="button" id="button30">30日</button>
-  <button type="button" id="button60">60日</button>
-  <button type="button" id="button-year">年</button>%>
-
 </div>
 
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  let myChart;
+  let mode = 'weight';
+  let chartData = {};
+  chartData.label = {
+    'weight': '体重(g)',
+    'length': '体長(cm)',
+    'temperature': '温度(℃)',
+    'humidity': '湿度(%)'
+  };
+  chartData.date = {
+    'weight': <%= @weight_day %>,
+    'length': <%= @length_day %>,
+    'temperature': <%= @temperature_day %>,
+    'humidity': <%= @humidity_day %>
+  };
 
-  let myData = [
-    {labels: []}
-  ]
 
-  const ctx = document.getElementById('myChart').getContext('2d');
-  const myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-          labels: gon.day,
+  chartData.weight = <%= @weight %>;
+  chartData.length = <%= @length %>;
+  chartData.temperature = <%= @temperature %>;
+  chartData.humidity = <%= @humidity %>;
+  
+  chartData.backgroundColor={
+    'weight': 'rgba(58, 50, 168, 0.2)',
+    'length': 'rgba(255, 80, 120, 0.2)',
+    'temperature': 'rgba(252, 94, 3, 0.2)',
+    'humidity': 'rgba(3, 248, 252, 0.2)'
+  };
+
+  chartData.borderColor ={
+    'weight': 'rgba(58, 50, 168, 1.0)',
+    'length': 'rgba(255, 80, 120, 1.0)',
+    'temperature': 'rgba(252, 94, 3, 1.0)',
+    'humidity': 'rgba(3, 248, 252, 1.0)'
+  };
+
+  chartData.min = 0;
+  chartData.max = chartData.date.length;
+  console.log(`chartData.max.length: ${chartData.max.length}`)
+
+
+
+
+  // const myData = [
+  //   {labels: <%= @day %>,
+  //   data: <%= @temperature %> },
+  // ];
+  function drawMyChart() {
+    const ctx = document.getElementById('myChart').getContext('2d');
+      if (myChart) {
+      myChart.destroy();
+    }
+  
+    myChart = new Chart(ctx, {
+        type: 'line',
+        // data: {
+        //     labels: <%= @day %>,
+        //     datasets: [{
+        //         label: '体重(g)',
+        //         data: <%= @weight %>,
+        //         backgroundColor: 'rgba(58, 50, 168, 0.2)',
+        //         borderColor: 'rgba(58, 50, 168, 1.0)',
+        //         borderWidth: 2,
+        //         type: 'line',
+        //         spanGaps: true,
+        //         yAxisID: 'y',
+        //     },{
+        //         label: '体長(cm)',
+        //         data: <%= @length %>,
+        //         backgroundColor: 'rgba(255, 80, 120, 0.2)',
+        //         borderColor: 'rgba(255, 80, 120, 1.0)',
+        //         borderWidth: 2,
+        //         type: 'line',
+        //         spanGaps: true,
+        //         yAxisID: 'y',
+        //     },{
+        //         label: '温度(℃)',
+        //         data: <%= @temperature %>,
+        //         backgroundColor: 'rgba(252, 94, 3, 0.2)',
+        //         borderColor: 'rgba(252, 94, 3, 1.0)',
+        //         borderWidth: 2,
+        //         type: 'bar',
+        //         spanGaps: true,
+        //         yAxisID: 'y1',
+        //     },{
+        //         label: '湿度(%)',
+        //         data: <%= @humidity %>,
+        //         backgroundColor: 'rgba(3, 248, 252, 0.2)',
+        //         borderColor: 'rgba(3, 248, 252, 1.0)',
+        //         borderWidth: 2,
+        //         type: 'bar',
+        //         spanGaps: true,
+        //         yAxisID: 'y1',
+        //     }]
+        data: {
+          labels: chartData.date[mode],
           datasets: [{
-              label: '体重(g)',
-              data: gon.weight,
-              backgroundColor: 'rgba(58, 50, 168, 0.2)',
-              borderColor: 'rgba(58, 50, 168, 1.0)',
-              borderWidth: 2,
-              type: 'line',
-              spanGaps: true,
-          },{
-              label: '体長(cm)',
-              data: gon.length,
-              backgroundColor: 'rgba(255, 80, 120, 0.2)',
-              borderColor: 'rgba(255, 80, 120, 1.0)',
-              borderWidth: 2,
-              type: 'line',
-              spanGaps: true,
-          },{
-              label: '温度(℃)',
-              data: gon.temperature,
-              backgroundColor: 'rgba(252, 94, 3, 0.2)',
-              borderColor: 'rgba(252, 94, 3, 1.0)',
-              borderWidth: 2,
-              type: 'bar',
-              spanGaps: true,
-          },{
-              label: '湿度(%)',
-              data: gon.humidity,
-              backgroundColor: 'rgba(3, 248, 252, 0.2)',
-              borderColor: 'rgba(3, 248, 252, 1.0)',
-              borderWidth: 2,
-              type: 'bar',
-              spanGaps: true,
+            label: chartData.label[mode],
+            data: chartData[mode],
+            fill: false,
+            borderWidth: 2,
+            backgroundColor: chartData.backgroundColor[mode],
+            borderColor: chartData.borderColor[mode],
+            tension: 0.1,
+            spanGaps: true
           }]
-      },
-      options: {
-          scales: {
-              x: {
-                ticks: {
-                  autoSkip: true,
-                  maxTicksLimit: '14'
+        },
+        options: {
+            scales: {
+                x: {
+                  ticks: {
+                    autoSkip: true,
+                    maxTicksLimit: '14'
+                  },
+                  min: chartData.min,
+                  max: chartData.max
                 },
-              },
-              y: {
+                y: {
+                  type: 'linear',
+                  position: 'left',
                   beginAtZero: true
-              },
-          },
-          maintainAspectRatio: false
+                },
+                // y1: {
+                //   type: 'linear',
+                //   position: 'right',
+                //   // beginAtZero: true
+                // }
+            },
+            maintainAspectRatio: false
+        }
+    });
+
+  };
+
+  drawMyChart();
+
+  // グラフ切り替え
+  let btns = document.querySelectorAll('.button-type button');
+  for(let i = 0; i < btns.length; i++ ){
+    btns[i].addEventListener('click', function() {
+      if(!(this).classList.contains('active')) {
+        let active_button = document.querySelector('.active');
+        active_button.classList.remove('active');
+        this.classList.add('active');
+        mode = this.dataset.mode;
+        drawMyChart()
       }
-  });
+    }, false);
+  }
 
 
+
+  // jQuery('.button-type button').click(function() {
+  //   if( !jQuery(this).hasClass('active') ) {
+  //     jQuery('.button-type button').removeClass('active');
+  //     jQuery(this).addClass('active');
+  //     mode = jQuery(this).data('mode');
+  //     drawMyChart();
+  //   }
+  // })
+
+
+// const updateChart = (selectedData) => {
+//   myChart.data.labels = selectedData.labels;
+//   myChart.data.datasets[0].data = selectedData.data;
+//   myChart.update();
+// }
+
+// document.getElementById('button1').addEventListener('click', function() {
+//   updateChart(myData[0]);
+// });
 
   // document.getElementById("button14").addEventListener('click', function() {
   //   // let xScale = myChart.scales.x;
@@ -128,6 +244,107 @@ document.addEventListener('DOMContentLoaded', function() {
   //   myChart.data.labels = <%= @year %>;
   //   myChart.update();
   // });
+
+  let startDate = document.getElementById('startDate');
+  let endDate = document.getElementById('endDate');
+
+  startDate.addEventListener('change', (e) => {
+    let startDateVal = e.target.value;
+    // document.getElementById('startDateSelected').innerText = startDateVal;
+    
+  })
+
+  endDate.addEventListener('change', (e) => {
+    let endDateVal = e.target.value;
+    // document.getElementById('endDateSelected').innerText = endDateVal;
+  })
+
+  const Dates = chartData.date[mode]
+  const MinDate = Dates[0]
+  const MaxDate = Dates.slice(-1)[0]
+  console.log(`Dates:b${Dates}`)
+  console.log(`MinDate:${MinDate}`)
+  console.log(`MaxDate:${MaxDate}`)
+  
+  let MinDateCustom = new Date(MinDate);
+  console.log(MinDateCustom);
+  MinDateCustom.setDate(MinDateCustom.getDate() - 1);
+  console.log(MinDateCustom);
+  let MinDateYesterday = MinDateCustom.getFullYear() + '-' + ('0' + (MinDateCustom.getMonth() + 1)).slice(-2) + '-' +('0' + MinDateCustom.getDate()).slice(-2)
+  console.log(`MinDateYesterday: ${MinDateYesterday}`);
+  let MaxDateCustom = new Date(MaxDate);
+  console.log(`MaxDateCustom:${MaxDateCustom}`);
+  MaxDateCustom.setDate(MaxDateCustom.getDate() + 1);
+  console.log(`MaxDateCustom:${MaxDateCustom}`);
+  let MaxDateTomorrow = MaxDateCustom.getFullYear() + '-' + ('0' + (MaxDateCustom.getMonth() + 1)).slice(-2) + '-' +('0' + MaxDateCustom.getDate()).slice(-2)
+  console.log(`MaxDateTomorrow: ${MaxDateTomorrow}`);
+
+
+  
+  jQuery('.datepicker').on('change', (e) => {
+    let dateText = e.target.value;
+    let dateTextCustom = new Date(dateText);
+    // console.log(dateTextCustom);
+    dateTextCustom2 = dateTextCustom.getFullYear() + '-' + ('0' + (dateTextCustom.getMonth() + 1)).slice(-2) + '-' +('0' + dateTextCustom.getDate()).slice(-2) + ' ' +  ('0' + dateTextCustom.getHours()).slice(-2) + ':' + ('0' + dateTextCustom.getMinutes()).slice(-2)
+    // console.log(dateTextCustom2);
+
+
+    // console.log(Dates.indexOf(dateText));
+    // if (String(chartData.date[mode]).indexOf(dateText) === -1) {
+    if (dateText < MinDateYesterday || dateText > MaxDateTomorrow) {
+      alert('日付が存在しません');
+      // console.log(String(chartData.date[mode]))
+      return false;
+    }
+    if (e.target.getAttribute('id') == 'startDate') {
+      let MinValue = Dates.find(e => e > dateTextCustom2);
+      chartData.min = MinValue;
+    } else {
+      let MaxValue;
+      for (let i = 0; i < Dates.length; i++) {
+        if (Dates[i] <= dateTextCustom2) {
+          MaxValue = Dates[i];
+          // console.log(`MaxValue: ${MaxValue}`);
+        }
+      }
+      chartData.max = MaxValue;
+    }
+
+
+    drawMyChart();
+      // console.log(`chartData.min：${chartData.min}`);
+      // console.log(`chartData.max：${chartData.max}`);
+  })
+
+  // jQuery.datetimepicker.setLocale('ja');
+  // jQuery('.datepicker').datetimepicker({
+  //   dateFormat: 'yy/mm/dd',
+  //   onChangeDateTime: function(dateText, inst){
+  //     console.log(dateText);
+  //     if ( String(chartData.date).indexOf(dateText) === -1 ) {
+  //       alert('日付が存在しません');
+  //       console.log(String(chartData.date).indexOf(dateText));
+  //       return false;
+  //     }
+  //     if ( jQuery(this).attr('id') == 'startDate' ) {
+  //       chartData.min = chartData.date.indexOf(dateText);
+  //     } else {
+  //       chartData.max = chartData.date.lastIndexOf(dateText);
+  //     }
+  //     drawMyChart();
+  //   }
+  // });
+
+  jQuery('.period input').on('input', function(event) {
+    if (!this.value) {
+      if ( this.getAttribute('id') == 'startDate' ) {
+        chartData.min = 0;
+      } else {
+        chartData.max = chartData.date.length;
+      }
+      drawMyChart();
+    }
+  });
 
 });
 

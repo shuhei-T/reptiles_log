@@ -14,6 +14,7 @@ class LogsController < ApplicationController
 
   def create
     @log = current_user.logs.build(log_params)
+    @log.weight ||= @reptile.logs.last.weight
     if @log.save
       redirect_to reptile_logs_path, success: "#{l @log.logged_at, format: :long} に記録しました"
     else
