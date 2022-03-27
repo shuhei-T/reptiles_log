@@ -42,6 +42,11 @@ module ApplicationHelper
       separator: '|',
       canonical: request.original_url,
       description: '爬虫類のための飼育記録アプリならレプログ!。爬虫類は他のペットと違う特性をもつ生き物なので、特徴をうまく汲み取って飼育管理を行う必要があります。爬虫類飼育者の悩みを解消し、かんたんにお世話記録をすることができるサービスです。',
+      icon: [
+        { href: image_url('favicon.ico') },
+        { href: image_url('icon.png'), rel: 'apple-touch-icon', sizes: '180x180',
+          type: 'image/png' }
+      ],
       og: default_og,
       twitter: default_twitter_card
     }
