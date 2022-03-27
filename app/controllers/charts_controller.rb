@@ -2,34 +2,6 @@ class ChartsController < ApplicationController
   before_action :set_reptile_id, only: %i[index]
 
   def index
-    @charts = @reptile.logs.all.order(logged_at: :asc)
-
-    # this_month = Date.today.all_month
-
-
-
-    # 日付
-    day = Array.new
-    @charts.each do |chart|
-      day << chart.logged_at.strftime("%Y年%m月%d日 %H:%M").to_s
-    end
-    @day = day.to_json.html_safe
-
-    # 今月
-    # month = []
-    # @charts.each do |chart|
-    #   if (this_month.include?(Date.parse(chart[:created_at].to_s)))
-    #     month << chart.created_at.strftime("%Y年%m月%d日 %H:%M").to_s
-    #   end
-    # end
-    # => ["2022年03月01日 02:58", "2022年03月01日 12:35", "2022年03月01日 13:16", "2022年03月01日 13:19", "2022年03月01日 13:22", "2022
-    #   03月01日 16:09"]
-
-    # year = []
-    # @charts.each do |chart|
-    #   year << chart.created_at.strftime('')
-    # end
-
     # 体重
     @weight = @reptile.logs.pluck(:weight).compact.to_json.html_safe
     @weight_charts = @reptile.logs.where("weight IS NOT NULL").order(logged_at: :asc)
