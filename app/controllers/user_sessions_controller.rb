@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_back_or_to reptiles_path, success: t('.success')
     else
-      redirect_to new_user_path, danger: t('.fail')
+      redirect_to login_path, danger: t('.fail')
     end
   end
 
