@@ -134,6 +134,12 @@ body {
   h1.contact_icon::before {
     content: "\f199";
   }
+  h1.password-apply::before {
+    content: "\f023";
+  }
+  h1.password-reset::before {
+    content: "\f3c1";
+  }
 
   h2.timeline::before {
     content: url('https://api.iconify.design/clarity/timeline-line.svg?color=%237eb63f&width=33&height=33');

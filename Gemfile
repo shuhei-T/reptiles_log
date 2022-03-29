@@ -40,6 +40,7 @@ group :development, :test do
   gem 'hirb'
   gem 'rails-erd'
   gem 'faker'
+  gem 'letter_opener_web', '~> 1.0'
 end
 
 group :development do
@@ -68,6 +69,7 @@ gem 'dotenv-rails'
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'draper'
+gem 'config'
 # Authentication
 gem 'sorcery'
 # UI/UX

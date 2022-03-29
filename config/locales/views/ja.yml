@@ -77,7 +77,7 @@ ja:
       title: '飼育グラフ'
   password_resets:
     new:
-      title: 'パスワードリセット申請'
+      title: 'パスワード再発行'
       submit: '送信'
     edit:
       title: 'パスワードリセット'
