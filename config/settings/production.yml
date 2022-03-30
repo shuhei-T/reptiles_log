@@ -1,2 +1,3 @@
 default_url_options:
-  host: 'localhost'
+  protcol: 'https'
+  host: 'reptileslog.com'
