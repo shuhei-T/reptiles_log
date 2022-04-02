@@ -18,7 +18,7 @@ class ChartsController < ApplicationController
     @length_charts.each do |chart|
       length_day << chart.logged_at.strftime("%Y-%m-%d %H:%M").to_s
     end
-    @length_day = weight_day.to_json.html_safe
+    @length_day = length_day.to_json.html_safe
 
     # 温度
     @temperature = @reptile.logs.pluck(:temperature).compact.to_json.html_safe

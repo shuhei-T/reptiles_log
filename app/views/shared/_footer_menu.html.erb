@@ -10,9 +10,9 @@
         <% end %>
         <% if (controller_name == 'reptiles' && action_name == 'show') || (controller_name == 'logs' && action_name == 'new') || (controller_name == 'logs' && action_name == 'index') || (controller_name == 'events' && action_name == 'index') || (controller_name == 'charts' && action_name == 'index') %>
           <%= link_to reptile_logs_path(@reptile), class: "nav-link text-dark #{ active_if('logs', 'index') }" do %>
-            <figure style="position: relative; top: 10px; text-align: center;">
+            <figure style="position: relative; top: 9.0px; text-align: center;">
               <span class="iconify" data-icon="clarity:timeline-line" data-width="30" data-height="30"></span>
-              <figcaption class="d-block" style="font-size: xx-small;">タイムライン</figcaption>
+              <figcaption class="d-block" style="font-size: xx-small; margin-top: .1rem;">タイムライン</figcaption>
             </figure>
           <% end %>
         <% end %>
