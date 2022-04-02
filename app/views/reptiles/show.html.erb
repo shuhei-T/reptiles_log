@@ -100,7 +100,7 @@
             </div>
             <div class="icon-message">
               <% if @reptile.adoptaversary.present? %>
-                <%= @reptile.adoptaversary&.strftime("%Y年%-m月%-d日") %>
+                <%= @reptile.adoptaversary&.strftime("%Y年%-m月%-d日") %>(<%= @reptile.decorate.full_adoptaversary %>)
               <% else %>
                 <span class="text-none">入力がありません</span>
               <% end %>

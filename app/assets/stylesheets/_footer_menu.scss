@@ -16,11 +16,11 @@ footer {
   left: 0;
   width: 100%;
   height: 100px;
-  svg:hover {
+  figure:hover {
     color: $footer-hover-color;
   }
   .active {
-    svg {
+    figure {
       color: $footer-hover-color;
     }
   }

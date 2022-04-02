@@ -1,12 +1,14 @@
 <% if@reptile.user == current_user %>
 <span class="edit_link">
-  <%= link_to edit_reptile_path(@reptile) do %>
-    <i class="fas fa-edit"></i>
-    <span>編集</span>
-  <% end %>
-  <%= link_to reptile_path(@reptile), method: :delete, data: { confirm: t('defaults.message.delete_confirm') } do %>
-    <i class="fas fa-trash"></i>
-    <span>削除</span>
-  <% end %>
+  <span class="edit-area">
+    <%= link_to edit_reptile_path(@reptile) do %>
+      <i class="fas fa-edit"></i> 編集
+    <% end %>
+  </span>
+  <span class="delete-area">
+    <%= link_to reptile_path(@reptile), method: :delete, data: { confirm: t('defaults.message.delete_confirm') } do %>
+      <i class="fas fa-trash"></i> 削除
+    <% end %>
+  </span>
 <span>
 <% end %>

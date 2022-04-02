@@ -5,7 +5,7 @@
   <div class="row title">
     <div class="col right-column">
       <span class="name-link">
-        <%= image_tag @reptile.image.url, class: 'rounded-circle card-img-top', size: '20x20A' %>
+        <%= image_tag @reptile.image.url, class: 'rounded-circle card-img-top', size: '20x20' %>
         <%= link_to reptile_path(@reptile) do %>
           <span class="reptile_name"><%= @reptile.name %></span>
         <% end %>
@@ -25,7 +25,7 @@
       <h2 class="h5 mb-0"><%= l date, format: :long %></h2>
       <% logs.each do |log| %>
         <div class="content">
-          <span class="small text-gray"><i class="far fa-clock me-1"></i></i><%= l log.logged_at, format: :long %></span>
+          <span class="small text-gray"><i class="far fa-clock me-1"></i></i><%= l log.logged_at, format: :time_only %></span>
           <%= link_to reptile_log_path(@reptile, log), class: 'delete-icon', method: :delete, data: { confirm: "#{l log.logged_at, format: :long}の記録を削除しますか？" } do %>
           <i class="fas fa-trash"></i>
           <% end %>

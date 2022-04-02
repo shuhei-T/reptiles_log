@@ -169,12 +169,29 @@ p {
 .weight {
   svg {
     margin-right: 0.3rem;
+    color: #3a32a8;
+  }
+}
+.length {
+  svg {
+    color: #ff5078;
   }
 }
 .temperature {
   svg {
     margin-left: 0.3rem;
     margin-right: 0.5rem;
+    color: #fc5e03;
+  }
+}
+.humidity {
+  img {
+    filter: invert(84%) sepia(30%) saturate(5750%) hue-rotate(137deg) brightness(105%) contrast(108%);
+  }
+}
+.remark {
+  svg {
+    color: #035549;
   }
 }
 
@@ -395,54 +412,6 @@ p {
     }
   }
 
-  // Timeline holder
-  // ul.timeline {
-  //   list-style-type: none;
-  //   position: relative;
-  //   padding-left: 1.5rem;
-  // }
-  // // Timeline vertical line
-  // ul.timeline::before {
-  //   content: ' ';
-  //   background: #fff;
-  //   display: inline-block;
-  //   position: absolute;
-  //   left: 16px;
-  //   width: 4px;
-  //   height: 100%;
-  //   z-index: 400;
-  //   border-radius: 0.5rem;
-  // }
-
-  // li.timeline-item {
-  //   margin: 20px 0;
-  // }
-
-  // Timeline item arrow
-  // .timeline-arrow {
-  //   border-top: 0.5rem solid transparent;
-  //   border-right: 0.5rem solid #fff;
-  //   border-bottom: 0.5rem solid transparent;
-  //   display: block;
-  //   position: absolute;
-  //   left: 2rem;
-  // }
-  // // timeline item circle marker
-  // li.timeline-item::before {
-  //   content: ' ';
-  //   background: #ddd;
-  //   display: inline-block;
-  //   position: absolute;
-  //   border-radius: 50%;
-  //   border: 3px solid #fff;
-  //   left: 11px;
-  //   width: 14px;
-  //   height: 14px;
-  //   z-index: 400;
-  //   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  // }
-
-  
   .content{
     border-top: solid 1px #eeeeee;
     padding: 0.7rem 0.7rem;
@@ -459,6 +428,7 @@ p {
     .delete-icon {
       margin-left: 0.5rem;
       text-decoration: none;
+      color: $delete-color;
     }
   }
 

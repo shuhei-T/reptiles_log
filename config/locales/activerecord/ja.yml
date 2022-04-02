@@ -73,3 +73,6 @@ ja:
       sheding:
         shed: '脱皮'
         white: '白濁'
+  time:
+    formats:
+      time_only: '%H:%M'
