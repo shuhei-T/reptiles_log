@@ -7,10 +7,6 @@
     </div>
     <div class="modal-body event-log-form log_new">
       <%= form_with model: @event, url: {controller: 'events', action: 'create'}, local: false, id: 'new_event' do |f| %>
-        <div class="mb-3 logged_at-area">
-          <%= f.label :logged_at, class: 'form-label' %><br/>
-          <%= raw sprintf(f.datetime_select( :logged_at, { use_month_numbers: true, date_separator: '%s', datetime_separator: '%s', time_separator: '%s' }, {class: 'form-control', style: 'display: inline-block; width: auto;'}),'年','月', '日', '時')+'分' %>
-        </div>
         <%= render 'logs/form', f: f %>
       <% end %>
     </div>
