@@ -1,5 +1,5 @@
 <%= javascript_pack_tag 'nathanvda_cocoon', 'data-turbolinks-track': 'reload' %>
-<div class="container">
+<div class="container" style="margin-bottom: 80px;">
   <h1 class="log"><%= t('.title') %></h1>
   <div class="row log_new">
     <div class="col-sm-4">
@@ -22,10 +22,6 @@
       <div class="form">
         <%= form_with model: @log, url:[@reptile, @log], local: true do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
-          <div class="mb-3 logged_at-area">
-            <%= f.label :logged_at, class: 'form-label' %><br/>
-            <%= f.datetime_field :logged_at, class: 'form-control', value: Time.current.strftime('%Y-%m-%dT%T')  %>
-          </div>
           <%= render 'form', f: f %>
         <% end %>
       </div>
