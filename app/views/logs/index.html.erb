@@ -26,7 +26,7 @@
       <% logs.each do |log| %>
         <div class="content">
           <span class="small text-gray"><i class="far fa-clock me-1"></i></i><%= l log.logged_at, format: :time_only %></span>
-          <%= link_to reptile_log_path(@reptile, log), class: 'delete-icon', method: :delete, data: { confirm: "#{l log.logged_at, format: :long}の記録を削除しますか？" } do %>
+          <%= link_to reptile_log_path(@reptile, log), class: 'delete-icon ms-2 text-decoration-none text-danger', method: :delete, data: { confirm: "#{l log.logged_at, format: :long}の記録を削除しますか？" } do %>
           <i class="fas fa-trash"></i>
           <% end %>
           <%= render 'logs/logs', log: log %>

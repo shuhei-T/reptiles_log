@@ -2,7 +2,7 @@
   <div class="modal-content">
     <div class="modal-header">
       <h5 class="modal-title" id="exampleModalLabel"><%= l @event.logged_at, format: :long %>
-        <%= link_to reptile_event_path(@reptile, @event), class: 'delete-icon', method: :delete, data: { confirm: "#{l @event.logged_at, format: :long}の記録を削除しますか？" }, remote: true do %>
+        <%= link_to reptile_event_path(@reptile, @event), class: 'delete-icon ms-2 text-decoration-none text-danger', method: :delete, data: { confirm: "#{l @event.logged_at, format: :long}の記録を削除しますか？" }, remote: true do %>
           <i class="fas fa-trash"></i>
         <% end %>
       </h5>
