@@ -3,7 +3,7 @@ class ChartsController < ApplicationController
 
   def index
     # 体重
-    @weight = @reptile.logs.pluck(:weight).compact.to_json.html_safe
+    @weight = @reptile.logs.order(logged_at: :asc).pluck(:weight).compact.to_json.html_safe
     @weight_charts = @reptile.logs.where("weight IS NOT NULL").order(logged_at: :asc)
     weight_day = Array.new
     @weight_charts.each do |chart|
@@ -12,7 +12,7 @@ class ChartsController < ApplicationController
     @weight_day = weight_day.to_json.html_safe
 
     # 体長
-    @length = @reptile.logs.pluck(:length).compact.to_json.html_safe
+    @length = @reptile.logs.order(logged_at: :asc).pluck(:length).compact.to_json.html_safe
     @length_charts = @reptile.logs.where("length IS NOT NULL").order(logged_at: :asc)
     length_day = Array.new
     @length_charts.each do |chart|
@@ -21,7 +21,7 @@ class ChartsController < ApplicationController
     @length_day = length_day.to_json.html_safe
 
     # 温度
-    @temperature = @reptile.logs.pluck(:temperature).compact.to_json.html_safe
+    @temperature = @reptile.logs.order(logged_at: :asc).pluck(:temperature).compact.to_json.html_safe
     @temperature_charts = @reptile.logs.where("temperature IS NOT NULL").order(logged_at: :asc)
     temperature_day = Array.new
     @temperature_charts.each do |chart|
@@ -30,7 +30,7 @@ class ChartsController < ApplicationController
     @temperature_day = temperature_day.to_json.html_safe
 
     # 湿度
-    @humidity = @reptile.logs.pluck(:humidity).compact.to_json.html_safe
+    @humidity = @reptile.logs.order(logged_at: :asc).pluck(:humidity).compact.to_json.html_safe
     @humidity_charts = @reptile.logs.where("humidity IS NOT NULL").order(logged_at: :asc)
     humidity_day = Array.new
     @humidity_charts.each do |chart|
