@@ -20,22 +20,23 @@ class ReptileDecorator < Draper::Decorator
     elsif adoptaversary && calced_age
       "#{calc_age(adoptaversary) + calced_age} 歳"
     elsif age
-      "#{age} 歳" 
+      "#{age} 歳"
+    end
+  end
+
+  def full_adoptaversary
+    year, month = calc_month(adoptaversary).divmod(12)
+    if year > 0 && month != 0
+      "#{year} 年 #{month} ヶ月"
+    elsif year <= 0
+      "#{month} ヶ月"
+    elsif month <= 0
+      "#{year} 年"
     end
   end
 
 
   private
-
-  def date_valid?
-    if birthday.present? && birthday > Date.today
-      errors.add(:birthday, ": 「生年月日」を未来に設定することはできません")
-    end
-    if birthday.present? && adoptaversary.present? && birthday > adoptaversary
-      errors.add(:birthday, ": 「お迎え日」より未来に設定することはできません")
-      errors.add(:adoptaversary, ": 「生年月日」より過去に設定することはできません")
-    end
-  end
 
   def calc_age(birthdayStr)
     return (Date.today.strftime("%Y%m%d").to_i - birthdayStr.strftime("%Y%m%d").to_i) / 10000
