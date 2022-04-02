@@ -4,21 +4,12 @@
 body {
   main {
     .top-wrapper {
-      // margin: auto;
-      // width: 100vw;
-      // height: 100vh;
-      // background-position: center;
       .contents {
         .top-inner-text {
           text-align: center;
+          background: transparent;
           img.pc-replog-top {
             display: none;
-          }
-          img.sp-replog-top  {
-            display: block;
-            object-fit: cover;
-            height: 100vh;
-            width: 100%;
           }
         }
         .btn-wrapper {
@@ -159,7 +150,17 @@ h2.check {
   }
 }
 
-@media screen and (min-width: 767px) {
+@media screen and(max-width: 480px) {
+  .top-wrapper {
+    background-image: image-url("replog_sp_v2.png");
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+  }
+}
+
+@media screen and (min-width: 481px) {
 /* 768px以上用（タブレット・PC用）の記述 */
   body {
     main {
