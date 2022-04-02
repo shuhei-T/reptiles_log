@@ -30,7 +30,7 @@
     <% end %>
     <%= render 'shared/flash_message' %>
     <%= yield %>
-    <% if current_page?(login_path) || current_page?(root_path) || current_page?(privacy_path) || current_page?(service_path) || current_page?(new_user_path) || current_page?(new_contact_path) || current_page?(new_password_reset_path) || (controller_path == 'password_resets' && action_name == 'edit') %>
+    <% if %i[login root privacy service new_user new_contact new_password_reset].any? { |name| current_page?(send("#{name}_path")) } || (controller_path == 'password_resets' && action_name == 'edit') %>
       <%= render 'shared/footer' %>
     <% else %>
       <%= render 'shared/footer_menu' %>

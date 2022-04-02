@@ -4,11 +4,10 @@
 body {
   main {
     .top-wrapper {
-      margin: auto;
-      width: 100vw;
-      height: 100vh;
-
-      background-position: center;
+      // margin: auto;
+      // width: 100vw;
+      // height: 100vh;
+      // background-position: center;
       .contents {
         .top-inner-text {
           text-align: center;
@@ -159,10 +158,6 @@ h2.check {
     color: $highlight-color; /*アイコン色*/
   }
 }
-
-
-
-
 
 @media screen and (min-width: 767px) {
 /* 768px以上用（タブレット・PC用）の記述 */

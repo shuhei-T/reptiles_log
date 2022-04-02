@@ -342,7 +342,7 @@
     <p><i class="fas fa-thermometer-half"></i> <%= log.temperature %>℃</p>
   </div>
 <% end %>
-<%# =============== 温度 ============================================================== %>
+<%# =============== 湿度 ============================================================== %>
 <% if log.humidity.present? %>
   <div class="humidity">
     <p><%= image_tag 'humidity.png', size: '20x20' %> <%= log.humidity %>%</p>
@@ -350,7 +350,7 @@
 <% end %>
 <%# =============== メモ ============================================================== %>
 <% if log.remark.present? %>
-  <p class="text-small mt-2 fw-light"><i class="fas fa-pen"></i> <%= log.remark %></p>
+  <p class="remark text-small mt-2 fw-light"><i class="fas fa-pen"></i> <%= log.remark %></p>
 <% end %>
 <%# =============== 画像 ============================================================== %>
 <% if log.images %>

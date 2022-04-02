@@ -109,6 +109,16 @@
         margin-right: 0.6rem;
         font-size: 1.2rem;
       }
+      .edit_link {
+        .edit-area {
+
+        }
+        .delete-area {
+          a {
+            color: $delete-color;
+          }
+        }
+      }
     }
   }
   .details {
