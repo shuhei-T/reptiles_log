@@ -8,7 +8,7 @@
         <span class="reptile_name"><%= @reptile.name %></span>
       <% end %>
     </div>
-    <div class="button-type border-bottom pb-2 mb-2">
+    <div class="button-type pb-2 mb-2">
       <button type="button" class="btn btn-outline-primary active" data-mode="weight">体重</button>
       <button type="button" class="btn btn-outline-primary" data-mode="length">体長</button>
       <button type="button" class="btn btn-outline-primary" data-mode="temperature">温度</button>
@@ -16,12 +16,12 @@
     </div>
     <%# <div class="period">
       期間 <input type="datetime-local" class="form-control d-inline-block datepicker" style="width: 230px;" id="startDate">
-      〜 <input type="datetime-local" class="form-control d-inline-block datepicker" style="width: 230px;" id="endDate">
+      - <input type="datetime-local" class="form-control d-inline-block datepicker" style="width: 230px;" id="endDate">
     </div> %>
 
-    <div class="period">
+    <div class="period border-bottom pb-2 mb-2">
       期間<br>
-      <input type="text" class="form-control d-inline-block datepicker" style="width: 175px;" id="startDate">〜<input type="text" class="form-control d-inline-block datepicker" style="width: 175px;" id="endDate">
+      <input type="text" class="form-control d-inline-block datepicker" style="width: 160px;" id="startDate"> 〜 <input type="text" class="form-control d-inline-block datepicker" style="width: 160px;" id="endDate">
     </div>
 
     <div style="position: relative; height:60vh; width:100vw;">
@@ -134,6 +134,8 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log(Dates);
   const MinDate = Dates[0];
   const MaxDate = Dates.slice(-1)[0];
+  console.log(MinDate);
+  console.log(MaxDate);
   
   let MinDateCustom = new Date(MinDate);
   MinDateCustom.setDate(MinDateCustom.getDate() - 1);
@@ -146,13 +148,14 @@ document.addEventListener('DOMContentLoaded', function() {
   // jQuery('.datepicker').on('change', (e) => {
   //   let dateText = e.target.value;
   //   let dateTextCustom = new Date(dateText);
-    
   //   const dateTextFormat = dateTextCustom.getFullYear() + '-' + ('0' + (dateTextCustom.getMonth() + 1)).slice(-2) + '-' +('0' + dateTextCustom.getDate()).slice(-2) + ' ' +  ('0' + dateTextCustom.getHours()).slice(-2) + ':' + ('0' + dateTextCustom.getMinutes()).slice(-2)
+  //   console.log(dateTextFormat);
 
-  //   if (dateText < MinDateYesterday || dateText > MaxDateTomorrow) {
-  //     alert('日付が存在しません');
-  //     return false;
-  //   }
+  //   // if (dateTextFormat < MinDate || dateTextFormat > MaxDate) {
+  //   //   alert('日付が存在しません');
+  //   //   return false;
+  //   // }
+
   //   if (e.target.getAttribute('id') == 'startDate') {
   //     let MinValue = Dates.find(e => e > dateTextFormat);
   //     chartData.min = MinValue;
@@ -171,14 +174,14 @@ document.addEventListener('DOMContentLoaded', function() {
   jQuery.datetimepicker.setLocale('ja');
   jQuery('.datepicker').datetimepicker({
     step: 10,
-    format: 'Y-m-d h:t',
+    format: 'y/m/d h:t',
     onSelectDate: function(dateText, inst){
       const dateTextFormat = dateText.getFullYear() + '-' + ('0' + (dateText.getMonth() + 1)).slice(-2) + '-' +('0' + dateText.getDate()).slice(-2) + ' ' +  ('0' + dateText.getHours()).slice(-2) + ':' + ('0' + dateText.getMinutes()).slice(-2)
       
-      if (dateTextFormat < MinDateYesterday || dateTextFormat > MaxDateTomorrow) {
-        alert('日付が存在しません');
-        return false;
-      }
+      // if (dateTextFormat < MinDateYesterday || dateTextFormat > MaxDateTomorrow) {
+      //   alert('日付が存在しません');
+      //   return false;
+      // }
       console.log(jQuery(inst).attr('id'));
       if (jQuery(inst).attr('id') == 'startDate') {
         let MinValue = Dates.find(e => e > dateTextFormat);
