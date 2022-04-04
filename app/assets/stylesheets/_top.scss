@@ -25,7 +25,6 @@ body {
         }
       }
     }
-
     .explanation-wrapper {
       max-width: 960px;
       margin: 0 0.3rem;
@@ -201,9 +200,15 @@ h2.check {
         max-width: 960px;
         margin: 0 auto;
         margin-bottom: 75px;
+        h2.label {
+          font-size: 34px;
+        }
         p.red {
-          font-size: 24px;
+          font-size: 30px;
           text-align: center;
+        }
+        p {
+          font-size: 20px;
         }
       }
 
@@ -213,7 +218,7 @@ h2.check {
         .contents {
           flex-direction: row;
           justify-content: space-between;
-          align-items: normal;
+          align-items: center;
 
           &:nth-child(odd) {
             flex-direction: row-reverse;
@@ -225,6 +230,14 @@ h2.check {
           }
           .text-contents {
             width: 58%;
+            // text-align: center;
+            h2 {
+              font-size: 28px;
+              color: #46B402;
+            }
+            p {
+              font-size: 20px;
+            }
           }
         }
       }
