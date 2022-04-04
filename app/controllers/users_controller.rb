@@ -12,9 +12,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      auto_login(@user)
       redirect_to login_path, success: t('.success')
     else
-      redirect_to login_path, danger: t('.fail')
+      redirect_to new_user_path, danger: t('.fail')
     end
   end
 
