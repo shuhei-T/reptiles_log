@@ -14,11 +14,6 @@
       <button type="button" class="btn btn-outline-primary" data-mode="temperature">温度</button>
       <button type="button" class="btn btn-outline-primary" data-mode="humidity">湿度</button>
     </div>
-    <%# <div class="period">
-      期間 <input type="datetime-local" class="form-control d-inline-block datepicker" style="width: 230px;" id="startDate">
-      - <input type="datetime-local" class="form-control d-inline-block datepicker" style="width: 230px;" id="endDate">
-    </div> %>
-
     <div class="period border-bottom pb-2 mb-2">
       期間<br>
       <input type="text" class="form-control d-inline-block datepicker" style="width: 160px;" id="startDate"> 〜 <input type="text" class="form-control d-inline-block datepicker" style="width: 160px;" id="endDate">
@@ -143,33 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
   let MaxDateCustom = new Date(MaxDate);
   MaxDateCustom.setDate(MaxDateCustom.getDate() + 1);
   const MaxDateTomorrow = MaxDateCustom.getFullYear() + '-' + ('0' + (MaxDateCustom.getMonth() + 1)).slice(-2) + '-' +('0' + MaxDateCustom.getDate()).slice(-2)
-  
-  // 期間フォームが変わったときの処理
-  // jQuery('.datepicker').on('change', (e) => {
-  //   let dateText = e.target.value;
-  //   let dateTextCustom = new Date(dateText);
-  //   const dateTextFormat = dateTextCustom.getFullYear() + '-' + ('0' + (dateTextCustom.getMonth() + 1)).slice(-2) + '-' +('0' + dateTextCustom.getDate()).slice(-2) + ' ' +  ('0' + dateTextCustom.getHours()).slice(-2) + ':' + ('0' + dateTextCustom.getMinutes()).slice(-2)
-  //   console.log(dateTextFormat);
-
-  //   // if (dateTextFormat < MinDate || dateTextFormat > MaxDate) {
-  //   //   alert('日付が存在しません');
-  //   //   return false;
-  //   // }
-
-  //   if (e.target.getAttribute('id') == 'startDate') {
-  //     let MinValue = Dates.find(e => e > dateTextFormat);
-  //     chartData.min = MinValue;
-  //   } else {
-  //     let MaxValue;
-  //     for (let i = 0; i < Dates.length; i++) {
-  //       if (Dates[i] <= dateTextFormat) {
-  //         MaxValue = Dates[i];
-  //       }
-  //     }
-  //     chartData.max = MaxValue;
-  //   }
-  //   drawMyChart();
-  // })
 
   jQuery.datetimepicker.setLocale('ja');
   jQuery('.datepicker').datetimepicker({
