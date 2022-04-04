@@ -1,6 +1,6 @@
 # レプログ!
 ![](app/assets/images/top.png)
-【https://reptileslog.com/】
+[サービスURL]https://reptileslog.com/
 ## サービス概要
 爬虫類飼育者のためのかんたん飼育記録サービス
 
