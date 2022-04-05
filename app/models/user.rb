@@ -36,8 +36,11 @@ class User < ApplicationRecord
   end
 
   def self.guest
-    find_or_create_by(email: "guest@example.com") do |user|
+    find_or_create_by!(email: "guest@example.com") do |user|
+      user.name = 'ゲストユーザー'
+      user.comment = 'ゲストユーザーアカウントです。実際にご利用になるにはご自身のアカウントが必要です。ログアウトしてから会員登録を行ってください。'
       user.password = ENV['SECRETS_TEST_ACCOUNT_PASS']
+      user.password_confirmation = ENV['SECRETS_TEST_ACCOUNT_PASS']
     end
   end
 end
