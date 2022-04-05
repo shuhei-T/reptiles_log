@@ -89,6 +89,16 @@
   margin: 10px 0 0;
 }
 
+.is_attention.card {
+  border: 1px solid #f3c7c5;
+}
+
+ul.text-list li {
+  list-style: inside;
+  margin-left: 1.4em;
+  text-indent: -1.4em;
+}
+
 @media screen and (min-width: 767px) {
   .user_profile {
     .name-space {

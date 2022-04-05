@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: %i[edit update following followers]
+  before_action :set_user, only: %i[edit update following followers withdrawal destroy]
 
   def show;end
 
@@ -26,6 +26,13 @@ class ProfilesController < ApplicationController
     @users = @user.followers
     @count =@users.count
     render 'show_follow'
+  end
+
+  def withdrawal;end
+
+  def destroy
+    @user.destroy
+    redirect_to root_path, success: t('.success')
   end
 
   private
