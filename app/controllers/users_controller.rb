@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to login_path, success: t('.success')
+      redirect_to reptiles_path, success: t('.success')
     else
       redirect_to new_user_path, danger: t('.fail')
     end

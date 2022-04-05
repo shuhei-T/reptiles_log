@@ -1,0 +1,24 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <div class="row">
+    <div class='col-md-10 offset-md-1 col-lg-8 offset-lg-2'>
+      <h1 class="withdrawal"><%= t '.title' %></h1>
+      <section>
+        <div class="is_attention card mb-4">
+          <div class="card-header text-danger fs-6 fw-bold" style="background-color: #ffeaea;">
+            <i class="fas fa-exclamation-triangle"></i> 解約に関する注意点
+          </div>
+          <ul class="card-body mb-0 text-list">
+            <li class="my-2">退会手続きをされますと、すべてのサービスがご利用できなくなります。</li>
+            <li class="my-2">退会手続き後、アカウントは完全に削除されるため、再度ログインすることはできなくなります。<br>アカウントに紐付いた生体情報も削除されるのでご注意ください。</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <div class="text-center">
+      <%= link_to profile_path, method: :delete, data: { confirm: t('defaults.message.withdrawal_confirm') }, class: 'btn btn-danger' do %>
+        <span>退会する</span>
+      <% end %>
+    </div>
+  </div>
+</div>

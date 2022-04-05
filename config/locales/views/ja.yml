@@ -21,6 +21,7 @@ ja:
       deleted: '%{item}を削除しました'
       delete_confirm: '削除しますか?'
       not_authorized: '権限がありません'
+      withdrawal_confirm: '本当に退会を行ってもいいですか?退会をボタンを押されますと、取り消しは行えません。退会が完了すると自動的にログアウト致します。'
   users:
     index:
       title: 'ユーザーリスト'
@@ -29,7 +30,7 @@ ja:
     new:
       title: '新規アカウント作成'
       to_login_page: 'ログインページへ'
-    create:  
+    create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
     search:
@@ -51,6 +52,10 @@ ja:
       title: 'マイプロフィール'
     edit:
       title: 'マイプロフィール編集'
+    withdrawal:
+      title: '退会手続き'
+    destroy:
+      success: '退会処理が完了しました'
   reptiles:
     index:
       title: '生体リスト'

@@ -14,9 +14,12 @@ Rails.application.routes.draw do
       get :search
     end
   end
-  resource :profile, only: %i[show edit update] do
+  resource :profile, only: %i[show edit update destroy] do
     collection do
       get :following, :followers
+    end
+    member do
+      get :withdrawal
     end
   end
   resources :relationships, only: %i[create update destroy]

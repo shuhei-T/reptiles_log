@@ -140,6 +140,9 @@ body {
   h1.password-reset::before {
     content: "\f3c1";
   }
+  h1.withdrawal::before {
+    content: "\f057";
+  }
 
   h2.timeline::before {
     content: url('https://api.iconify.design/clarity/timeline-line.svg?color=%237eb63f&width=33&height=33');
@@ -237,4 +240,8 @@ body {
 
 .c-error-message {
   color: red;
+}
+
+.alert {
+  margin-bottom: 0;
 }
