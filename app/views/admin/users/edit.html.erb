@@ -6,12 +6,20 @@
       <%= form_with model: @user, url: admin_user_path(@user), local: true do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
           <%= f.label :email %>
           <%= f.email_field :email, class: 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.label :name %>
-          <%= f.text_field :name, class: 'form-control' %>
+          <%= f.label :comment %>
+          <%= f.text_area :comment, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :role %>
+          <%= f.select :role, User.roles_i18n.invert, {}, class: 'form-control' %>
         </div>
         <div class="form-group">
           <%= f.label :avatar %>
@@ -23,10 +31,6 @@
                         class: 'rounded-circle',
                         id: 'preview',
                         size: '100x100' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :role %>
-          <%= f.select :role, User.roles_i18n.invert, {}, class: 'form-control' %>
         </div>
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>
