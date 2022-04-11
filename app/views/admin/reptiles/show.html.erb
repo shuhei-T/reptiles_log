@@ -1,0 +1,97 @@
+<% content_for(:title, @reptile.name) %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t('.title') %></h1>
+      <div class="text-right mb-3">
+        <%= link_to t('defaults.edit'), edit_admin_reptile_path(@reptile), class: 'btn btn-success' %>
+        <%= link_to t('defaults.delete'), admin_reptile_path(@reptile), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class: 'btn btn-danger' %>
+      </div>
+      <table class="table table-bordered bg-white">
+        <tr>
+          <th scope="row"><%= Reptile.human_attribute_name(:id) %></th>
+          <td><%= @reptile.id %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Reptile.human_attribute_name(:name) %></th>
+          <td><%= @reptile.name %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Reptile.human_attribute_name(:user) %></th>
+          <td><%= @reptile.user.name %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Reptile.human_attribute_name(:reptile_category) %></th>
+          <td>
+            <% if @reptile.reptile_category.present? %>
+              <%= @reptile.reptile_category %>
+            <% else %>
+              <span class="text-none">入力がありません</span>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Reptile.human_attribute_name(:morph) %></th>
+          <td>
+            <% if @reptile.morph.present? %>
+              <%= @reptile.morph %>
+            <% else %>
+              <span class="text-none">入力がありません</span>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Reptile.human_attribute_name(:sex) %></th>
+          <td>
+            <% if @reptile.sex.present? %>
+              <%= @reptile.sex_i18n %>
+            <% else %>
+              <span class="text-none">入力がありません</span>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Reptile.human_attribute_name(:birthday) %></th>
+          <td>
+            <% if @reptile.birthday.present? %>
+              <%= @reptile.birthday&.strftime("%Y年%-m月%-d日") %>(<%= @reptile.decorate.full_age %>)
+            <% else %>
+              <span class="text-none">入力がありません</span>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Reptile.human_attribute_name(:adoptaversary) %></th>
+          <td>
+            <% if @reptile.adoptaversary.present? %>
+              <%= @reptile.adoptaversary&.strftime("%Y年%-m月%-d日") %>(<%= @reptile.decorate.full_adoptaversary %>)
+            <% else %>
+              <span class="text-none">入力がありません</span>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Reptile.human_attribute_name(:comment) %></th>
+          <td>
+            <% if @reptile.comment.present? %>
+              <%= @reptile.comment %>
+            <% else %>
+              <span class="text-none">入力がありません</span>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Reptile.human_attribute_name(:image) %></th>
+          <td><%= image_tag @reptile.image.url, size: '100x100' %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Reptile.human_attribute_name(:created_at) %></th>
+          <td><%= l @reptile.created_at, format: :long %></td>
+        </tr>
+      </table>
+      <div class="text-right mb-3">
+        <%= link_to '飼育記録', admin_reptile_logs_path(@reptile), class: 'btn btn-info' %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<% content_for(:title, @reptile.name) %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t '.title' %></h1>
+      <%= form_with model: @reptile, url: admin_reptile_path(@reptile), local: true do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :reptile_category %>
+          <%= f.text_field :reptile_category, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :morph %>
+          <%= f.text_field :morph, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :sex, class: 'form-label' %><br>
+          <%= f.collection_radio_buttons :sex, Reptile.sexes_i18n, :first, :last do |b| %>
+          <%= b.label(class: 'form-check-label') { b.radio_button + b.text } %>
+          <% end %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :birthday, class: 'form-label' %><br>
+          <div class="select_raw">
+            <%= raw sprintf(f.date_select(:birthday, {prefix:'birthday', prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1920, date_separator:'%s'} ,{class: 'form-select', style: 'display: inline-block;width: auto;'}),'年','月')+'日' %>
+          </div>
+        </div>
+        <div class="mb-3">
+          <%= f.label :adoptaversary, class: 'form-label' %><br>
+          <div class="select_raw">
+            <%= raw sprintf(f.date_select(:adoptaversary, {prefix:'adoptaversary', prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1920, date_separator:'%s'}, {class: 'form-select', style: 'display: inline-block;width: auto;'}),'年','月')+'日' %>
+          </div>
+        </div>
+        <div class="mb-3">
+          <%= f.label :age, class: 'form-label', id: 'label-age' %>
+          <div class="select_raw", id="raw_age">
+            <%= raw sprintf(f.select :age, options_for_select((0..99).to_a), {prompt:"--", include_blank: true}, {class: 'form-select', style: 'display: inline-block;width: auto;'}) +' 歳' %>
+          </div>
+        </div>
+        <div class="mb-3">
+          <%= f.label :comment, class: 'form-label' %>
+          <%= f.text_area :comment, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :image %>
+          <%= f.file_field :image, class: 'form-control mb-3', accept: 'image/*', onchange: 'previewImage(preview)' %>
+          <%= f.hidden_field :image_cache %>
+        </div>
+        <div class='mt-3 mb-3'>
+          <%= image_tag @reptile.image.url, id: 'preview', size: '150x150' %>
+        </div>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
