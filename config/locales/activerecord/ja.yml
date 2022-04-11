@@ -18,6 +18,7 @@ ja:
         comment: 'コメント'
         created_at: '作成日時'
         updated_at: '更新日時'
+        role: '権限'
       reptile:
         name: '生体の名前'
         reptile_category: '種類'
@@ -28,6 +29,7 @@ ja:
         image: '生体の写真'
         comment: '自己紹介'
         age: '年齢'
+        user: 'オーナー'
       log:
         remark: 'メモ'
         condition: '調子'
@@ -57,6 +59,10 @@ ja:
     updated_at: '更新日時'
     base: ''
   enums:
+    user:
+      role:
+        general: '一般'
+        admin: '管理者'
     reptile:
       sex:
         unknown: '不明'

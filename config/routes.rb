@@ -30,4 +30,19 @@ Rails.application.routes.draw do
   end
   resources :contacts, only: %i[new create]
   resources :password_resets, only: %i[new create edit update]
+
+  namespace :admin do
+    root to: 'dashboards#index'
+    get 'login', to: 'user_sessions#new'
+    post 'login', to: 'user_sessions#create'
+    delete 'logout', to: 'user_sessions#destroy'
+    resources :users, only: %i[index show edit update destroy] do
+      member do
+        get :own_list
+      end
+    end
+    resources :reptiles, only: %i[index show edit update destroy] do
+      resources :logs, only: %i[index destroy]
+    end
+  end
 end
