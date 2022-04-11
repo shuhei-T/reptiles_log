@@ -25,6 +25,10 @@
           <td><%= @user.email %></td>
         </tr>
         <tr>
+          <th scope="row"><%= User.human_attribute_name(:comment) %></th>
+          <td><%= @user.comment %></td>
+        </tr>
+        <tr>
           <th scope="row"><%= User.human_attribute_name(:avatar) %></th>
           <td><%= image_tag @user.avatar.url, size: '100x100' %></td>
         </tr>
