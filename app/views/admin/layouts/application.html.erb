@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta lang='ja'>
+    <meta name="robots" content="noindex, nofollow">
+    <title><%= page_title(yield(:title), admin: true) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  </head>
+  <body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+    <%= render 'admin/shared/header' %>
+    <%= render 'admin/shared/sidebar' %>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <%= render 'shared/flash_message' %>
+      <%= yield %>
+    </div>
+    <!-- /.content-wrapper -->
+    <%= render 'admin/shared/footer' %>    
+    </div>
+  </body>
+</html>

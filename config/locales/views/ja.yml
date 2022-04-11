@@ -4,7 +4,7 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     post: '投稿'
-    search_word: 'ユーザー検索'
+    search_word: '検索ワード'
     show: '詳細'
     edit: '編集'
     delete: '削除'
@@ -116,10 +116,15 @@ ja:
         title: 'ユーザー詳細'
       edit:
         title: 'ユーザー編集'
-    boards:
+      own_list:
+        title: '所有生体'
+    reptiles:
       index:
-        title: '掲示板一覧'
+        title: '生体一覧'
       show:
-        title: '掲示板詳細'
+        title: '生体プロフィール'
       edit:
-        title: '掲示板編集'
+        title: '生体プロフィール編集'
+    logs:
+      index:
+        title: '飼育記録'
