@@ -1,0 +1,22 @@
+<tr>
+  <td>
+    <%= user.id %>
+  </td>
+  <td>
+    <%= user.name %>
+  </td>
+  <td>
+    <%= user.email %>
+  </td>
+  <td>
+    <%= user.role_i18n %>
+  </td>
+  <td>
+    <%= l user.created_at, format: :long %>
+  </td>
+  <td>
+    <%= link_to t('defaults.show'), admin_user_path(user), class: 'btn btn-info' %>
+    <%= link_to t('defaults.edit'), edit_admin_user_path(user), class: 'btn btn-success' %>
+    <%= link_to t('defaults.delete'), admin_user_path(user), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class: 'btn btn-danger' %>
+  </td>
+</tr>
