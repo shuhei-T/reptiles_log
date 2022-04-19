@@ -13,6 +13,7 @@ class Log < ApplicationRecord
   validates :length, numericality: { greater_than_or_equal_to: 1, less_than: 100000 }, allow_nil: true
   validates :temperature, numericality: { greater_than_or_equal_to: 1, less_than: 50 }, allow_nil: true
   validates :humidity, numericality: { greater_than_or_equal_to: 1, less_than: 100 }, allow_nil: true
+  validates :logged_at, presence: true
 
   mount_uploaders :images, ImagesUploader
 
