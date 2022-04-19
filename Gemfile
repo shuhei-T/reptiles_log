@@ -36,6 +36,8 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'webdrivers'
+  gem 'capybara'
   gem 'pry-byebug'
   gem 'hirb'
   gem 'rails-erd'

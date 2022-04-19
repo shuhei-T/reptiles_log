@@ -1296,6 +1296,15 @@ GEM
       rails (>= 3.1)
     builder (3.2.4)
     byebug (11.1.3)
+    capybara (3.36.0)
+      addressable
+      matrix
+      mini_mime (>= 0.1.3)
+      nokogiri (~> 1.8)
+      rack (>= 1.6.0)
+      rack-test (>= 0.6.3)
+      regexp_parser (>= 1.5, < 3.0)
+      xpath (~> 3.2)
     carrierwave (2.2.2)
       activemodel (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -1304,6 +1313,7 @@ GEM
       marcel (~> 1.0.0)
       mini_mime (>= 0.1.3)
       ssrf_filter (~> 1.0)
+    childprocess (4.1.0)
     choice (0.2.0)
     cocoon (1.2.15)
     coderay (1.1.3)
@@ -1458,6 +1468,7 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
+    matrix (0.4.2)
     meta-tags (2.16.0)
       actionpack (>= 3.2.0, < 7.1)
     method_source (1.0.0)
@@ -1592,6 +1603,7 @@ GEM
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     ruby2_keywords (0.0.5)
+    rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -1602,6 +1614,10 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    selenium-webdriver (4.1.0)
+      childprocess (>= 0.5, < 5.0)
+      rexml (~> 3.2, >= 3.2.5)
+      rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
     sitemap_generator (6.2.1)
       builder (~> 3.0)
@@ -1631,6 +1647,10 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
+    webdrivers (5.0.0)
+      nokogiri (~> 1.6)
+      rubyzip (>= 1.3.0)
+      selenium-webdriver (~> 4.0)
     webpacker (5.4.3)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
@@ -1639,6 +1659,8 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    xpath (3.2.0)
+      nokogiri (~> 1.8)
     zeitwerk (2.5.3)
 
 PLATFORMS
@@ -1652,6 +1674,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   bootstrap5-kaminari-views
   byebug
+  capybara
   carrierwave
   cocoon
   config
@@ -1688,6 +1711,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
+  webdrivers
   webpacker (~> 5.0)
 
 RUBY VERSION
