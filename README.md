@@ -2,9 +2,11 @@
 ![](app/assets/images/top.png)
 [サービスURL]https://reptileslog.com/
 ## サービス概要
-爬虫類飼育者のためのかんたん飼育記録サービス
+爬虫類飼育者のためのかんたん飼育記録サービスです。
 
 ## 機能
+ご利用になるにはユーザーアカウントを作成していただいてログインする必要があります。
+
 ### 生体登録
 ![](app/assets/images/profile.png)
 
@@ -30,6 +32,7 @@
 - jQuery
 
 ## インフラ
+- PostgreSQL
 - Heroku
 - AWS S3
 
